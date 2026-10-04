@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bidang Ibadah - Pendidikan Islam Tahun 3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .arabic-font { font-family: 'Amiri', serif; direction: rtl; }
+    @media print {
+      @page { size: A4 portrait; margin: 10mm; }
+      body { background-color: #ffffff !important; color: #000000 !important; font-size: 10pt; }
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
+    }
+    @media screen { .print-only { display: none; } }
+  </style>
+</head>
+<body class="bg-amber-50/40 text-slate-800 min-h-screen antialiased">
+  <div class="no-print max-w-5xl mx-auto px-4 py-6 md:py-10 space-y-8">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-2xl text-xs font-bold text-slate-700 shadow-xs">
+        <span>⬅️</span><span>Kembali ke Menu Bidang</span>
+      </a>
+      <button onclick="window.print()" class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2.5 rounded-2xl font-bold text-xs shadow-md">
+        Cetak Lembaran A4 (PDF)
+      </button>
+    </div>
+
+    <header class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-cyan-100">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-xs font-bold">
+        <span>🤲 BIDANG IBADAH</span> • <span>TAHUN 3</span>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-2">Bersuci Daripada Hadas</h1>
+      <p class="text-sm text-slate-500 italic">Purification from Hadath</p>
+    </header>
+
+    <div class="bg-white rounded-3xl p-6 shadow-sm border border-cyan-100 space-y-4">
+      <h3 class="text-base font-bold text-slate-900">8 WAGBA Ibadah (Buku Teks)</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold">
+        <button onclick="showW(1)" id="btn-ib-1" class="p-3 rounded-2xl border-2 bg-cyan-50 border-cyan-500">1. Maksud Hadas</button>
+        <button onclick="showW(2)" id="btn-ib-2" class="p-3 rounded-2xl border-2 bg-white">2. Bahagian Hadas</button>
+        <button onclick="showW(3)" id="btn-ib-3" class="p-3 rounded-2xl border-2 bg-white">3. Cara Bersuci</button>
+        <button onclick="showW(4)" id="btn-ib-4" class="p-3 rounded-2xl border-2 bg-white">4. Hukum Bersuci</button>
+        <button onclick="showW(5)" id="btn-ib-5" class="p-3 rounded-2xl border-2 bg-white">5. Sebab Hadas Besar</button>
+        <button onclick="showW(6)" id="btn-ib-6" class="p-3 rounded-2xl border-2 bg-white">6. Larangan Hadas</button>
+        <button onclick="showW(7)" id="btn-ib-7" class="p-3 rounded-2xl border-2 bg-white">7. Cara Mandi Wajib</button>
+        <button onclick="showW(8)" id="btn-ib-8" class="p-3 rounded-2xl border-2 bg-white">8. Kepentingan</button>
+      </div>
+    </div>
+
+    <!-- WAGBA Contents -->
+    <div id="ib-1" class="ib-card bg-white rounded-3xl p-6 border border-cyan-200 space-y-2">
+      <h4 class="font-bold text-slate-900">WAGBA 1: Maksud Hadas</h4>
+      <p class="text-sm font-bold text-slate-800">"Hadas ialah kekotoran maknawi pada diri seseorang yang menghalang sahnya ibadah yang disyaratkan bersuci."</p>
+      <p class="text-xs text-slate-500">Contoh ibadah terhalang: Solat, tawaf dan menyentuh Al-Quran.</p>
+    </div>
+    <div id="ib-2" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-2">
+      <h4 class="font-bold text-slate-900">WAGBA 2: Pembahagian Hadas</h4>
+      <div class="grid grid-cols-2 gap-3 text-xs font-bold text-center">
+        <div class="p-4 bg-cyan-50 rounded-2xl border">1. Hadas Kecil (Minor Hadath)</div>
+        <div class="p-4 bg-cyan-50 rounded-2xl border">2. Hadas Besar (Major Hadath)</div>
+      </div>
+    </div>
+    <div id="ib-3" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-2">
+      <h4 class="font-bold text-slate-900">WAGBA 3: Cara Bersuci</h4>
+      <p class="text-xs">• <strong>Hadas Kecil:</strong> Berwuduk (atau bertayamum jika ada keuzuran).</p>
+      <p class="text-xs">• <strong>Hadas Besar:</strong> Mandi Wajib.</p>
+    </div>
+    <div id="ib-4" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 text-center space-y-2">
+      <h4 class="font-bold text-slate-900">WAGBA 4: Hukum Bersuci Daripada Hadas</h4>
+      <div class="text-3xl font-black text-emerald-800">WAJIB</div>
+    </div>
+    <div id="ib-5" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-3">
+      <h4 class="font-bold text-slate-900">WAGBA 5: 6 Sebab Berhadas Besar (Buku Teks)</h4>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-bold">
+        <div class="p-3 bg-cyan-50 rounded-xl border">1. Keluar mani</div>
+        <div class="p-3 bg-cyan-50 rounded-xl border">2. Bersetubuh</div>
+        <div class="p-3 bg-cyan-50 rounded-xl border">3. Haid</div>
+        <div class="p-3 bg-cyan-50 rounded-xl border">4. Nifas</div>
+        <div class="p-3 bg-cyan-50 rounded-xl border">5. Wiladah</div>
+        <div class="p-3 bg-cyan-50 rounded-xl border">6. Mati</div>
+      </div>
+    </div>
+    <div id="ib-6" class="ib-card hidden bg-white rounded-3xl p-6 border border-rose-200 space-y-3">
+      <h4 class="font-bold text-rose-900">WAGBA 6: 4 Perkara Dilarang Semasa Berhadas Besar</h4>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold text-center">
+        <div class="p-3 bg-rose-50 rounded-xl border">1. Menunaikan solat</div>
+        <div class="p-3 bg-rose-50 rounded-xl border">2. Mengerjakan tawaf</div>
+        <div class="p-3 bg-rose-50 rounded-xl border">3. Membaca & menyentuh Al-Quran</div>
+        <div class="p-3 bg-rose-50 rounded-xl border">4. Berada di dalam masjid</div>
+      </div>
+    </div>
+    <div id="ib-7" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-3">
+      <h4 class="font-bold text-slate-900">WAGBA 7: 9 Langkah Mandi Wajib</h4>
+      <div class="space-y-1.5 text-xs">
+        <div class="p-2.5 bg-amber-50 rounded-xl border font-bold">1. Menghilangkan najis (Wajib)</div>
+        <div class="p-2.5 bg-amber-50 rounded-xl border font-bold">2. Membaca basmalah (Sunat) & berniat mengangkat hadas besar (Wajib)</div>
+        <div class="p-2.5 bg-white rounded-xl border">3. Membasuh tangan 3 kali (Sunat)</div>
+        <div class="p-2.5 bg-white rounded-xl border">4. Membasuh kemaluan daripada kekotoran (Sunat)</div>
+        <div class="p-2.5 bg-white rounded-xl border">5. Mengambil wuduk (Sunat)</div>
+        <div class="p-2.5 bg-amber-50 rounded-xl border font-bold">6. Membasuh keseluruhan rambut di kepala dan telinga (Wajib)</div>
+        <div class="p-2.5 bg-amber-50 rounded-xl border font-bold">7. Menjirus air ke seluruh badan (Wajib) bermula sebelah kanan (Sunat)</div>
+        <div class="p-2.5 bg-white rounded-xl border">8. Menggosok bahagian sulit dan lipatan (Sunat)</div>
+        <div class="p-2.5 bg-white rounded-xl border">9. Membasuh kaki (Sunat)</div>
+      </div>
+    </div>
+    <div id="ib-8" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-4">
+      <h4 class="font-bold text-slate-900">WAGBA 8: Kepentingan Mandi Wajib</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div class="p-4 bg-rose-50 rounded-2xl border space-y-1">
+          <div class="font-extrabold text-rose-800">Aspek Jasmani:</div>
+          <div>1. Badan bersih dan segar<br>2. Kesihatan tubuh badan<br>3. Bersih daripada bau dan kuman<br>4. Selesa berinteraksi dengan orang lain</div>
+        </div>
+        <div class="p-4 bg-emerald-50 rounded-2xl border space-y-1">
+          <div class="font-extrabold text-emerald-800">Aspek Rohani:</div>
+          <div>1. Boleh solat, tawaf & sentuh Al-Quran<br>2. Amal ibadah diterima Allah SWT<br>3. Bukti ketaatan kepada Allah SWT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showW(id) {
+      document.querySelectorAll('.ib-card').forEach(el=>el.classList.add('hidden'));
+      document.getElementById('ib-'+id).classList.remove('hidden');
+      for(let i=1; i<=8; i++) {
+        document.getElementById('btn-ib-'+i).className = (i===id) ? "p-3 rounded-2xl border-2 bg-cyan-50 border-cyan-500" : "p-3 rounded-2xl border-2 bg-white";
+      }
+    }
+  </script>
+</body>
+</html>
