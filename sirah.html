@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bidang Sirah - Pendidikan Islam Tahun 3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .arabic-font { font-family: 'Amiri', serif; direction: rtl; }
+    @media print {
+      @page { size: A4 portrait; margin: 10mm; }
+      body { background-color: #ffffff !important; color: #000000 !important; font-size: 10pt; }
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
+    }
+    @media screen { .print-only { display: none; } }
+  </style>
+</head>
+<body class="bg-amber-50/40 text-slate-800 min-h-screen antialiased selection:bg-amber-200">
+  <div class="no-print max-w-5xl mx-auto px-4 py-6 md:py-10 space-y-6">
+    
+    <!-- Butang Navigasi Atas -->
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-2xl text-xs font-bold text-slate-700 shadow-xs transition hover:scale-105 active:scale-95">
+        <span>⬅️</span>
+        <span>Kembali ke Menu Bidang / <span class="italic font-normal">Back</span></span>
+      </a>
+
+      <button onclick="window.print()" class="flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-3.5 py-2 rounded-2xl font-bold text-xs shadow-md shadow-amber-600/20 transition hover:scale-105 active:scale-95">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>Cetak Lembaran A4</span>
+      </button>
+    </div>
+
+    <!-- Header Modul Sirah -->
+    <header class="bg-white rounded-3xl p-5 md:p-7 shadow-sm border border-amber-100 relative overflow-hidden">
+      <div class="absolute -right-8 -top-8 w-36 h-36 bg-amber-100/50 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="space-y-1.5 text-center md:text-left z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-[11px] font-bold tracking-wide">
+          <span>📜 BIDANG SIRAH</span>
+          <span>•</span>
+          <span class="italic font-normal">SEERAH</span>
+          <span>•</span>
+          <span>TAHUN 3</span>
+        </div>
+        <h1 class="text-xl md:text-2xl font-extrabold text-slate-900 leading-tight">
+          Kenal Wahyu: Penurunan Wahyu Pertama
+        </h1>
+        <p class="text-xs md:text-sm text-slate-500 italic font-medium">
+          Understanding Revelation: The Event of the First Revelation
+        </p>
+      </div>
+    </header>
+
+    <!-- 2 Pilihan Utama: NOTA vs KUIZ -->
+    <section class="grid grid-cols-2 gap-3">
+      <button onclick="switchTab('wagba')" id="tab-btn-wagba" class="p-3.5 md:p-4 rounded-2xl border-2 border-amber-500 bg-amber-50/50 ring-2 ring-amber-400/20 shadow-xs transition-all flex items-center justify-between group">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="text-xl">🎯</span>
+          <div>
+            <div class="text-[10px] font-bold text-amber-700 uppercase">Modul</div>
+            <h2 class="text-xs md:text-sm font-extrabold text-slate-900">NOTA WAGBA</h2>
+          </div>
+        </div>
+        <span class="text-amber-600 font-bold text-xs">➔</span>
+      </button>
+
+      <button onclick="switchTab('kuiz')" id="tab-btn-kuiz" class="p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-amber-50/60 shadow-xs transition-all flex items-center justify-between group">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="text-xl">⭐</span>
+          <div>
+            <div class="text-[10px] font-bold text-amber-700 uppercase">Ujian</div>
+            <h2 class="text-xs md:text-sm font-extrabold text-slate-900">KUIZ INTERAKTIF</h2>
+          </div>
+        </div>
+        <span class="text-amber-600 font-bold text-xs">➔</span>
+      </button>
+    </section>
+
+    <!-- ================= NOTA WAGBA ================= -->
+    <div id="section-wagba" class="space-y-5">
+      <!-- Pilihan Butang Mini WAGBA -->
+      <div class="bg-white rounded-3xl p-4 md:p-5 shadow-sm border border-amber-100 space-y-3">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="text-xs font-bold text-slate-800">Pilih Helaian WAGBA Sirah:</span>
+          <span class="text-[10px] px-2 py-0.5 bg-amber-100 text-amber-800 rounded-full font-bold">1 hingga 8</span>
+        </div>
+
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
+          <button onclick="activateNote(1)" id="btn-w-1" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-amber-500 bg-amber-50 text-amber-900 font-extrabold text-xs ring-2 ring-amber-400/20">W1</button>
+          <button onclick="activateNote(2)" id="btn-w-2" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-amber-300 text-slate-700 font-bold text-xs">W2</button>
+          <button onclick="activateNote(3)" id="btn-w-3" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-amber-300 text-slate-700 font-bold text-xs">W3</button>
+          <button onclick="activateNote(4)" id="btn-w-4" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-amber-300 text-slate-700 font-bold text-xs">W4</button>
+          <button onclick="activateNote(5)" id="btn-w-5" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-amber-300 text-slate-700 font-bold text-xs">W5</button>
+          <button onclick="activateNote(6)" id="btn-w-6" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-amber-300 text-slate-700 font-bold text-xs">W6</button>
+          <button onclick="activateNote(7)" id="btn-w-7" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-amber-300 text-slate-700 font-bold text-xs">W7</button>
+          <button onclick="activateNote(8)" id="btn-w-8" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-amber-300 text-slate-700 font-bold text-xs">W8</button>
+        </div>
+      </div>
+
+      <!-- WAGBA 1: Maksud Wahyu & Lokasi -->
+      <div id="note-1" class="note-item bg-white rounded-3xl p-5 md:p-8 border border-amber-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 1: Maksud Wahyu & Tempat Penurunan</span>
+          <span class="text-xs text-slate-400 italic">Definition & Location</span>
+        </div>
+
+        <div class="p-5 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-2">
+          <div class="text-xs font-bold text-amber-800 uppercase tracking-wider">1. Pengertian Wahyu:</div>
+          <h3 class="text-base md:text-lg font-bold text-slate-900 leading-relaxed">
+            "Wahyu ialah kalam Allah SWT yang disampaikan kepada para nabi dan rasul."
+          </h3>
+          <p class="text-xs md:text-sm text-slate-600 italic">
+            "Revelation is the words of Allah SWT conveyed to the prophets and messengers."
+          </p>
+        </div>
+
+        <div class="p-5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+          <div class="text-xs font-bold text-slate-700 uppercase tracking-wider">2. Lokasi Penurunan Wahyu Pertama:</div>
+          <div class="text-sm font-bold text-slate-900">• Lokasi: Gua Hira' (terletak di puncak Jabal an-Nur).</div>
+          <div class="text-xs text-slate-600">• Peristiwa: Tempat berlakunya peristiwa agung penurunan wahyu yang pertama kepada Nabi Muhammad SAW.</div>
+          <p class="text-[11px] text-slate-400 italic">Location: Cave Hira' on Jabal an-Nur, the site of the first divine revelation.</p>
+        </div>
+
+        <div class="pt-3 border-t flex justify-end">
+          <button onclick="activateNote(2)" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 2 (Fakta Penurunan)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 2: Fakta Penurunan Wahyu Pertama -->
+      <div id="note-2" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-amber-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 2: Fakta Penurunan Wahyu Pertama</span>
+          <span class="text-xs text-slate-400 italic">Key Historical Facts</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+          <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200">
+            <span class="text-2xl">📅</span>
+            <div class="text-[11px] text-slate-500 uppercase mt-1">Tarikh Peristiwa</div>
+            <div class="text-base font-extrabold text-slate-900">17 Ramadan</div>
+            <div class="text-[10px] text-slate-400 italic">17th of Ramadan</div>
+          </div>
+
+          <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200">
+            <span class="text-2xl">👤</span>
+            <div class="text-[11px] text-slate-500 uppercase mt-1">Usia Nabi Muhammad SAW</div>
+            <div class="text-base font-extrabold text-slate-900">40 Tahun</div>
+            <div class="text-[10px] text-slate-400 italic">40 Years Old</div>
+          </div>
+
+          <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200">
+            <span class="text-2xl">🕊️</span>
+            <div class="text-[11px] text-slate-500 uppercase mt-1">Malaikat Pembawa Wahyu</div>
+            <div class="text-base font-extrabold text-slate-900">Malaikat Jibril AS</div>
+            <div class="text-[10px] text-slate-400 italic">Angel Jibril (Gabriel)</div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-1 text-xs">
+          <div class="font-bold text-slate-800">Fakta Nabi Muhammad SAW Mendaki Jabal an-Nur:</div>
+          <div>• <strong>Tujuan:</strong> Sebelum diangkat menjadi rasul, Nabi Muhammad SAW kerap ke Gua Hira' untuk beribadah dan bertafakur.</div>
+          <div>• <strong>Sifat:</strong> Baginda menunjukkan sifat sabar yang amat tinggi walaupun pendakiannya curam, berbatu dan mencabar.</div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(1)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(3)" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 3 (Kronologi di Gua)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 3: Kronologi Peristiwa di Gua Hira' -->
+      <div id="note-3" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-amber-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 3: Peristiwa Penurunan Wahyu di Gua Hira'</span>
+          <span class="text-xs text-slate-400 italic">Chronology at Cave Hira'</span>
+        </div>
+
+        <div class="space-y-2.5 text-xs">
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
+            <div>
+              <div class="font-bold text-slate-900">Malaikat Jibril AS menemui Nabi Muhammad SAW ketika baginda sedang beribadah di Gua Hira'.</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">Angel Jibril met the Prophet while he was in seclusion/worship.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
+            <div>
+              <div class="font-bold text-slate-900">Malaikat Jibril AS menyuruh baginda membaca, tetapi baginda menjawab bahawa baginda tidak tahu membaca ("Maa ana biqaari'").</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">Jibril asked him to read, but the Prophet replied that he could not read.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">3</span>
+            <div>
+              <div class="font-bold text-slate-900">Malaikat Jibril AS memeluk baginda dengan erat dan meminta baginda membaca lagi; baginda memberikan jawapan yang sama.</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">Jibril embraced him firmly and repeated the command; the Prophet gave the same response.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">4</span>
+            <div>
+              <div class="font-bold text-slate-900">Selepas memeluk baginda sebanyak tiga kali, Malaikat Jibril AS mengajarkan Nabi Muhammad SAW ayat 1 hingga 5 Surah Al-‘Alaq.</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">After embracing him three times, Angel Jibril taught the Prophet verses 1–5 of Surah Al-‘Alaq.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(2)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(4)" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 4 (Peristiwa Selepas)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 4: Peristiwa Selepas Penurunan Wahyu -->
+      <div id="note-4" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-amber-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 4: Peristiwa Selepas Penurunan Wahyu</span>
+          <span class="text-xs text-slate-400 italic">Events After the Revelation</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-4 bg-rose-50/60 rounded-2xl border border-rose-200 space-y-1.5">
+            <div class="font-bold text-rose-900 text-sm">1. Pulang Dalam Keadaan Takut & Menggigil</div>
+            <div class="text-slate-700">Nabi Muhammad SAW pulang ke rumah menemui isteri baginda, Saidatina Khadijah RA dalam keadaan gementar dan ketakutan.</div>
+            <div class="text-slate-500 italic text-[11px]">The Prophet returned home to Khadijah RA trembling in fear.</div>
+          </div>
+
+          <div class="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-200 space-y-1.5">
+            <div class="font-bold text-emerald-900 text-sm">2. Saidatina Khadijah Menenangkan Baginda</div>
+            <div class="text-slate-700">Saidatina Khadijah RA segera menenangkan dan menyelimutkan Nabi Muhammad SAW dengan penuh kasih sayang.</div>
+            <div class="text-slate-500 italic text-[11px]">Khadijah comforted and wrapped him in a blanket.</div>
+          </div>
+
+          <div class="p-4 bg-blue-50/60 rounded-2xl border border-blue-200 space-y-1.5 sm:col-span-2">
+            <div class="font-bold text-blue-900 text-sm">3. Bertemu Waraqah bin Naufal</div>
+            <div class="text-slate-700">Saidatina Khadijah membawa baginda bertemu sepupunya, Waraqah bin Naufal (seorang pendeta Nasrani yang mahir isi kitab suci terdahulu).</div>
+            <div class="text-slate-800 font-semibold mt-1">• Pengesahan: Waraqah mengesahkan bahawa Nabi Muhammad SAW telah dilantik menjadi Rasul Allah sebagaimana yang dinyatakan dalam kitab-kitab suci terdahulu.</div>
+            <div class="text-slate-500 italic text-[11px]">Waraqah confirmed that Muhammad SAW was appointed as a messenger of Allah.</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(3)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(5)" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 5 (Surah Al-'Alaq)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 5: Teks & Terjemahan Surah Al-'Alaq (1-5) -->
+      <div id="note-5" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-amber-200 space-y-6 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 5: Surah Al-‘Alaq (Ayat 1–5)</span>
+          <span class="text-xs text-slate-400 italic">Verses 1 to 5</span>
+        </div>
+
+        <!-- Teks Arab Penuh (RTL) -->
+        <div class="p-6 bg-amber-50/60 rounded-2xl border border-amber-200 text-center space-y-3">
+          <p class="arabic-font text-2xl md:text-4xl leading-relaxed text-amber-950 font-bold" dir="rtl">
+            اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ﴿١﴾ خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ ﴿٢﴾ اقْرَأْ وَرَبُّكَ الْأَكْرَمُ ﴿٣﴾ الَّذِي عَلَّمَ بِالْقَلَمِ ﴿٤﴾ عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ ﴿٥﴾
+          </p>
+          <p class="text-xs text-slate-500 font-semibold">(Surah Al-‘Alaq: Ayat 1–5)</p>
+        </div>
+
+        <!-- Senarai Ayat Rumi & Terjemahan Lengkap -->
+        <div class="space-y-2 text-xs">
+          <div class="p-3 bg-white rounded-xl border border-slate-200">
+            <strong>Ayat 1:</strong> Iqra’ bismi rabbikalladzii khalaq — <em>Bacalah dengan nama Tuhanmu yang menciptakan.</em>
+          </div>
+          <div class="p-3 bg-white rounded-xl border border-slate-200">
+            <strong>Ayat 2:</strong> Khalaqal-insaana min ‘alaq — <em>Dia menciptakan manusia daripada segumpal darah.</em>
+          </div>
+          <div class="p-3 bg-white rounded-xl border border-slate-200">
+            <strong>Ayat 3:</strong> Iqra’ wa rabbukal-akram — <em>Bacalah, dan Tuhanmulah Yang Maha Pemurah.</em>
+          </div>
+          <div class="p-3 bg-white rounded-xl border border-slate-200">
+            <strong>Ayat 4:</strong> Alladzii ‘allama bil-qalam — <em>Yang mengajar manusia melalui pena dan tulisan.</em>
+          </div>
+          <div class="p-3 bg-white rounded-xl border border-slate-200">
+            <strong>Ayat 5:</strong> ‘Allamal-insaana maa lam ya‘lam — <em>Dia mengajarkan manusia apa yang tidak diketahuinya.</em>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(4)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(6)" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 6 (Pecahan Blok)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 6: Pecahan Blok Terjemahan Surah Al-'Alaq (1-5) -->
+      <div id="note-6" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-amber-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 6: Pecahan Blok Surah Al-‘Alaq</span>
+          <span class="text-xs text-slate-400 italic">Phrase-by-Phrase Breakdown</span>
+        </div>
+
+        <div class="space-y-3">
+          <!-- Blok 1 -->
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-center justify-between gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
+            <div class="flex-1">
+              <div class="text-xs font-bold text-slate-900">Iqra’ bismi rabbikalladzii khalaq</div>
+              <div class="text-[11px] text-slate-600">Bacalah dengan nama Tuhanmu yang menciptakan</div>
+              <div class="text-[10px] text-slate-400 italic">Read in the name of your Lord who created</div>
+            </div>
+            <div class="arabic-font text-lg font-bold text-amber-950" dir="rtl">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</div>
+          </div>
+
+          <!-- Blok 2 -->
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-center justify-between gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
+            <div class="flex-1">
+              <div class="text-xs font-bold text-slate-900">Khalaqal-insaana min ‘alaq</div>
+              <div class="text-[11px] text-slate-600">Dia menciptakan manusia daripada segumpal darah</div>
+              <div class="text-[10px] text-slate-400 italic">Created man from a clinging clot</div>
+            </div>
+            <div class="arabic-font text-lg font-bold text-amber-950" dir="rtl">خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ</div>
+          </div>
+
+          <!-- Blok 3 -->
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-center justify-between gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">3</span>
+            <div class="flex-1">
+              <div class="text-xs font-bold text-slate-900">Iqra’ wa rabbukal-akram</div>
+              <div class="text-[11px] text-slate-600">Bacalah, dan Tuhanmulah Yang Maha Pemurah</div>
+              <div class="text-[10px] text-slate-400 italic">Read, and your Lord is the Most Generous</div>
+            </div>
+            <div class="arabic-font text-lg font-bold text-amber-950" dir="rtl">اقْرَأْ وَرَبُّكَ الْأَكْرَمُ</div>
+          </div>
+
+          <!-- Blok 4 -->
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-center justify-between gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">4</span>
+            <div class="flex-1">
+              <div class="text-xs font-bold text-slate-900">Alladzii ‘allama bil-qalam</div>
+              <div class="text-[11px] text-slate-600">Yang mengajar manusia melalui pena dan tulisan</div>
+              <div class="text-[10px] text-slate-400 italic">Who taught by the pen</div>
+            </div>
+            <div class="arabic-font text-lg font-bold text-amber-950" dir="rtl">الَّذِي عَلَّمَ بِالْقَلَمِ</div>
+          </div>
+
+          <!-- Blok 5 -->
+          <div class="p-3.5 bg-amber-50/50 rounded-2xl border border-amber-200 flex items-center justify-between gap-3">
+            <span class="w-6 h-6 rounded-lg bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">5</span>
+            <div class="flex-1">
+              <div class="text-xs font-bold text-slate-900">‘Allamal-insaana maa lam ya‘lam</div>
+              <div class="text-[11px] text-slate-600">Dia mengajarkan manusia apa yang tidak diketahuinya</div>
+              <div class="text-[10px] text-slate-400 italic">Taught man what he did not know</div>
+            </div>
+            <div class="arabic-font text-lg font-bold text-amber-950" dir="rtl">عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(5)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(7)" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 7 (Kepentingan)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 7: 5 Kepentingan Wahyu -->
+      <div id="note-7" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-amber-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 7: 5 Kepentingan Wahyu</span>
+          <span class="text-xs text-slate-400 italic">The Importance of Revelation</span>
+        </div>
+
+        <div class="space-y-2.5 text-xs">
+          <div class="p-3.5 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-0.5">
+            <div class="font-bold text-slate-900">1. Medium untuk mengetahui perintah dan larangan Allah SWT</div>
+            <div class="text-slate-500 italic text-[11px]">A medium to understand Allah's commands and prohibitions.</div>
+          </div>
+
+          <div class="p-3.5 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-0.5">
+            <div class="font-bold text-slate-900">2. Mematahkan hujah orang kafir</div>
+            <div class="text-slate-500 italic text-[11px]">Refutes the arguments and doubts of the disbelievers.</div>
+          </div>
+
+          <div class="p-3.5 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-0.5">
+            <div class="font-bold text-slate-900">3. Memberi penyelesaian kepada permasalahan manusia sepanjang zaman</div>
+            <div class="text-slate-500 italic text-[11px]">Provides solutions to human issues and challenges throughout all eras.</div>
+          </div>
+
+          <div class="p-3.5 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-0.5">
+            <div class="font-bold text-slate-900">4. Menjelaskan tentang perkara sam'iyyat (alam ghaib)</div>
+            <div class="text-slate-500 italic text-[11px]">Explains sam'iyyat (matters of the unseen and metaphysical realm).</div>
+          </div>
+
+          <div class="p-3.5 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-0.5">
+            <div class="font-bold text-slate-900">5. Mengandungi iktibar tentang peristiwa umat terdahulu</div>
+            <div class="text-slate-500 italic text-[11px]">Contains lessons and moral guidance from past historical events and nations.</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(6)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(8)" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 8 (Iktibar)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 8: 4 Iktibar Peristiwa Penurunan Wahyu Pertama -->
+      <div id="note-8" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-amber-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 8: 4 Iktibar Peristiwa Penurunan Wahyu Pertama</span>
+          <span class="text-xs text-slate-400 italic">Lessons from the Event</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <!-- 1 -->
+          <div class="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-1">
+            <div class="font-extrabold text-emerald-900 text-sm">1. Al-Quran Sebagai Panduan Hidup</div>
+            <div class="text-slate-700">• <strong>Peristiwa:</strong> Al-Quran ialah wahyu yang diturunkan kepada Nabi Muhammad SAW.</div>
+            <div class="text-slate-700">• <strong>Iktibar:</strong> Kita mestilah menjadikan Al-Quran sebagai panduan hidup bagi mencapai kejayaan di dunia dan akhirat.</div>
+            <div class="text-[10px] text-slate-400 italic">Make the Qur'an our life guide.</div>
+          </div>
+
+          <!-- 2 -->
+          <div class="p-4 bg-blue-50/70 rounded-2xl border border-blue-200 space-y-1">
+            <div class="font-extrabold text-blue-900 text-sm">2. Gigih & Bersungguh-sungguh</div>
+            <div class="text-slate-700">• <strong>Peristiwa:</strong> Nabi SAW gigih mendaki Jabal an-Nur untuk ke Gua Hira'.</div>
+            <div class="text-slate-700">• <strong>Iktibar:</strong> Mencontohi kesungguhan Nabi Muhammad SAW dalam melakukan semua perkara terutamanya dalam beribadah.</div>
+            <div class="text-[10px] text-slate-400 italic">Perseverance in worship and all deeds.</div>
+          </div>
+
+          <!-- 3 -->
+          <div class="p-4 bg-purple-50/70 rounded-2xl border border-purple-200 space-y-1">
+            <div class="font-extrabold text-purple-900 text-sm">3. Berpendirian Teguh</div>
+            <div class="text-slate-700">• <strong>Peristiwa:</strong> Nabi SAW beribadah kepada Allah SWT walaupun masyarakatnya menyembah berhala.</div>
+            <div class="text-slate-700">• <strong>Iktibar:</strong> Kita mesti berpendirian teguh dan tidak terpengaruh dengan anasir tidak baik yang ada di sekeliling kita.</div>
+            <div class="text-[10px] text-slate-400 italic">Steadfast faith amid negative surroundings.</div>
+          </div>
+
+          <!-- 4 -->
+          <div class="p-4 bg-amber-50/70 rounded-2xl border border-amber-200 space-y-1">
+            <div class="font-extrabold text-amber-900 text-sm">4. Mengutamakan Ilmu & Membaca</div>
+            <div class="text-slate-700">• <strong>Peristiwa:</strong> Wahyu yang pertama diturunkan ialah "Iqra'" yang bererti "bacalah".</div>
+            <div class="text-slate-700">• <strong>Iktibar:</strong> Tekun menuntut ilmu dan menjadikan amalan membaca sebagai tabiat hidup seharian.</div>
+            <div class="text-[10px] text-slate-400 italic">Make reading and learning a habit.</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(7)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="switchTab('kuiz')" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-2xl text-xs font-extrabold shadow-md transition flex items-center gap-1.5">
+            <span>Uji Kefahaman dalam Kuiz ⭐</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= KUIZ INTERAKTIF ================= -->
+    <div id="section-kuiz" class="hidden space-y-5">
+      <div class="bg-white rounded-3xl p-4 md:p-5 shadow-sm border border-amber-100 space-y-3">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="text-xs font-bold text-slate-800">Pilih Kuiz Sirah:</span>
+          <span class="text-[10px] px-2 py-0.5 bg-amber-100 text-amber-800 rounded-full font-bold">Kuiz 1 hingga 8</span>
+        </div>
+
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
+          <button onclick="loadQuiz(1)" id="btn-q-1" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-amber-500 bg-amber-50 text-amber-900 ring-2 ring-amber-400/20">Q1</button>
+          <button onclick="loadQuiz(2)" id="btn-q-2" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q2</button>
+          <button onclick="loadQuiz(3)" id="btn-q-3" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q3</button>
+          <button onclick="loadQuiz(4)" id="btn-q-4" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q4</button>
+          <button onclick="loadQuiz(5)" id="btn-q-5" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q5</button>
+          <button onclick="loadQuiz(6)" id="btn-q-6" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q6</button>
+          <button onclick="loadQuiz(7)" id="btn-q-7" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q7</button>
+          <button onclick="loadQuiz(8)" id="btn-q-8" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q8</button>
+        </div>
+      </div>
+
+      <div id="quiz-card" class="p-5 md:p-8 bg-white rounded-3xl border border-amber-200 shadow-sm space-y-5"></div>
+    </div>
+  </div>
+
+  <!-- Cetakan A4 KSSR -->
+  <div class="print-only max-w-[210mm] mx-auto p-4 bg-white text-black text-xs">
+    <div class="text-center border-b-2 border-black pb-2 mb-3">
+      <div class="font-extrabold text-[11px] uppercase">PENTAKSIRAN BILIK DARJAH (PBD) • BIDANG SIRAH TAHUN 3</div>
+      <h1 class="text-sm font-black uppercase">Kenal Wahyu: Penurunan Wahyu Pertama</h1>
+    </div>
+    <div class="border border-black p-2 mb-3 space-y-1">
+      <div>NAMA: ____________________________________ KELAS: _________ TARIKH: _________</div>
+    </div>
+    <div class="mb-3">
+      <strong>Bahagian A: Isi tempat kosong dengan jawapan yang betul.</strong>
+      <table class="w-full border-collapse border border-black text-center mt-2 text-xs">
+        <tr class="bg-gray-100"><th class="border border-black p-1">Perkara</th><th class="border border-black p-1">Maklumat Peristiwa</th></tr>
+        <tr><td class="border border-black p-2 font-bold">Maksud Wahyu</td><td class="border border-black p-2 text-left">Kalam Allah SWT yang disampaikan kepada para nabi dan rasul.</td></tr>
+        <tr><td class="border border-black p-2 font-bold">Tempat Penurunan</td><td class="border border-black p-2 text-left">Gua Hira' di puncak Jabal an-Nur.</td></tr>
+        <tr><td class="border border-black p-2 font-bold">Tarikh & Usia Nabi</td><td class="border border-black p-2 text-left">17 Ramadan ketika Nabi Muhammad SAW berusia 40 tahun.</td></tr>
+        <tr><td class="border border-black p-2 font-bold">Wahyu Pertama</td><td class="border border-black p-2 text-left">Surah Al-‘Alaq (Ayat 1 hingga 5).</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Logik Skrip -->
+  <script>
+    function switchTab(mode) {
+      const secWagba = document.getElementById('section-wagba');
+      const secKuiz = document.getElementById('section-kuiz');
+      const btnWagba = document.getElementById('tab-btn-wagba');
+      const btnKuiz = document.getElementById('tab-btn-kuiz');
+
+      if (mode === 'wagba') {
+        secWagba.classList.remove('hidden');
+        secKuiz.classList.add('hidden');
+        btnWagba.className = "p-3.5 md:p-4 rounded-2xl border-2 border-amber-500 bg-amber-50/50 ring-2 ring-amber-400/20 shadow-xs transition-all flex items-center justify-between group";
+        btnKuiz.className = "p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-amber-50/60 shadow-xs transition-all flex items-center justify-between group";
+      } else {
+        secWagba.classList.add('hidden');
+        secKuiz.classList.remove('hidden');
+        btnKuiz.className = "p-3.5 md:p-4 rounded-2xl border-2 border-amber-500 bg-amber-50/50 ring-2 ring-amber-400/20 shadow-xs transition-all flex items-center justify-between group";
+        btnWagba.className = "p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-amber-50/60 shadow-xs transition-all flex items-center justify-between group";
+        loadQuiz(1);
+      }
+    }
+
+    function activateNote(id) {
+      document.querySelectorAll('.note-item').forEach(el => el.classList.add('hidden'));
+      const activeNoteEl = document.getElementById('note-' + id);
+      if (activeNoteEl) activeNoteEl.classList.remove('hidden');
+
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.getElementById('btn-w-' + i);
+        if (i === id) {
+          btn.className = "w-btn p-2 rounded-xl border-2 transition-all text-center border-amber-500 bg-amber-50 text-amber-900 font-extrabold text-xs ring-2 ring-amber-400/20";
+        } else {
+          btn.className = "w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-amber-300 text-slate-700 font-bold text-xs";
+        }
+      }
+    }
+
+    // Data Kuiz Dwibahasa Sirah
+    const quizDatabase = {
+      1: {
+        title: "KUIZ WAGBA 1: Maksud Wahyu & Lokasi",
+        sub: "Meaning of Revelation & Location",
+        question: "Apakah maksud wahyu dan di manakah tempat penurunan wahyu yang pertama?",
+        options: [
+          { text: "Kalam Allah SWT kepada nabi dan rasul; bertempat di Gua Hira'", en: "Words of Allah to prophets; at Cave Hira'", correct: true },
+          { text: "Mimpi yang dialami para sahabat; bertempat di Madinah", en: "Dreams of companions; in Madinah", correct: false },
+          { text: "Kisah sejarah umat terdahulu; bertempat di Gua Thur", en: "History of ancient nations; at Cave Thur", correct: false }
+        ],
+        explanation: "Wahyu ialah kalam Allah SWT yang disampaikan kepada para nabi dan rasul, dan wahyu pertama diturunkan di Gua Hira' di Jabal an-Nur."
+      },
+      2: {
+        title: "KUIZ WAGBA 2: Fakta Penurunan Wahyu",
+        sub: "Facts of the Revelation",
+        question: "Bilakah peristiwa penurunan wahyu pertama berlaku dan berapakah umur Nabi Muhammad SAW ketika itu?",
+        options: [
+          { text: "17 Ramadan ketika baginda berusia 40 tahun", en: "17th of Ramadan when he was 40 years old", correct: true },
+          { text: "1 Syawal ketika baginda berusia 25 tahun", en: "1st of Shawwal when he was 25 years old", correct: false },
+          { text: "10 Zulhijjah ketika baginda berusia 63 tahun", en: "10th of Dhulhijjah when he was 63 years old", correct: false }
+        ],
+        explanation: "Peristiwa wahyu pertama berlaku pada 17 Ramadan ketika Nabi Muhammad SAW berusia 40 tahun dan disampaikan oleh Malaikat Jibril AS."
+      },
+      3: {
+        title: "KUIZ WAGBA 3: Peristiwa di Gua Hira'",
+        sub: "Event at Cave Hira'",
+        question: "Apakah yang dilakukan oleh Malaikat Jibril AS sebelum mengajarkan ayat 1–5 Surah Al-‘Alaq?",
+        options: [
+          { text: "Menyuruh baginda membaca dan memeluk erat baginda sebanyak 3 kali", en: "Commanding him to read and firmly embracing him 3 times", correct: true },
+          { text: "Memberikan sebuah buku bertulis kepada baginda", en: "Handing him a written physical book", correct: false },
+          { text: "Menyuruh baginda pulang ke rumah dengan segera", en: "Telling him to return home immediately", correct: false }
+        ],
+        explanation: "Malaikat Jibril AS menyuruh baginda membaca ('Iqra'') dan memeluk erat baginda sebanyak 3 kali selepas baginda menyatakan bahawa baginda tidak tahu membaca."
+      },
+      4: {
+        title: "KUIZ WAGBA 4: Peristiwa Selepas Wahyu",
+        sub: "Events After the Revelation",
+        question: "Siapakah pendeta yang mengesahkan bahawa Nabi Muhammad SAW telah dilantik menjadi Rasul Allah?",
+        options: [
+          { text: "Waraqah bin Naufal", en: "Waraqah bin Naufal", correct: true },
+          { text: "Abu Talib", en: "Abu Talib", correct: false },
+          { text: "Mus'ab bin Umair", en: "Mus'ab bin Umair", correct: false }
+        ],
+        explanation: "Saidatina Khadijah RA membawa baginda berjumpa dengan sepupunya, Waraqah bin Naufal, yang mengesahkan kerasulan Nabi Muhammad SAW berdasarkan kitab terdahulu."
+      },
+      5: {
+        title: "KUIZ WAGBA 5: Surah Al-‘Alaq",
+        sub: "Surah Al-‘Alaq (Verses 1–5)",
+        question: "Apakah perkataan pertama dalam wahyu yang diturunkan kepada Nabi Muhammad SAW?",
+        options: [
+          { text: "Iqra' (Bacalah)", en: "Iqra' (Read)", correct: true },
+          { text: "Qul (Katakanlah)", en: "Qul (Say)", correct: false },
+          { text: "Yaa Ayyuha (Wahai)", en: "Yaa Ayyuha (O you)", correct: false }
+        ],
+        explanation: "Wahyu pertama yang diturunkan ialah permulaan Surah Al-‘Alaq iaitu perkataan 'Iqra'' yang bererti 'Bacalah'."
+      },
+      6: {
+        title: "KUIZ WAGBA 6: Pecahan Maksud Ayat",
+        sub: "Meaning of Verses",
+        question: "Apakah maksud bagi potongan ayat 'Alladzii ‘allama bil-qalam' (الَّذِي عَلَّمَ بِالْقَلَمِ)?",
+        options: [
+          { text: "Yang mengajar manusia melalui pena dan tulisan", en: "Who taught by the pen", correct: true },
+          { text: "Menciptakan manusia daripada segumpal darah", en: "Created man from a clinging clot", correct: false },
+          { text: "Dan Tuhanmulah Yang Maha Pemurah", en: "And your Lord is the Most Generous", correct: false }
+        ],
+        explanation: "'Alladzii ‘allama bil-qalam' (ayat ke-4) bermaksud Allah SWT Yang mengajar manusia dengan perantaraan pena dan tulisan."
+      },
+      7: {
+        title: "KUIZ WAGBA 7: Kepentingan Wahyu",
+        sub: "The Importance of Revelation",
+        question: "Antara berikut, yang manakah kepentingan wahyu menurut buku teks?",
+        options: [
+          { text: "Medium mengetahui perintah Allah & penyelesaian masalah manusia sepanjang zaman", en: "Medium to know Allah's commands & solutions for all eras", correct: true },
+          { text: "Mencari kekayaan harta benda dunia semata-mata", en: "Solely accumulating worldly wealth", correct: false },
+          { text: "Mempelajari sihir dan ramalan bintang", en: "Learning magic and fortune telling", correct: false }
+        ],
+        explanation: "Wahyu penting sebagai medium mengetahui perintah dan larangan Allah, mematahkan hujah orang kafir, dan memberi penyelesaian masalah manusia sepanjang zaman."
+      },
+      8: {
+        title: "KUIZ WAGBA 8: Iktibar Penurunan Wahyu",
+        sub: "Lessons from the Revelation",
+        question: "Apakah iktibar yang boleh kita amalkan daripada perintah wahyu pertama 'Iqra''?",
+        options: [
+          { text: "Tekun menuntut ilmu dan menjadikan amalan membaca sebagai tabiat", en: "Diligently pursue knowledge and make reading a habit", correct: true },
+          { text: "Menghabiskan masa bermain permainan video", en: "Spending time playing video games", correct: false },
+          { text: "Mempercayai perkara tahyul dan khurafat", en: "Believing in superstitions", correct: false }
+        ],
+        explanation: "Iktibar daripada peristiwa 'Iqra'' ialah kita hendaklah tekun menuntut ilmu dan membudayakan amalan membaca dalam kehidupan harian."
+      }
+    };
+
+    function loadQuiz(id) {
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.getElementById('btn-q-' + i);
+        if (i === id) {
+          btn.className = "q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-amber-500 bg-amber-50 text-amber-900 ring-2 ring-amber-400/20";
+        } else {
+          btn.className = "q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300";
+        }
+      }
+
+      const q = quizDatabase[id];
+      const card = document.getElementById('quiz-card');
+      card.innerHTML = `
+        <div class="flex items-center justify-between border-b pb-2">
+          <div>
+            <span class="px-2.5 py-0.5 bg-amber-600 text-white rounded-lg text-[11px] font-extrabold uppercase">${q.title}</span>
+            <div class="text-[10px] text-slate-400 italic mt-0.5">${q.sub}</div>
+          </div>
+          <div id="quiz-status-badge" class="text-[11px] font-bold px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full">Belum Dijawab</div>
+        </div>
+
+        <div>
+          <div class="text-sm md:text-base font-bold text-slate-900 leading-snug">${q.question}</div>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          ${q.options.map((opt, optIndex) => `
+            <button onclick="handleAnswer(${id}, ${optIndex})" id="opt-btn-${optIndex}" class="w-full text-left p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-amber-400 hover:bg-amber-50/40 transition">
+              <div class="text-xs md:text-sm font-bold text-slate-800">${opt.text}</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">${opt.en}</div>
+            </button>
+          `).join('')}
+        </div>
+
+        <div id="quiz-feedback" class="hidden p-3.5 rounded-2xl text-xs font-medium space-y-1"></div>
+      `;
+    }
+
+    function handleAnswer(quizId, optIndex) {
+      const q = quizDatabase[quizId];
+      const isCorrect = q.options[optIndex].correct;
+      const feedbackEl = document.getElementById('quiz-feedback');
+      const badge = document.getElementById('quiz-status-badge');
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.getElementById('opt-btn-' + idx);
+        btn.disabled = true;
+        btn.classList.add('cursor-not-allowed', 'opacity-80');
+        if (opt.correct) {
+          btn.classList.remove('bg-white', 'border-slate-200');
+          btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900');
+        } else if (idx === optIndex && !isCorrect) {
+          btn.classList.remove('bg-white', 'border-slate-200');
+          btn.classList.add('bg-rose-100', 'border-rose-400', 'text-rose-900');
+        }
+      });
+
+      feedbackEl.classList.remove('hidden');
+      if (isCorrect) {
+        badge.className = "text-[11px] font-bold px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-full";
+        badge.innerText = "Tahniah! Betul ⭐";
+        feedbackEl.className = "p-3.5 rounded-2xl text-xs font-medium bg-emerald-100/90 text-emerald-950 border border-emerald-300 space-y-1";
+        feedbackEl.innerHTML = `<strong>Tahniah! Jawapan Tepat! 🎉</strong><br>${q.explanation}`;
+      } else {
+        badge.className = "text-[11px] font-bold px-2.5 py-0.5 bg-rose-100 text-rose-800 rounded-full";
+        badge.innerText = "Cuba Lagi 😊";
+        feedbackEl.className = "p-3.5 rounded-2xl text-xs font-medium bg-rose-100/90 text-rose-950 border border-rose-300 space-y-1";
+        feedbackEl.innerHTML = `<strong>Jawapan Kurang Tepat. 😊</strong><br>${q.explanation}`;
+      }
+    }
+  </script>
+</body>
+</html>
