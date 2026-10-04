@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bidang Ibadah - Pendidikan Islam Tahun 3</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
@@ -18,116 +20,611 @@
     @media screen { .print-only { display: none; } }
   </style>
 </head>
-<body class="bg-amber-50/40 text-slate-800 min-h-screen antialiased">
-  <div class="no-print max-w-5xl mx-auto px-4 py-6 md:py-10 space-y-8">
+<body class="bg-amber-50/40 text-slate-800 min-h-screen antialiased selection:bg-cyan-200">
+  <div class="no-print max-w-5xl mx-auto px-4 py-6 md:py-10 space-y-6">
+    
+    <!-- Butang Navigasi Atas -->
     <div class="flex items-center justify-between">
-      <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-2xl text-xs font-bold text-slate-700 shadow-xs">
-        <span>⬅️</span><span>Kembali ke Menu Bidang</span>
+      <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-2xl text-xs font-bold text-slate-700 shadow-xs transition hover:scale-105 active:scale-95">
+        <span>⬅️</span>
+        <span>Kembali ke Menu Bidang / <span class="italic font-normal">Back</span></span>
       </a>
-      <button onclick="window.print()" class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2.5 rounded-2xl font-bold text-xs shadow-md">
-        Cetak Lembaran A4 (PDF)
+
+      <button onclick="window.print()" class="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-3.5 py-2 rounded-2xl font-bold text-xs shadow-md shadow-cyan-600/20 transition hover:scale-105 active:scale-95">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>Cetak Lembaran A4</span>
       </button>
     </div>
 
-    <header class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-cyan-100">
-      <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-xs font-bold">
-        <span>🤲 BIDANG IBADAH</span> • <span>TAHUN 3</span>
+    <!-- Header Modul Ibadah -->
+    <header class="bg-white rounded-3xl p-5 md:p-7 shadow-sm border border-cyan-100 relative overflow-hidden">
+      <div class="absolute -right-8 -top-8 w-36 h-36 bg-cyan-100/50 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="space-y-1.5 text-center md:text-left z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-[11px] font-bold tracking-wide">
+          <span>🤲 BIDANG IBADAH</span>
+          <span>•</span>
+          <span class="italic font-normal">IBADAH</span>
+          <span>•</span>
+          <span>TAHUN 3</span>
+        </div>
+        <h1 class="text-xl md:text-2xl font-extrabold text-slate-900 leading-tight">
+          Bersuci Daripada Hadas
+        </h1>
+        <p class="text-xs md:text-sm text-slate-500 italic font-medium">
+          Purification from Ritual Impurity (Hadath)
+        </p>
       </div>
-      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-2">Bersuci Daripada Hadas</h1>
-      <p class="text-sm text-slate-500 italic">Purification from Hadath</p>
     </header>
 
-    <div class="bg-white rounded-3xl p-6 shadow-sm border border-cyan-100 space-y-4">
-      <h3 class="text-base font-bold text-slate-900">8 WAGBA Ibadah (Buku Teks)</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold">
-        <button onclick="showW(1)" id="btn-ib-1" class="p-3 rounded-2xl border-2 bg-cyan-50 border-cyan-500">1. Maksud Hadas</button>
-        <button onclick="showW(2)" id="btn-ib-2" class="p-3 rounded-2xl border-2 bg-white">2. Bahagian Hadas</button>
-        <button onclick="showW(3)" id="btn-ib-3" class="p-3 rounded-2xl border-2 bg-white">3. Cara Bersuci</button>
-        <button onclick="showW(4)" id="btn-ib-4" class="p-3 rounded-2xl border-2 bg-white">4. Hukum Bersuci</button>
-        <button onclick="showW(5)" id="btn-ib-5" class="p-3 rounded-2xl border-2 bg-white">5. Sebab Hadas Besar</button>
-        <button onclick="showW(6)" id="btn-ib-6" class="p-3 rounded-2xl border-2 bg-white">6. Larangan Hadas</button>
-        <button onclick="showW(7)" id="btn-ib-7" class="p-3 rounded-2xl border-2 bg-white">7. Cara Mandi Wajib</button>
-        <button onclick="showW(8)" id="btn-ib-8" class="p-3 rounded-2xl border-2 bg-white">8. Kepentingan</button>
+    <!-- 2 Pilihan Utama: NOTA vs KUIZ -->
+    <section class="grid grid-cols-2 gap-3">
+      <button onclick="switchTab('wagba')" id="tab-btn-wagba" class="p-3.5 md:p-4 rounded-2xl border-2 border-cyan-500 bg-cyan-50/50 ring-2 ring-cyan-400/20 shadow-xs transition-all flex items-center justify-between group">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="text-xl">🎯</span>
+          <div>
+            <div class="text-[10px] font-bold text-cyan-700 uppercase">Modul</div>
+            <h2 class="text-xs md:text-sm font-extrabold text-slate-900">NOTA WAGBA</h2>
+          </div>
+        </div>
+        <span class="text-cyan-600 font-bold text-xs">➔</span>
+      </button>
+
+      <button onclick="switchTab('kuiz')" id="tab-btn-kuiz" class="p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-amber-50/60 shadow-xs transition-all flex items-center justify-between group">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="text-xl">⭐</span>
+          <div>
+            <div class="text-[10px] font-bold text-amber-700 uppercase">Ujian</div>
+            <h2 class="text-xs md:text-sm font-extrabold text-slate-900">KUIZ INTERAKTIF</h2>
+          </div>
+        </div>
+        <span class="text-amber-600 font-bold text-xs">➔</span>
+      </button>
+    </section>
+
+    <!-- ================= NOTA WAGBA ================= -->
+    <div id="section-wagba" class="space-y-5">
+      <!-- Pilihan Butang Mini WAGBA -->
+      <div class="bg-white rounded-3xl p-4 md:p-5 shadow-sm border border-cyan-100 space-y-3">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="text-xs font-bold text-slate-800">Pilih Helaian WAGBA:</span>
+          <span class="text-[10px] px-2 py-0.5 bg-cyan-100 text-cyan-800 rounded-full font-bold">1 hingga 8</span>
+        </div>
+
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
+          <button onclick="activateNote(1)" id="btn-w-1" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-cyan-500 bg-cyan-50 text-cyan-800 font-extrabold text-xs ring-2 ring-cyan-400/20">W1</button>
+          <button onclick="activateNote(2)" id="btn-w-2" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-cyan-300 text-slate-700 font-bold text-xs">W2</button>
+          <button onclick="activateNote(3)" id="btn-w-3" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-cyan-300 text-slate-700 font-bold text-xs">W3</button>
+          <button onclick="activateNote(4)" id="btn-w-4" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-cyan-300 text-slate-700 font-bold text-xs">W4</button>
+          <button onclick="activateNote(5)" id="btn-w-5" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-cyan-300 text-slate-700 font-bold text-xs">W5</button>
+          <button onclick="activateNote(6)" id="btn-w-6" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-cyan-300 text-slate-700 font-bold text-xs">W6</button>
+          <button onclick="activateNote(7)" id="btn-w-7" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-cyan-300 text-slate-700 font-bold text-xs">W7</button>
+          <button onclick="activateNote(8)" id="btn-w-8" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-cyan-300 text-slate-700 font-bold text-xs">W8</button>
+        </div>
+      </div>
+
+      <!-- WAGBA 1 -->
+      <div id="note-1" class="note-item bg-white rounded-3xl p-5 md:p-8 border border-cyan-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-cyan-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 1: Maksud Hadas</span>
+          <span class="text-xs text-slate-400 italic">Meaning of Hadath</span>
+        </div>
+
+        <div class="p-5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-2">
+          <h3 class="text-base md:text-lg font-bold text-slate-900 leading-relaxed">
+            "Hadas ialah kekotoran maknawi pada diri seseorang yang menghalang sahnya ibadah yang disyaratkan bersuci."
+          </h3>
+          <p class="text-xs md:text-sm text-slate-600 italic">
+            "Hadath is a state of ritual impurity in a person that prevents the validity of acts of worship requiring ritual purity."
+          </p>
+        </div>
+
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs space-y-1">
+          <div class="font-bold text-slate-800">Contoh ibadah yang terhalang jika berhadas:</div>
+          <div class="text-slate-600">• Solat fardu dan solat sunat | • Tawaf mengelilingi Kaabah | • Menyentuh dan membawa mashaf Al-Quran</div>
+        </div>
+
+        <div class="pt-3 border-t flex justify-end">
+          <button onclick="activateNote(2)" class="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 2 (Bahagian Hadas)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 2 -->
+      <div id="note-2" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-cyan-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-cyan-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 2: Pembahagian Hadas</span>
+          <span class="text-xs text-slate-400 italic">Divisions of Hadath</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-1">
+            <span class="w-6 h-6 rounded-lg bg-cyan-600 text-white font-extrabold text-xs flex items-center justify-center">1</span>
+            <div class="text-base font-bold text-slate-900">Hadas Kecil</div>
+            <div class="text-xs text-slate-500 italic">Minor Hadath</div>
+            <div class="text-xs text-slate-600 pt-1">Hadas yang terbatal wuduk disebabkan perkara seperti buang air kecil/besar, kentut, atau tidur lena.</div>
+          </div>
+
+          <div class="p-5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-1">
+            <span class="w-6 h-6 rounded-lg bg-cyan-600 text-white font-extrabold text-xs flex items-center justify-center">2</span>
+            <div class="text-base font-bold text-slate-900">Hadas Besar</div>
+            <div class="text-xs text-slate-500 italic">Major Hadath</div>
+            <div class="text-xs text-slate-600 pt-1">Hadas yang mewajibkan mandi untuk mengangkat kekotoran maknawi pada seluruh anggota badan.</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(1)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(3)" class="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 3 (Cara Bersuci)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 3 -->
+      <div id="note-3" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-cyan-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-cyan-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 3: Cara Bersuci</span>
+          <span class="text-xs text-slate-400 italic">Methods of Purification</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-5 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-1">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-800">Hadas Kecil</div>
+            <div class="text-sm font-bold text-slate-900">Berwuduk</div>
+            <div class="text-xs text-slate-500 italic">Ablution (Wudu')</div>
+            <p class="text-xs text-slate-600 pt-1">Atau bertayamum sekiranya ketiadaan air atau mempunyai keuzuran syar'i.</p>
+          </div>
+
+          <div class="p-5 bg-teal-50/70 rounded-2xl border border-teal-200 space-y-1">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-teal-800">Hadas Besar</div>
+            <div class="text-sm font-bold text-slate-900">Mandi Wajib</div>
+            <div class="text-xs text-slate-500 italic">Purificatory Bath (Ghusl)</div>
+            <p class="text-xs text-slate-600 pt-1">Menyiram air mutlak meratakan seluruh badan berserta niat mengangkat hadas besar.</p>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(2)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(4)" class="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 4 (Hukum Bersuci)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 4 -->
+      <div id="note-4" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-cyan-200 space-y-5 text-center shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-cyan-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 4: Hukum Bersuci Daripada Hadas</span>
+          <span class="text-xs text-slate-400 italic">Ruling of Purification</span>
+        </div>
+
+        <div class="p-8 bg-cyan-50/60 rounded-3xl border border-cyan-200 space-y-2">
+          <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Hukum Bersuci Adalah:</div>
+          <div class="text-4xl md:text-5xl font-black text-cyan-900 tracking-wider">WAJIB</div>
+          <div class="text-xs text-slate-500 italic">Obligatory / Compulsory in Islam</div>
+        </div>
+        <p class="text-xs text-slate-600">Seseorang Muslim wajib bersuci terlebih dahulu sebelum dapat melaksanakan ibadah yang disyaratkan suci daripada hadas.</p>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(3)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(5)" class="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 5 (Sebab Hadas Besar)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 5 -->
+      <div id="note-5" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-cyan-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-cyan-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 5: 6 Sebab Berhadas Besar</span>
+          <span class="text-xs text-slate-400 italic">Causes of Major Hadath</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs">
+          <div class="p-3.5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-0.5">
+            <span class="font-extrabold text-cyan-800">1. Keluar Mani</span>
+            <div class="text-[10px] text-slate-500 italic">Ejaculation</div>
+          </div>
+          <div class="p-3.5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-0.5">
+            <span class="font-extrabold text-cyan-800">2. Bersetubuh</span>
+            <div class="text-[10px] text-slate-500 italic">Sexual intercourse</div>
+          </div>
+          <div class="p-3.5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-0.5">
+            <span class="font-extrabold text-cyan-800">3. Haid</span>
+            <div class="text-[10px] text-slate-500 italic">Menstruation</div>
+          </div>
+          <div class="p-3.5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-0.5">
+            <span class="font-extrabold text-cyan-800">4. Nifas</span>
+            <div class="text-[10px] text-slate-500 italic">Postpartum bleeding</div>
+          </div>
+          <div class="p-3.5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-0.5">
+            <span class="font-extrabold text-cyan-800">5. Wiladah</span>
+            <div class="text-[10px] text-slate-500 italic">Giving birth</div>
+          </div>
+          <div class="p-3.5 bg-cyan-50/60 rounded-2xl border border-cyan-200 space-y-0.5">
+            <span class="font-extrabold text-cyan-800">6. Mati</span>
+            <div class="text-[10px] text-slate-500 italic">Death (except martyrs)</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(4)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(6)" class="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 6 (Larangan)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 6 -->
+      <div id="note-6" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-rose-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-rose-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 6: 4 Larangan Semasa Berhadas Besar</span>
+          <span class="text-xs text-slate-400 italic">Prohibitions</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-4 bg-rose-50/70 rounded-2xl border border-rose-200 space-y-1">
+            <span class="w-6 h-6 rounded-lg bg-rose-600 text-white font-extrabold text-xs flex items-center justify-center">1</span>
+            <div class="font-bold text-slate-900">Menunaikan Solat</div>
+            <div class="text-[11px] text-slate-500 italic">Performing prayers (Salah)</div>
+          </div>
+
+          <div class="p-4 bg-rose-50/70 rounded-2xl border border-rose-200 space-y-1">
+            <span class="w-6 h-6 rounded-lg bg-rose-600 text-white font-extrabold text-xs flex items-center justify-center">2</span>
+            <div class="font-bold text-slate-900">Mengerjakan Tawaf</div>
+            <div class="text-[11px] text-slate-500 italic">Circumambulating the Kaaba (Tawaf)</div>
+          </div>
+
+          <div class="p-4 bg-rose-50/70 rounded-2xl border border-rose-200 space-y-1">
+            <span class="w-6 h-6 rounded-lg bg-rose-600 text-white font-extrabold text-xs flex items-center justify-center">3</span>
+            <div class="font-bold text-slate-900">Membaca, Menyentuh & Membawa Al-Quran</div>
+            <div class="text-[11px] text-slate-500 italic">Reciting, touching or carrying the Quran</div>
+          </div>
+
+          <div class="p-4 bg-rose-50/70 rounded-2xl border border-rose-200 space-y-1">
+            <span class="w-6 h-6 rounded-lg bg-rose-600 text-white font-extrabold text-xs flex items-center justify-center">4</span>
+            <div class="font-bold text-slate-900">Berada / Duduk di Dalam Masjid</div>
+            <div class="text-[11px] text-slate-500 italic">Staying or sitting inside a mosque</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(5)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(7)" class="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 7 (Langkah Mandi)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 7 -->
+      <div id="note-7" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-cyan-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-cyan-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 7: 9 Langkah Mandi Wajib</span>
+          <span class="text-xs text-slate-400 italic">9 Steps of Ghusl</span>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <div class="p-3 bg-amber-50 rounded-2xl border border-amber-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900">1. Menghilangkan najis pada badan</span>
+            <span class="px-2 py-0.5 bg-amber-600 text-white rounded-lg text-[10px] font-extrabold">Wajib</span>
+          </div>
+          <div class="p-3 bg-amber-50 rounded-2xl border border-amber-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900">2. Membaca basmalah (Sunat) & berniat mengangkat hadas besar</span>
+            <span class="px-2 py-0.5 bg-amber-600 text-white rounded-lg text-[10px] font-extrabold">Niat: Wajib</span>
+          </div>
+          <div class="p-3 bg-white rounded-2xl border border-slate-200 flex justify-between items-center">
+            <span class="text-slate-800">3. Membasuh kedua-dua belah tangan 3 kali</span>
+            <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-lg text-[10px] font-bold">Sunat</span>
+          </div>
+          <div class="p-3 bg-white rounded-2xl border border-slate-200 flex justify-between items-center">
+            <span class="text-slate-800">4. Membasuh kemaluan daripada kekotoran</span>
+            <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-lg text-[10px] font-bold">Sunat</span>
+          </div>
+          <div class="p-3 bg-white rounded-2xl border border-slate-200 flex justify-between items-center">
+            <span class="text-slate-800">5. Mengambil wuduk dengan sempurna</span>
+            <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-lg text-[10px] font-bold">Sunat</span>
+          </div>
+          <div class="p-3 bg-amber-50 rounded-2xl border border-amber-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900">6. Membasuh keseluruhan rambut di kepala dan celah telinga</span>
+            <span class="px-2 py-0.5 bg-amber-600 text-white rounded-lg text-[10px] font-extrabold">Wajib</span>
+          </div>
+          <div class="p-3 bg-amber-50 rounded-2xl border border-amber-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900">7. Menjirus air ke seluruh badan (dahulukan sebelah kanan)</span>
+            <span class="px-2 py-0.5 bg-amber-600 text-white rounded-lg text-[10px] font-extrabold">Rata Air: Wajib</span>
+          </div>
+          <div class="p-3 bg-white rounded-2xl border border-slate-200 flex justify-between items-center">
+            <span class="text-slate-800">8. Menggosok bahagian sulit dan celah-celah lipatan</span>
+            <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-lg text-[10px] font-bold">Sunat</span>
+          </div>
+          <div class="p-3 bg-white rounded-2xl border border-slate-200 flex justify-between items-center">
+            <span class="text-slate-800">9. Membasuh kedua-dua belah kaki</span>
+            <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-lg text-[10px] font-bold">Sunat</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(6)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(8)" class="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 8 (Kepentingan)</span><span>➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WAGBA 8 -->
+      <div id="note-8" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-cyan-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-cyan-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 8: Kepentingan Mandi Wajib</span>
+          <span class="text-xs text-slate-400 italic">Significance</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-4 bg-rose-50/70 rounded-2xl border border-rose-200 space-y-1.5">
+            <div class="font-extrabold text-rose-900 text-sm">Aspek Jasmani (Physical Aspect):</div>
+            <div class="text-slate-700">1. Badan menjadi bersih, sihat dan segar</div>
+            <div class="text-slate-700">2. Mengelakkan jangkitan kuman dan bau</div>
+            <div class="text-slate-700">3. Menjaga kebersihan dan kesihatan tubuh</div>
+            <div class="text-slate-700">4. Memberi keselesaan berinteraksi dengan orang ramai</div>
+          </div>
+
+          <div class="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-1.5">
+            <div class="font-extrabold text-emerald-900 text-sm">Aspek Rohani (Spiritual Aspect):</div>
+            <div class="text-slate-700">1. Membolehkan solat, tawaf dan baca Al-Quran</div>
+            <div class="text-slate-700">2. Amal ibadah sah dan diterima Allah SWT</div>
+            <div class="text-slate-700">3. Bukti ketaatan kepada syariat Allah SWT</div>
+            <div class="text-slate-700">4. Memperoleh pahala dan ketenangan jiwa</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(7)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="switchTab('kuiz')" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-2xl text-xs font-extrabold shadow-md transition flex items-center gap-1.5">
+            <span>Uji Kefahaman dalam Kuiz ⭐</span><span>➔</span>
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- WAGBA Contents -->
-    <div id="ib-1" class="ib-card bg-white rounded-3xl p-6 border border-cyan-200 space-y-2">
-      <h4 class="font-bold text-slate-900">WAGBA 1: Maksud Hadas</h4>
-      <p class="text-sm font-bold text-slate-800">"Hadas ialah kekotoran maknawi pada diri seseorang yang menghalang sahnya ibadah yang disyaratkan bersuci."</p>
-      <p class="text-xs text-slate-500">Contoh ibadah terhalang: Solat, tawaf dan menyentuh Al-Quran.</p>
-    </div>
-    <div id="ib-2" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-2">
-      <h4 class="font-bold text-slate-900">WAGBA 2: Pembahagian Hadas</h4>
-      <div class="grid grid-cols-2 gap-3 text-xs font-bold text-center">
-        <div class="p-4 bg-cyan-50 rounded-2xl border">1. Hadas Kecil (Minor Hadath)</div>
-        <div class="p-4 bg-cyan-50 rounded-2xl border">2. Hadas Besar (Major Hadath)</div>
-      </div>
-    </div>
-    <div id="ib-3" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-2">
-      <h4 class="font-bold text-slate-900">WAGBA 3: Cara Bersuci</h4>
-      <p class="text-xs">• <strong>Hadas Kecil:</strong> Berwuduk (atau bertayamum jika ada keuzuran).</p>
-      <p class="text-xs">• <strong>Hadas Besar:</strong> Mandi Wajib.</p>
-    </div>
-    <div id="ib-4" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 text-center space-y-2">
-      <h4 class="font-bold text-slate-900">WAGBA 4: Hukum Bersuci Daripada Hadas</h4>
-      <div class="text-3xl font-black text-emerald-800">WAJIB</div>
-    </div>
-    <div id="ib-5" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-3">
-      <h4 class="font-bold text-slate-900">WAGBA 5: 6 Sebab Berhadas Besar (Buku Teks)</h4>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-bold">
-        <div class="p-3 bg-cyan-50 rounded-xl border">1. Keluar mani</div>
-        <div class="p-3 bg-cyan-50 rounded-xl border">2. Bersetubuh</div>
-        <div class="p-3 bg-cyan-50 rounded-xl border">3. Haid</div>
-        <div class="p-3 bg-cyan-50 rounded-xl border">4. Nifas</div>
-        <div class="p-3 bg-cyan-50 rounded-xl border">5. Wiladah</div>
-        <div class="p-3 bg-cyan-50 rounded-xl border">6. Mati</div>
-      </div>
-    </div>
-    <div id="ib-6" class="ib-card hidden bg-white rounded-3xl p-6 border border-rose-200 space-y-3">
-      <h4 class="font-bold text-rose-900">WAGBA 6: 4 Perkara Dilarang Semasa Berhadas Besar</h4>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold text-center">
-        <div class="p-3 bg-rose-50 rounded-xl border">1. Menunaikan solat</div>
-        <div class="p-3 bg-rose-50 rounded-xl border">2. Mengerjakan tawaf</div>
-        <div class="p-3 bg-rose-50 rounded-xl border">3. Membaca & menyentuh Al-Quran</div>
-        <div class="p-3 bg-rose-50 rounded-xl border">4. Berada di dalam masjid</div>
-      </div>
-    </div>
-    <div id="ib-7" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-3">
-      <h4 class="font-bold text-slate-900">WAGBA 7: 9 Langkah Mandi Wajib</h4>
-      <div class="space-y-1.5 text-xs">
-        <div class="p-2.5 bg-amber-50 rounded-xl border font-bold">1. Menghilangkan najis (Wajib)</div>
-        <div class="p-2.5 bg-amber-50 rounded-xl border font-bold">2. Membaca basmalah (Sunat) & berniat mengangkat hadas besar (Wajib)</div>
-        <div class="p-2.5 bg-white rounded-xl border">3. Membasuh tangan 3 kali (Sunat)</div>
-        <div class="p-2.5 bg-white rounded-xl border">4. Membasuh kemaluan daripada kekotoran (Sunat)</div>
-        <div class="p-2.5 bg-white rounded-xl border">5. Mengambil wuduk (Sunat)</div>
-        <div class="p-2.5 bg-amber-50 rounded-xl border font-bold">6. Membasuh keseluruhan rambut di kepala dan telinga (Wajib)</div>
-        <div class="p-2.5 bg-amber-50 rounded-xl border font-bold">7. Menjirus air ke seluruh badan (Wajib) bermula sebelah kanan (Sunat)</div>
-        <div class="p-2.5 bg-white rounded-xl border">8. Menggosok bahagian sulit dan lipatan (Sunat)</div>
-        <div class="p-2.5 bg-white rounded-xl border">9. Membasuh kaki (Sunat)</div>
-      </div>
-    </div>
-    <div id="ib-8" class="ib-card hidden bg-white rounded-3xl p-6 border border-cyan-200 space-y-4">
-      <h4 class="font-bold text-slate-900">WAGBA 8: Kepentingan Mandi Wajib</h4>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-        <div class="p-4 bg-rose-50 rounded-2xl border space-y-1">
-          <div class="font-extrabold text-rose-800">Aspek Jasmani:</div>
-          <div>1. Badan bersih dan segar<br>2. Kesihatan tubuh badan<br>3. Bersih daripada bau dan kuman<br>4. Selesa berinteraksi dengan orang lain</div>
+    <!-- ================= KUIZ INTERAKTIF ================= -->
+    <div id="section-kuiz" class="hidden space-y-5">
+      <div class="bg-white rounded-3xl p-4 md:p-5 shadow-sm border border-amber-100 space-y-3">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="text-xs font-bold text-slate-800">Pilih Kuiz Ibadah:</span>
+          <span class="text-[10px] px-2 py-0.5 bg-amber-100 text-amber-800 rounded-full font-bold">Kuiz 1 hingga 8</span>
         </div>
-        <div class="p-4 bg-emerald-50 rounded-2xl border space-y-1">
-          <div class="font-extrabold text-emerald-800">Aspek Rohani:</div>
-          <div>1. Boleh solat, tawaf & sentuh Al-Quran<br>2. Amal ibadah diterima Allah SWT<br>3. Bukti ketaatan kepada Allah SWT</div>
+
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
+          <button onclick="loadQuiz(1)" id="btn-q-1" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-amber-500 bg-amber-50 text-amber-900 ring-2 ring-amber-400/20">Q1</button>
+          <button onclick="loadQuiz(2)" id="btn-q-2" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q2</button>
+          <button onclick="loadQuiz(3)" id="btn-q-3" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q3</button>
+          <button onclick="loadQuiz(4)" id="btn-q-4" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q4</button>
+          <button onclick="loadQuiz(5)" id="btn-q-5" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q5</button>
+          <button onclick="loadQuiz(6)" id="btn-q-6" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q6</button>
+          <button onclick="loadQuiz(7)" id="btn-q-7" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q7</button>
+          <button onclick="loadQuiz(8)" id="btn-q-8" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300">Q8</button>
         </div>
       </div>
+
+      <div id="quiz-card" class="p-5 md:p-8 bg-white rounded-3xl border border-amber-200 shadow-sm space-y-5"></div>
+    </div>
+  </div>
+
+  <!-- Cetakan A4 KSSR -->
+  <div class="print-only max-w-[210mm] mx-auto p-4 bg-white text-black text-xs">
+    <div class="text-center border-b-2 border-black pb-2 mb-3">
+      <div class="font-extrabold text-[11px] uppercase">PENTAKSIRAN BILIK DARJAH (PBD) • BIDANG IBADAH TAHUN 3</div>
+      <h1 class="text-sm font-black uppercase">Bersuci Daripada Hadas</h1>
+    </div>
+    <div class="border border-black p-2 mb-3 space-y-1">
+      <div>NAMA: ____________________________________ KELAS: _________ TARIKH: _________</div>
+    </div>
+    <div class="mb-3">
+      <strong>Bahagian A: Nyatakan cara bersuci bagi jenis hadas berikut.</strong>
+      <table class="w-full border-collapse border border-black text-center mt-2 text-xs">
+        <tr class="bg-gray-100"><th class="border border-black p-1">Jenis Hadas</th><th class="border border-black p-1">Cara Bersuci</th></tr>
+        <tr><td class="border border-black p-2 font-bold">Hadas Kecil</td><td class="border border-black p-2 text-left">Berwuduk atau bertayamum jika ada keuzuran syar'i.</td></tr>
+        <tr><td class="border border-black p-2 font-bold">Hadas Besar</td><td class="border border-black p-2 text-left">Mandi wajib dengan meratakan air mutlak ke seluruh badan.</td></tr>
+      </table>
     </div>
   </div>
 
   <script>
-    function showW(id) {
-      document.querySelectorAll('.ib-card').forEach(el=>el.classList.add('hidden'));
-      document.getElementById('ib-'+id).classList.remove('hidden');
-      for(let i=1; i<=8; i++) {
-        document.getElementById('btn-ib-'+i).className = (i===id) ? "p-3 rounded-2xl border-2 bg-cyan-50 border-cyan-500" : "p-3 rounded-2xl border-2 bg-white";
+    function switchTab(mode) {
+      const secWagba = document.getElementById('section-wagba');
+      const secKuiz = document.getElementById('section-kuiz');
+      const btnWagba = document.getElementById('tab-btn-wagba');
+      const btnKuiz = document.getElementById('tab-btn-kuiz');
+
+      if (mode === 'wagba') {
+        secWagba.classList.remove('hidden');
+        secKuiz.classList.add('hidden');
+        btnWagba.className = "p-3.5 md:p-4 rounded-2xl border-2 border-cyan-500 bg-cyan-50/50 ring-2 ring-cyan-400/20 shadow-xs transition-all flex items-center justify-between group";
+        btnKuiz.className = "p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-amber-50/60 shadow-xs transition-all flex items-center justify-between group";
+      } else {
+        secWagba.classList.add('hidden');
+        secKuiz.classList.remove('hidden');
+        btnKuiz.className = "p-3.5 md:p-4 rounded-2xl border-2 border-amber-500 bg-amber-50/50 ring-2 ring-amber-400/20 shadow-xs transition-all flex items-center justify-between group";
+        btnWagba.className = "p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-cyan-50/60 shadow-xs transition-all flex items-center justify-between group";
+        loadQuiz(1);
+      }
+    }
+
+    function activateNote(id) {
+      document.querySelectorAll('.note-item').forEach(el => el.classList.add('hidden'));
+      const activeNoteEl = document.getElementById('note-' + id);
+      if (activeNoteEl) activeNoteEl.classList.remove('hidden');
+
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.getElementById('btn-w-' + i);
+        if (i === id) {
+          btn.className = "w-btn p-2 rounded-xl border-2 transition-all text-center border-cyan-500 bg-cyan-50 text-cyan-800 font-extrabold text-xs ring-2 ring-cyan-400/20";
+        } else {
+          btn.className = "w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-cyan-300 text-slate-700 font-bold text-xs";
+        }
+      }
+    }
+
+    // Data Kuiz Dwibahasa Ibadah
+    const quizDatabase = {
+      1: {
+        title: "KUIZ WAGBA 1: Maksud Hadas",
+        sub: "Meaning of Hadath",
+        question: "Apakah pengertian hadas menurut istilah syarak?",
+        options: [
+          { text: "Kekotoran maknawi pada diri seseorang yang menghalang sahnya ibadah", en: "A ritual impurity preventing validity of acts of worship", correct: true },
+          { text: "Kekotoran fizikal seperti lumpur dan tanah", en: "Physical dirt such as mud and earth", correct: false },
+          { text: "Perasaan ragu-ragu ketika melakukan solat", en: "Feelings of doubt during prayer", correct: false }
+        ],
+        explanation: "Hadas ialah kekotoran maknawi pada diri seseorang yang menghalang sahnya ibadah yang disyaratkan bersuci seperti solat dan tawaf."
+      },
+      2: {
+        title: "KUIZ WAGBA 2: Pembahagian Hadas",
+        sub: "Divisions of Hadath",
+        question: "Hadas terbahagi kepada dua bahagian iaitu...",
+        options: [
+          { text: "Hadas kecil dan hadas besar", en: "Minor hadath and major hadath", correct: true },
+          { text: "Najis mukhaffafah dan najis mughallazah", en: "Light najis and heavy najis", correct: false },
+          { text: "Kekotoran zahir dan batin", en: "Apparent and hidden impurities", correct: false }
+        ],
+        explanation: "Hadas terbahagi kepada dua bahagian: Hadas kecil (disucikan dengan wuduk) dan Hadas besar (disucikan dengan mandi wajib)."
+      },
+      3: {
+        title: "KUIZ WAGBA 3: Cara Bersuci",
+        sub: "Methods of Purification",
+        question: "Bagaimanakah cara bersuci daripada hadas besar?",
+        options: [
+          { text: "Mandi wajib dengan meratakan air ke seluruh badan", en: "Purificatory bath (ghusl) covering the entire body", correct: true },
+          { text: "Cukup sekadar mengambil wuduk sahaja", en: "Merely performing wudu'", correct: false },
+          { text: "Membasuh muka dan tangan sahaja", en: "Washing only face and hands", correct: false }
+        ],
+        explanation: "Cara bersuci daripada hadas kecil adalah berwuduk, manakala bersuci daripada hadas besar wajib dengan mandi wajib."
+      },
+      4: {
+        title: "KUIZ WAGBA 4: Hukum Bersuci",
+        sub: "Ruling of Purification",
+        question: "Apakah hukum bersuci daripada hadas sebelum menunaikan solat?",
+        options: [
+          { text: "Wajib", en: "Obligatory / Compulsory", correct: true },
+          { text: "Sunat", en: "Recommended (Sunnah)", correct: false },
+          { text: "Harus", en: "Permissible", correct: false }
+        ],
+        explanation: "Hukum bersuci daripada hadas untuk ibadah yang disyaratkan suci (seperti solat dan tawaf) adalah wajib."
+      },
+      5: {
+        title: "KUIZ WAGBA 5: Sebab Hadas Besar",
+        sub: "Causes of Major Hadath",
+        question: "Antara berikut, yang manakah sebab berhadas besar bagi perempuan?",
+        options: [
+          { text: "Haid, nifas dan wiladah", en: "Menstruation, postpartum bleeding, and childbirth", correct: true },
+          { text: "Tidur yang nyenyak", en: "Deep sleeping", correct: false },
+          { text: "Keluar angin daripada dubur", en: "Passing wind", correct: false }
+        ],
+        explanation: "Antara sebab berhadas besar ialah keluar mani, bersetubuh, haid, nifas, wiladah (melahirkan anak) dan mati."
+      },
+      6: {
+        title: "KUIZ WAGBA 6: Larangan Semasa Berhadas Besar",
+        sub: "Prohibitions of Major Hadath",
+        question: "Apakah perkara yang dilarang semasa seseorang berada dalam keadaan berhadas besar?",
+        options: [
+          { text: "Solat, tawaf, membaca dan menyentuh Al-Quran", en: "Prayer, tawaf, reciting and touching the Quran", correct: true },
+          { text: "Makan dan minum makanan halal", en: "Eating and drinking halal food", correct: false },
+          { text: "Bercakap dengan rakan-rakan", en: "Talking with friends", correct: false }
+        ],
+        explanation: "Seseorang yang berhadas besar dilarang menunaikan solat, tawaf, membaca atau menyentuh Al-Quran, dan duduk di dalam masjid."
+      },
+      7: {
+        title: "KUIZ WAGBA 7: Langkah Mandi Wajib",
+        sub: "Steps of Ghusl",
+        question: "Antara rukun mandi wajib yang mesti dilakukan ialah...",
+        options: [
+          { text: "Niat dan meratakan air ke seluruh badan", en: "Intention and wetting the entire body with water", correct: true },
+          { text: "Menggosok gigi 3 kali", en: "Brushing teeth 3 times", correct: false },
+          { text: "Membasuh muka sahaja", en: "Washing the face only", correct: false }
+        ],
+        explanation: "Rukun mandi wajib merangkumi: Niat mengangkat hadas besar, menghilangkan najis, dan meratakan air mutlak ke seluruh badan termasuk rambut dan kulit."
+      },
+      8: {
+        title: "KUIZ WAGBA 8: Kepentingan Bersuci",
+        sub: "Significance of Ghusl",
+        question: "Apakah kepentingan mandi wajib dari aspek rohani?",
+        options: [
+          { text: "Amalan ibadah sah dan diterima Allah SWT", en: "Worship is valid and accepted by Allah", correct: true },
+          { text: "Mendapat pujian daripada masyarakat", en: "Receiving praise from community", correct: false },
+          { text: "Jimat wang membeli sabun", en: "Saving money on soap", correct: false }
+        ],
+        explanation: "Kepentingan rohani mandi wajib membolehkan ibadah seperti solat sah, diterima Allah SWT, dan mendekatkan diri kepada-Nya."
+      }
+    };
+
+    function loadQuiz(id) {
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.getElementById('btn-q-' + i);
+        if (i === id) {
+          btn.className = "q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-amber-500 bg-amber-50 text-amber-900 ring-2 ring-amber-400/20";
+        } else {
+          btn.className = "q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-amber-300";
+        }
+      }
+
+      const q = quizDatabase[id];
+      const card = document.getElementById('quiz-card');
+      card.innerHTML = `
+        <div class="flex items-center justify-between border-b pb-2">
+          <div>
+            <span class="px-2.5 py-0.5 bg-amber-600 text-white rounded-lg text-[11px] font-extrabold uppercase">${q.title}</span>
+            <div class="text-[10px] text-slate-400 italic mt-0.5">${q.sub}</div>
+          </div>
+          <div id="quiz-status-badge" class="text-[11px] font-bold px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full">Belum Dijawab</div>
+        </div>
+
+        <div>
+          <div class="text-sm md:text-base font-bold text-slate-900 leading-snug">${q.question}</div>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          ${q.options.map((opt, optIndex) => `
+            <button onclick="handleAnswer(${id}, ${optIndex})" id="opt-btn-${optIndex}" class="w-full text-left p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-amber-400 hover:bg-amber-50/40 transition">
+              <div class="text-xs md:text-sm font-bold text-slate-800">${opt.text}</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">${opt.en}</div>
+            </button>
+          `).join('')}
+        </div>
+
+        <div id="quiz-feedback" class="hidden p-3.5 rounded-2xl text-xs font-medium space-y-1"></div>
+      `;
+    }
+
+    function handleAnswer(quizId, optIndex) {
+      const q = quizDatabase[quizId];
+      const isCorrect = q.options[optIndex].correct;
+      const feedbackEl = document.getElementById('quiz-feedback');
+      const badge = document.getElementById('quiz-status-badge');
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.getElementById('opt-btn-' + idx);
+        btn.disabled = true;
+        btn.classList.add('cursor-not-allowed', 'opacity-80');
+        if (opt.correct) {
+          btn.classList.remove('bg-white', 'border-slate-200');
+          btn.classList.add('bg-cyan-100', 'border-cyan-500', 'text-cyan-900');
+        } else if (idx === optIndex && !isCorrect) {
+          btn.classList.remove('bg-white', 'border-slate-200');
+          btn.classList.add('bg-rose-100', 'border-rose-400', 'text-rose-900');
+        }
+      });
+
+      feedbackEl.classList.remove('hidden');
+      if (isCorrect) {
+        badge.className = "text-[11px] font-bold px-2.5 py-0.5 bg-cyan-100 text-cyan-800 rounded-full";
+        badge.innerText = "Tahniah! Betul ⭐";
+        feedbackEl.className = "p-3.5 rounded-2xl text-xs font-medium bg-cyan-100/90 text-cyan-950 border border-cyan-300 space-y-1";
+        feedbackEl.innerHTML = `<strong>Tahniah! Jawapan Tepat! 🎉</strong><br>${q.explanation}`;
+      } else {
+        badge.className = "text-[11px] font-bold px-2.5 py-0.5 bg-rose-100 text-rose-800 rounded-full";
+        badge.innerText = "Cuba Lagi 😊";
+        feedbackEl.className = "p-3.5 rounded-2xl text-xs font-medium bg-rose-100/90 text-rose-950 border border-rose-300 space-y-1";
+        feedbackEl.innerHTML = `<strong>Jawapan Kurang Tepat. 😊</strong><br>${q.explanation}`;
       }
     }
   </script>
