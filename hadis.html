@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bidang Hadis - Pendidikan Islam Tahun 3</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
@@ -18,209 +20,477 @@
     @media screen { .print-only { display: none; } }
   </style>
 </head>
-<body class="bg-amber-50/40 text-slate-800 min-h-screen antialiased">
+<body class="bg-amber-50/40 text-slate-800 min-h-screen antialiased selection:bg-emerald-200">
   <div class="no-print max-w-5xl mx-auto px-4 py-6 md:py-10 space-y-8">
+    
+    <!-- Butang Navigasi Atas -->
     <div class="flex items-center justify-between">
-      <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-2xl text-xs font-bold text-slate-700 shadow-xs">
-        <span>⬅️</span><span>Kembali ke Menu Bidang</span>
+      <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-2xl text-xs font-bold text-slate-700 shadow-xs transition hover:scale-105 active:scale-95">
+        <span>⬅️</span>
+        <span>Kembali ke Menu Bidang / <span class="italic font-normal">Back to Modules</span></span>
       </a>
-      <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-2xl font-bold text-xs shadow-md">
-        Cetak Lembaran A4 (PDF)
+
+      <button onclick="window.print()" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-2xl font-bold text-xs shadow-md shadow-emerald-600/20 transition hover:scale-105 active:scale-95">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>Cetak Lembaran A4 (PDF)</span>
       </button>
     </div>
 
-    <header class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-emerald-100">
-      <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold">
-        <span>📖 BIDANG HADIS</span> • <span>TAHUN 3</span>
+    <!-- Header Modul Hadis -->
+    <header class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-emerald-100 relative overflow-hidden">
+      <div class="absolute -right-8 -top-8 w-36 h-36 bg-emerald-100/50 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="space-y-2 text-center md:text-left z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold tracking-wide">
+          <span>📖 BIDANG HADIS</span>
+          <span>•</span>
+          <span class="italic font-normal">HADITH MODULE</span>
+          <span>•</span>
+          <span>TAHUN 3 / YEAR 3</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">
+          Yang Muda Dikasihi, Yang Tua Dihormati
+        </h1>
+        <p class="text-sm md:text-base text-slate-500 italic font-medium">
+          Love the Younger Ones, Respect the Elders
+        </p>
       </div>
-      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-2">Yang Muda Dikasihi, Yang Tua Dihormati</h1>
-      <p class="text-sm text-slate-500 italic">Love the Younger Ones, Respect the Elders</p>
     </header>
 
+    <!-- 2 Pilihan Utama: NOTA vs KUIZ -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <button onclick="switchTab('wagba')" id="tab-btn-wagba" class="p-6 rounded-3xl border-2 border-emerald-500 bg-emerald-50/40 text-left font-bold text-lg flex justify-between items-center">
-        <div><div class="text-xs text-emerald-700 uppercase">Modul Pembelajaran</div>NOTA WAGBA</div><span>➔</span>
+      <button onclick="switchTab('wagba')" id="tab-btn-wagba" class="p-6 rounded-3xl border-2 border-emerald-500 bg-emerald-50/40 ring-2 ring-emerald-400/20 shadow-sm transition-all flex items-center justify-between group">
+        <div class="flex items-center gap-4 text-left">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+            🎯
+          </div>
+          <div>
+            <div class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Modul Pembelajaran</div>
+            <h2 class="text-xl font-extrabold text-slate-900">NOTA WAGBA</h2>
+            <p class="text-xs text-slate-500 italic">Hadith Learning Notes</p>
+          </div>
+        </div>
+        <div class="text-emerald-600 font-bold text-lg">➔</div>
       </button>
-      <button onclick="switchTab('kuiz')" id="tab-btn-kuiz" class="p-6 rounded-3xl border-2 border-slate-200 bg-white text-left font-bold text-lg flex justify-between items-center">
-        <div><div class="text-xs text-amber-700 uppercase">Penilaian Kendiri</div>KUIZ INTERAKTIF</div><span>➔</span>
+
+      <button onclick="switchTab('kuiz')" id="tab-btn-kuiz" class="p-6 rounded-3xl border-2 border-slate-200 bg-white hover:bg-amber-50/60 shadow-sm transition-all flex items-center justify-between group">
+        <div class="flex items-center gap-4 text-left">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+            ⭐
+          </div>
+          <div>
+            <div class="text-xs font-bold text-amber-700 uppercase tracking-wider">Penilaian Kendiri</div>
+            <h2 class="text-xl font-extrabold text-slate-900">KUIZ INTERAKTIF</h2>
+            <p class="text-xs text-slate-500 italic">Interactive Assessment Quizzes</p>
+          </div>
+        </div>
+        <div class="text-amber-600 font-bold text-lg">➔</div>
       </button>
     </section>
 
-    <!-- NOTA WAGBA -->
+    <!-- ================= NOTA WAGBA ================= -->
     <div id="section-wagba" class="space-y-6">
       <div class="bg-white rounded-3xl p-6 shadow-sm border border-emerald-100 space-y-4">
-        <h3 class="text-base font-bold text-slate-900">Pilih Objektif WAGBA (Nota Hadis)</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-          <button onclick="activateNote(1)" id="btn-w-1" class="w-btn p-3 rounded-2xl border-2 bg-emerald-50 border-emerald-500 font-bold text-left">1. Lafaz Hadis</button>
-          <button onclick="activateNote(2)" id="btn-w-2" class="w-btn p-3 rounded-2xl border-2 bg-white border-slate-200 font-bold text-left">2. Terjemahan</button>
-          <button onclick="activateNote(3)" id="btn-w-3" class="w-btn p-3 rounded-2xl border-2 bg-white border-slate-200 font-bold text-left">3. Erti Hadis</button>
-          <button onclick="activateNote(4)" id="btn-w-4" class="w-btn p-3 rounded-2xl border-2 bg-white border-slate-200 font-bold text-left">4. Peranan Hadis</button>
-          <button onclick="activateNote(5)" id="btn-w-5" class="w-btn p-3 rounded-2xl border-2 bg-white border-slate-200 font-bold text-left">5. Adab Orang Muda</button>
-          <button onclick="activateNote(6)" id="btn-w-6" class="w-btn p-3 rounded-2xl border-2 bg-white border-slate-200 font-bold text-left">6. Adab Orang Tua</button>
-          <button onclick="activateNote(7)" id="btn-w-7" class="w-btn p-3 rounded-2xl border-2 bg-white border-slate-200 font-bold text-left">7. Kesan Kasih Muda</button>
-          <button onclick="activateNote(8)" id="btn-w-8" class="w-btn p-3 rounded-2xl border-2 bg-white border-slate-200 font-bold text-left">8. Kesan Hormat Tua</button>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Pilih Objektif WAGBA (Nota Hadis)</h3>
+            <p class="text-xs text-slate-500 italic">Select a WAGBA objective to view the textbook notes:</p>
+          </div>
+          <span class="text-xs px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full font-semibold self-start sm:self-auto border border-emerald-200">
+            8 WAGBA DSKP
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <button onclick="activateNote(1)" id="btn-w-1" class="w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-emerald-500 bg-emerald-50/80 ring-2 ring-emerald-400/20">
+            <span class="w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-emerald-600 text-white w-max">WAGBA 1</span>
+            <div><div class="text-xs font-bold text-slate-800">Lafaz Hadis</div><div class="text-[11px] text-slate-500 italic">Hadith Recitation</div></div>
+          </button>
+          <button onclick="activateNote(2)" id="btn-w-2" class="w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-slate-200 bg-white hover:border-emerald-400">
+            <span class="w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-slate-100 text-slate-700 w-max">WAGBA 2</span>
+            <div><div class="text-xs font-bold text-slate-800">Terjemahan Hadis</div><div class="text-[11px] text-slate-500 italic">Translation of Hadith</div></div>
+          </button>
+          <button onclick="activateNote(3)" id="btn-w-3" class="w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-slate-200 bg-white hover:border-emerald-400">
+            <span class="w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-slate-100 text-slate-700 w-max">WAGBA 3</span>
+            <div><div class="text-xs font-bold text-slate-800">Pengertian Hadis</div><div class="text-[11px] text-slate-500 italic">Definition of Hadith</div></div>
+          </button>
+          <button onclick="activateNote(4)" id="btn-w-4" class="w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-slate-200 bg-white hover:border-emerald-400">
+            <span class="w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-slate-100 text-slate-700 w-max">WAGBA 4</span>
+            <div><div class="text-xs font-bold text-slate-800">Peranan Hadis</div><div class="text-[11px] text-slate-500 italic">Role of Hadith</div></div>
+          </button>
+          <button onclick="activateNote(5)" id="btn-w-5" class="w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-slate-200 bg-white hover:border-emerald-400">
+            <span class="w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-slate-100 text-slate-700 w-max">WAGBA 5</span>
+            <div><div class="text-xs font-bold text-slate-800">Adab Mengasihi Orang Muda</div><div class="text-[11px] text-slate-500 italic">Manners Toward the Young</div></div>
+          </button>
+          <button onclick="activateNote(6)" id="btn-w-6" class="w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-slate-200 bg-white hover:border-emerald-400">
+            <span class="w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-slate-100 text-slate-700 w-max">WAGBA 6</span>
+            <div><div class="text-xs font-bold text-slate-800">Adab Menghormati Orang Tua</div><div class="text-[11px] text-slate-500 italic">Manners Toward Elders</div></div>
+          </button>
+          <button onclick="activateNote(7)" id="btn-w-7" class="w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-slate-200 bg-white hover:border-emerald-400">
+            <span class="w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-slate-100 text-slate-700 w-max">WAGBA 7</span>
+            <div><div class="text-xs font-bold text-slate-800">Kesan Mengasihi Orang Muda</div><div class="text-[11px] text-slate-500 italic">Impact of Loving the Young</div></div>
+          </button>
+          <button onclick="activateNote(8)" id="btn-w-8" class="w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-slate-200 bg-white hover:border-emerald-400">
+            <span class="w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-slate-100 text-slate-700 w-max">WAGBA 8</span>
+            <div><div class="text-xs font-bold text-slate-800">Kesan Menghormati Orang Tua</div><div class="text-[11px] text-slate-500 italic">Impact of Respecting Elders</div></div>
+          </button>
         </div>
       </div>
 
-      <div id="note-1" class="note-item bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 text-center space-y-3">
-        <span class="text-xs font-bold text-emerald-800 uppercase">Matan Hadis Nabi SAW</span>
-        <p class="arabic-font text-3xl md:text-5xl leading-relaxed text-emerald-950 font-bold">لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَيُوَقِّرْ كَبِيرَنَا</p>
-        <p class="text-xs text-slate-500">(Riwayat At-Tirmizi)</p>
-      </div>
-      <div id="note-2" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-2">
-        <h4 class="font-bold text-slate-900">Terjemahan Hadis:</h4>
-        <p class="text-base font-bold text-slate-800">"Bukan daripada golongan kami orang yang tidak mengasihi orang yang lebih muda dan tidak menghormati orang yang lebih tua."</p>
-        <p class="text-xs text-slate-500 italic">"He is not one of us who does not show mercy to our young ones and acknowledge the honour due to our elders."</p>
-      </div>
-      <div id="note-3" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-3">
-        <h4 class="font-bold text-slate-900">Pengertian Hadis (Buku Teks):</h4>
-        <p class="text-sm font-bold text-slate-800">"Hadis ialah semua perkara yang disandarkan kepada Nabi Muhammad SAW sama ada dari segi perkataan, perbuatan, pengakuan (taqrir) atau sifat baginda."</p>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold text-center">
-          <div class="p-3 bg-emerald-50 rounded-xl border">1. Perkataan (Qauli)</div>
-          <div class="p-3 bg-emerald-50 rounded-xl border">2. Perbuatan (Fi'li)</div>
-          <div class="p-3 bg-emerald-50 rounded-xl border">3. Pengakuan (Taqriri)</div>
-          <div class="p-3 bg-emerald-50 rounded-xl border">4. Sifat (Wasfi)</div>
+      <!-- Item Nota Hadis -->
+      <div id="note-1" class="note-item bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 text-center space-y-4 shadow-sm">
+        <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 1: Matan Hadis Nabi SAW</span>
+        <div class="p-6 bg-emerald-50/50 rounded-2xl border border-emerald-100 space-y-3">
+          <p class="arabic-font text-3xl md:text-5xl leading-relaxed text-emerald-950 font-bold">لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَيُوَقِّرْ كَبِيرَنَا</p>
+          <p class="text-xs text-slate-500 font-semibold">(Riwayat At-Tirmizi / <span class="italic">Narrated by At-Tirmidhi</span>)</p>
         </div>
       </div>
-      <div id="note-4" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-3">
-        <h4 class="font-bold text-slate-900">Peranan Hadis (Buku Teks):</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-          <div class="p-4 bg-emerald-50 rounded-xl border font-bold">1. Hadis penting kerana hadis sumber hukum yang kedua selepas Al-Quran.</div>
-          <div class="p-4 bg-emerald-50 rounded-xl border font-bold">2. Hadis berfungsi untuk menjelaskan hukum secara terperinci.</div>
+
+      <div id="note-2" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
+        <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 2: Terjemahan Hadis</span>
+        <div class="p-6 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-2">
+          <p class="text-base md:text-lg font-bold text-slate-900 leading-relaxed">
+            "Bukan daripada golongan kami orang yang tidak mengasihi orang yang lebih muda dan tidak menghormati orang yang lebih tua."
+          </p>
+          <p class="text-xs md:text-sm text-slate-600 italic">
+            "He is not one of us who does not show mercy to our young ones and acknowledge the honour due to our elders."
+          </p>
         </div>
       </div>
-      <div id="note-5" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-3">
-        <h4 class="font-bold text-slate-900">Adab Mengasihi Orang Muda (Buku Teks):</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-xs font-bold">
-          <div class="p-3 bg-white rounded-xl border">1. Berbicara dengan nada yang mesra</div>
-          <div class="p-3 bg-white rounded-xl border">2. Mewujudkan hubungan baik dengan orang muda</div>
-          <div class="p-3 bg-white rounded-xl border">3. Menasihati dengan kata-kata yang baik</div>
-          <div class="p-3 bg-white rounded-xl border">4. Melihat mereka dengan penuh kasih sayang</div>
-          <div class="p-3 bg-white rounded-xl border sm:col-span-2 lg:col-span-1">5. Menunjukkan contoh teladan yang baik</div>
+
+      <div id="note-3" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
+        <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 3: Pengertian Hadis</span>
+        <div class="p-5 bg-emerald-50/60 rounded-2xl border border-emerald-200 space-y-2">
+          <p class="text-sm md:text-base font-bold text-slate-900 leading-relaxed">
+            "Hadis ialah semua perkara yang disandarkan kepada Nabi Muhammad SAW sama ada dari segi perkataan, perbuatan, pengakuan (taqrir) atau sifat baginda."
+          </p>
+          <p class="text-xs text-slate-600 italic">
+            "Hadith is everything attributed to Prophet Muhammad SAW, whether in words, actions, tacit approvals (taqrir), or characteristics."
+          </p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-bold text-center">
+          <div class="p-3 bg-white rounded-xl border border-slate-200">1. Perkataan<div class="text-[10px] text-slate-500 italic">Words (Qauli)</div></div>
+          <div class="p-3 bg-white rounded-xl border border-slate-200">2. Perbuatan<div class="text-[10px] text-slate-500 italic">Actions (Fi'li)</div></div>
+          <div class="p-3 bg-white rounded-xl border border-slate-200">3. Pengakuan<div class="text-[10px] text-slate-500 italic">Approvals (Taqriri)</div></div>
+          <div class="p-3 bg-white rounded-xl border border-slate-200">4. Sifat<div class="text-[10px] text-slate-500 italic">Characteristics (Wasfi)</div></div>
         </div>
       </div>
-      <div id="note-6" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-3">
-        <h4 class="font-bold text-slate-900">Adab Menghormati Orang Tua (Buku Teks):</h4>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold">
-          <div class="p-3 bg-white rounded-xl border">1. Panggilan terhormat</div>
-          <div class="p-3 bg-white rounded-xl border">2. Meminta nasihat</div>
-          <div class="p-3 bg-white rounded-xl border">3. Memberi salam</div>
-          <div class="p-3 bg-white rounded-xl border">4. Sopan santun berbicara</div>
-          <div class="p-3 bg-white rounded-xl border">5. Taat kepada orang tua</div>
-          <div class="p-3 bg-white rounded-xl border">6. Bersikap lemah lembut</div>
-          <div class="p-3 bg-white rounded-xl border">7. Ringan tulang membantu</div>
-          <div class="p-3 bg-white rounded-xl border">8. Dahulukan dalam semua hal</div>
+
+      <div id="note-4" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
+        <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 4: Peranan Hadis</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
+          <div class="p-5 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-1">
+            <div class="font-bold text-slate-900">1. Sumber hukum kedua selepas Al-Quran</div>
+            <div class="text-xs text-slate-500 italic">The second source of Islamic law after the Quran.</div>
+          </div>
+          <div class="p-5 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-1">
+            <div class="font-bold text-slate-900">2. Menjelaskan hukum secara terperinci</div>
+            <div class="text-xs text-slate-500 italic">Explains and details rulings found in the Quran.</div>
+          </div>
         </div>
       </div>
-      <div id="note-7" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-pink-200 space-y-3">
-        <h4 class="font-bold text-pink-900">5 Kesan Mengasihi Orang Muda:</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-xs font-bold">
-          <div class="p-3 bg-white rounded-xl border">1. Disayangi dan dihormati</div>
-          <div class="p-3 bg-white rounded-xl border">2. Keluarga hidup bahagia</div>
-          <div class="p-3 bg-white rounded-xl border">3. Masyarakat hidup aman</div>
-          <div class="p-3 bg-white rounded-xl border">4. Orang muda lebih sopan</div>
-          <div class="p-3 bg-white rounded-xl border sm:col-span-2 lg:col-span-1">5. Wujud kerjasama dalam semua urusan</div>
+
+      <div id="note-5" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
+        <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 5: Adab Mengasihi Orang Muda</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><strong>1. Berbicara dengan nada mesra</strong><div class="text-slate-500 italic mt-0.5">Speaking in a friendly tone</div></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><strong>2. Mewujudkan hubungan baik</strong><div class="text-slate-500 italic mt-0.5">Building a positive relationship</div></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><strong>3. Menasihati dengan kata-kata baik</strong><div class="text-slate-500 italic mt-0.5">Advising with good words</div></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><strong>4. Melihat penuh kasih sayang</strong><div class="text-slate-500 italic mt-0.5">Looking upon them with affection</div></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200 sm:col-span-2 lg:col-span-1"><strong>5. Menunjukkan teladan yang baik</strong><div class="text-slate-500 italic mt-0.5">Setting an exemplary role model</div></div>
         </div>
       </div>
-      <div id="note-8" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-amber-200 space-y-3">
-        <h4 class="font-bold text-amber-900">5 Kesan Menghormati Orang Tua:</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-xs font-bold">
-          <div class="p-3 bg-white rounded-xl border">1. Kasih sayang muda & tua</div>
-          <div class="p-3 bg-white rounded-xl border">2. Kehidupan lebih diberkati</div>
-          <div class="p-3 bg-white rounded-xl border">3. Memperoleh ketenangan jiwa</div>
-          <div class="p-3 bg-white rounded-xl border">4. Dikasihi Allah & Rasul</div>
-          <div class="p-3 bg-white rounded-xl border sm:col-span-2 lg:col-span-1">5. Masyarakat lebih harmoni</div>
+
+      <div id="note-6" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
+        <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 6: Adab Menghormati Orang Tua</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-white rounded-xl border"><strong>1. Panggilan hormat</strong><div class="text-[10px] text-slate-500 italic">Respectful titles</div></div>
+          <div class="p-3 bg-white rounded-xl border"><strong>2. Meminta nasihat</strong><div class="text-[10px] text-slate-500 italic">Seeking advice</div></div>
+          <div class="p-3 bg-white rounded-xl border"><strong>3. Memberi salam</strong><div class="text-[10px] text-slate-500 italic">Initiating greetings</div></div>
+          <div class="p-3 bg-white rounded-xl border"><strong>4. Sopan santun</strong><div class="text-[10px] text-slate-500 italic">Polite mannerisms</div></div>
+          <div class="p-3 bg-white rounded-xl border"><strong>5. Taat berbuat baik</strong><div class="text-[10px] text-slate-500 italic">Obedience in goodness</div></div>
+          <div class="p-3 bg-white rounded-xl border"><strong>6. Lemah lembut</strong><div class="text-[10px] text-slate-500 italic">Gentleness</div></div>
+          <div class="p-3 bg-white rounded-xl border"><strong>7. Ringan tulang bantu</strong><div class="text-[10px] text-slate-500 italic">Readiness to help</div></div>
+          <div class="p-3 bg-white rounded-xl border"><strong>8. Dahulukan urusan</strong><div class="text-[10px] text-slate-500 italic">Giving priority</div></div>
+        </div>
+      </div>
+
+      <div id="note-7" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-pink-200 space-y-4 shadow-sm">
+        <span class="px-3 py-1 bg-pink-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 7: Kesan Mengasihi Orang Muda</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+          <div class="p-4 bg-pink-50/50 rounded-2xl border border-pink-200"><strong>1. Disayangi dan dihormati</strong><div class="text-slate-500 italic mt-0.5">Loved and respected</div></div>
+          <div class="p-4 bg-pink-50/50 rounded-2xl border border-pink-200"><strong>2. Keluarga hidup bahagia</strong><div class="text-slate-500 italic mt-0.5">Happy family life</div></div>
+          <div class="p-4 bg-pink-50/50 rounded-2xl border border-pink-200"><strong>3. Masyarakat hidup aman</strong><div class="text-slate-500 italic mt-0.5">Peaceful society</div></div>
+          <div class="p-4 bg-pink-50/50 rounded-2xl border border-pink-200"><strong>4. Orang muda lebih sopan</strong><div class="text-slate-500 italic mt-0.5">Youth behave more politely</div></div>
+          <div class="p-4 bg-pink-50/50 rounded-2xl border border-pink-200 sm:col-span-2 lg:col-span-1"><strong>5. Wujud kerjasama</strong><div class="text-slate-500 italic mt-0.5">Fosters mutual cooperation</div></div>
+        </div>
+      </div>
+
+      <div id="note-8" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-amber-200 space-y-4 shadow-sm">
+        <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 8: Kesan Menghormati Orang Tua</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+          <div class="p-4 bg-amber-50/50 rounded-2xl border border-amber-200"><strong>1. Kasih sayang terjalin erat</strong><div class="text-slate-500 italic mt-0.5">Close bonds of affection</div></div>
+          <div class="p-4 bg-amber-50/50 rounded-2xl border border-amber-200"><strong>2. Kehidupan lebih diberkati</strong><div class="text-slate-500 italic mt-0.5">A more blessed life</div></div>
+          <div class="p-4 bg-amber-50/50 rounded-2xl border border-amber-200"><strong>3. Ketenangan jiwa</strong><div class="text-slate-500 italic mt-0.5">Inner peace & tranquility</div></div>
+          <div class="p-4 bg-amber-50/50 rounded-2xl border border-amber-200"><strong>4. Dikasihi Allah & Rasul</strong><div class="text-slate-500 italic mt-0.5">Beloved by Allah & His Messenger</div></div>
+          <div class="p-4 bg-amber-50/50 rounded-2xl border border-amber-200 sm:col-span-2 lg:col-span-1"><strong>5. Masyarakat lebih harmoni</strong><div class="text-slate-500 italic mt-0.5">A harmonious society</div></div>
         </div>
       </div>
     </div>
 
-    <!-- KUIZ -->
+    <!-- ================= KUIZ INTERAKTIF ================= -->
     <div id="section-kuiz" class="hidden space-y-6">
-      <div class="bg-white rounded-3xl p-6 shadow-sm border border-amber-100">
-        <h3 class="text-base font-bold text-slate-900 mb-3">Pilih Kuiz Hadis</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold">
-          <button onclick="loadQuiz(1)" class="p-3 rounded-xl border-2 bg-amber-50 border-amber-400">Kuiz 1: Lafaz</button>
-          <button onclick="loadQuiz(2)" class="p-3 rounded-xl border-2 bg-white">Kuiz 2: Terjemahan</button>
-          <button onclick="loadQuiz(3)" class="p-3 rounded-xl border-2 bg-white">Kuiz 3: Pengertian</button>
-          <button onclick="loadQuiz(4)" class="p-3 rounded-xl border-2 bg-white">Kuiz 4: Peranan</button>
-          <button onclick="loadQuiz(5)" class="p-3 rounded-xl border-2 bg-white">Kuiz 5: Adab Muda</button>
-          <button onclick="loadQuiz(6)" class="p-3 rounded-xl border-2 bg-white">Kuiz 6: Adab Tua</button>
-          <button onclick="loadQuiz(7)" class="p-3 rounded-xl border-2 bg-white">Kuiz 7: Kesan Muda</button>
-          <button onclick="loadQuiz(8)" class="p-3 rounded-xl border-2 bg-white">Kuiz 8: Kesan Tua</button>
+      <div class="bg-white rounded-3xl p-6 shadow-sm border border-amber-100 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Pilih Modul Kuiz Hadis</h3>
+            <p class="text-xs text-slate-500 italic">Select which Hadith quiz you want to attempt:</p>
+          </div>
+          <span class="text-xs px-3 py-1 bg-amber-50 text-amber-800 rounded-full font-semibold self-start sm:self-auto border border-amber-200">
+            8 Kuiz Objektif
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <button onclick="loadQuiz(1)" id="btn-q-1" class="q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-amber-500 bg-amber-50/80 ring-2 ring-amber-400/20">Kuiz 1: Lafaz Hadis</button>
+          <button onclick="loadQuiz(2)" id="btn-q-2" class="q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-slate-200 bg-white hover:border-amber-400">Kuiz 2: Terjemahan</button>
+          <button onclick="loadQuiz(3)" id="btn-q-3" class="q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-slate-200 bg-white hover:border-amber-400">Kuiz 3: Pengertian</button>
+          <button onclick="loadQuiz(4)" id="btn-q-4" class="q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-slate-200 bg-white hover:border-amber-400">Kuiz 4: Peranan</button>
+          <button onclick="loadQuiz(5)" id="btn-q-5" class="q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-slate-200 bg-white hover:border-amber-400">Kuiz 5: Adab Muda</button>
+          <button onclick="loadQuiz(6)" id="btn-q-6" class="q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-slate-200 bg-white hover:border-amber-400">Kuiz 6: Adab Tua</button>
+          <button onclick="loadQuiz(7)" id="btn-q-7" class="q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-slate-200 bg-white hover:border-amber-400">Kuiz 7: Kesan Muda</button>
+          <button onclick="loadQuiz(8)" id="btn-q-8" class="q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-slate-200 bg-white hover:border-amber-400">Kuiz 8: Kesan Tua</button>
         </div>
       </div>
-      <div id="quiz-box" class="p-6 bg-white rounded-3xl border border-amber-200 shadow-sm space-y-4"></div>
+
+      <!-- Kad Soalan Kuiz -->
+      <div id="quiz-card" class="p-6 md:p-8 bg-white rounded-3xl border border-amber-200 shadow-sm space-y-5"></div>
     </div>
   </div>
 
-  <!-- A4 PRINT WORKSHEET -->
+  <!-- Cetakan A4 KSSR -->
   <div class="print-only max-w-[210mm] mx-auto p-4 bg-white text-black text-xs">
     <div class="text-center border-b-2 border-black pb-2 mb-3">
-      <div class="font-black text-sm uppercase">PENTAKSIRAN BILIK DARJAH (PBD) • BIDANG HADIS TAHUN 3</div>
+      <div class="font-extrabold text-[11px] uppercase">PENTAKSIRAN BILIK DARJAH (PBD) • BIDANG HADIS TAHUN 3</div>
+      <h1 class="text-sm font-black uppercase">Yang Muda Dikasihi, Yang Tua Dihormati</h1>
     </div>
     <div class="border border-black p-2 mb-3 space-y-1">
       <div>NAMA: ____________________________________ KELAS: _________ TARIKH: _________</div>
     </div>
     <div class="mb-3">
-      <strong>Bahagian A: Padankan maksud hadis yang betul.</strong>
-      <table class="w-full border-collapse border border-black text-center mt-2">
+      <strong>Bahagian A: Padankan potongan hadis dengan maksudnya yang betul.</strong>
+      <table class="w-full border-collapse border border-black text-center mt-2 text-xs">
         <tr class="bg-gray-100"><th class="border border-black p-1">Potongan Hadis</th><th class="border border-black p-1">Maksud</th></tr>
-        <tr><td class="border border-black p-2 arabic-font">لَيْسَ مِنَّا</td><td class="border border-black p-2 text-left">Bukan daripada golongan kami.</td></tr>
-        <tr><td class="border border-black p-2 arabic-font">مَنْ لَمْ يَرْحَمْ صَغِيرَنَا</td><td class="border border-black p-2 text-left">Orang yang tidak mengasihi orang muda kita.</td></tr>
-        <tr><td class="border border-black p-2 arabic-font">وَيُوَقِّرْ كَبِيرَنَا</td><td class="border border-black p-2 text-left">Dan tidak menghormati orang tua kita.</td></tr>
+        <tr><td class="border border-black p-2 arabic-font text-base">لَيْسَ مِنَّا</td><td class="border border-black p-2 text-left">Bukan daripada golongan kami.</td></tr>
+        <tr><td class="border border-black p-2 arabic-font text-base">مَنْ لَمْ يَرْحَمْ صَغِيرَنَا</td><td class="border border-black p-2 text-left">Orang yang tidak mengasihi orang muda kita.</td></tr>
+        <tr><td class="border border-black p-2 arabic-font text-base">وَيُوَقِّرْ كَبِيرَنَا</td><td class="border border-black p-2 text-left">Dan tidak menghormati orang tua kita.</td></tr>
       </table>
     </div>
   </div>
 
+  <!-- Logik Skrip -->
   <script>
     function switchTab(mode) {
-      if(mode==='wagba') {
-        document.getElementById('section-wagba').classList.remove('hidden');
-        document.getElementById('section-kuiz').classList.add('hidden');
-        document.getElementById('tab-btn-wagba').className="p-6 rounded-3xl border-2 border-emerald-500 bg-emerald-50/40 text-left font-bold text-lg flex justify-between items-center";
-        document.getElementById('tab-btn-kuiz').className="p-6 rounded-3xl border-2 border-slate-200 bg-white text-left font-bold text-lg flex justify-between items-center";
+      const secWagba = document.getElementById('section-wagba');
+      const secKuiz = document.getElementById('section-kuiz');
+      const btnWagba = document.getElementById('tab-btn-wagba');
+      const btnKuiz = document.getElementById('tab-btn-kuiz');
+
+      if (mode === 'wagba') {
+        secWagba.classList.remove('hidden');
+        secKuiz.classList.add('hidden');
+        btnWagba.className = "p-6 rounded-3xl border-2 border-emerald-500 bg-emerald-50/40 ring-2 ring-emerald-400/20 shadow-sm transition-all flex items-center justify-between group";
+        btnKuiz.className = "p-6 rounded-3xl border-2 border-slate-200 bg-white hover:bg-amber-50/60 shadow-sm transition-all flex items-center justify-between group";
       } else {
-        document.getElementById('section-wagba').classList.add('hidden');
-        document.getElementById('section-kuiz').classList.remove('hidden');
-        document.getElementById('tab-btn-kuiz').className="p-6 rounded-3xl border-2 border-amber-500 bg-amber-50/40 text-left font-bold text-lg flex justify-between items-center";
-        document.getElementById('tab-btn-wagba').className="p-6 rounded-3xl border-2 border-slate-200 bg-white text-left font-bold text-lg flex justify-between items-center";
+        secWagba.classList.add('hidden');
+        secKuiz.classList.remove('hidden');
+        btnKuiz.className = "p-6 rounded-3xl border-2 border-amber-500 bg-amber-50/40 ring-2 ring-amber-400/20 shadow-sm transition-all flex items-center justify-between group";
+        btnWagba.className = "p-6 rounded-3xl border-2 border-slate-200 bg-white hover:bg-emerald-50/60 shadow-sm transition-all flex items-center justify-between group";
         loadQuiz(1);
       }
     }
+
     function activateNote(id) {
-      document.querySelectorAll('.note-item').forEach(el=>el.classList.add('hidden'));
-      document.getElementById('note-'+id).classList.remove('hidden');
-      document.querySelectorAll('.w-btn').forEach((b,idx)=>{
-        b.className = (idx+1 === id) ? "w-btn p-3 rounded-2xl border-2 bg-emerald-50 border-emerald-500 font-bold text-left" : "w-btn p-3 rounded-2xl border-2 bg-white border-slate-200 font-bold text-left";
-      });
+      document.querySelectorAll('.note-item').forEach(el => el.classList.add('hidden'));
+      const activeNoteEl = document.getElementById('note-' + id);
+      if (activeNoteEl) activeNoteEl.classList.remove('hidden');
+
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.getElementById('btn-w-' + i);
+        const badge = btn.querySelector('.w-badge');
+        if (i === id) {
+          btn.className = "w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-emerald-500 bg-emerald-50/80 ring-2 ring-emerald-400/20";
+          badge.className = "w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-emerald-600 text-white w-max";
+        } else {
+          btn.className = "w-btn text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 border-slate-200 bg-white hover:border-emerald-400";
+          badge.className = "w-badge px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-slate-100 text-slate-700 w-max";
+        }
+      }
     }
-    const qData = {
-      1: { q: "Sambungan bagi 'لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَ...' ialah?", opts: ["يُوَقِّرْ كَبِيرَنَا", "يَعْلَمْ كَبِيرَنَا"], ans: 0 },
-      2: { q: "Maksud potongan 'لَيْسَ مِنَّا' ialah?", opts: ["Bukan daripada golongan kami", "Bukan daripada kewajipan"], ans: 0 },
-      3: { q: "Hadis merangkumi perkara yang disandarkan kepada Nabi SAW dari segi...", opts: ["Perkataan, perbuatan, pengakuan dan sifat", "Perkataan sahaja"], ans: 0 },
-      4: { q: "Hadis berfungsi sebagai...", opts: ["Sumber hukum kedua dan penjelas terperinci", "Buku ganti al-Quran"], ans: 0 },
-      5: { q: "Antara adab mengasihi orang muda ialah...", opts: ["Berbicara dengan nada mesra", "Meninggikan suara"], ans: 0 },
-      6: { q: "Antara adab menghormati orang tua ialah...", opts: ["Panggilan terhormat & memberi salam", "Berebut tempat"], ans: 0 },
-      7: { q: "Kesan mengasihi orang muda:", opts: ["Keluarga bahagia & orang muda lebih sopan", "Masyarakat huru-hara"], ans: 0 },
-      8: { q: "Kesan menghormati orang tua:", opts: ["Kehidupan berkat & dikasihi Allah", "Menjadi riyak"], ans: 0 }
+
+    // Data Kuiz Dwibahasa Hadis
+    const quizDatabase = {
+      1: {
+        title: "KUIZ WAGBA 1: Lafaz Hadis",
+        sub: "Hadith Recitation",
+        question: "Lengkapkan lafaz matan hadis ini:<br><span class='arabic-font text-2xl font-bold'>لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَ...</span>",
+        options: [
+          { text: "يُوَقِّرْ كَبِيرَنَا (yuwaqqir kabiiranaa)", en: "and acknowledge the honour of our elders", correct: true },
+          { text: "يَعْلَمْ كَبِيرَنَا (ya'lam kabiiranaa)", en: "and know our elders", correct: false },
+          { text: "يَشْكُرْ كَبِيرَنَا (yasykur kabiiranaa)", en: "and thank our elders", correct: false }
+        ],
+        explanation: "Lafaz penuh hadis riwayat At-Tirmizi ialah: لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَيُوَقِّرْ كَبِيرَنَا"
+      },
+      2: {
+        title: "KUIZ WAGBA 2: Terjemahan Hadis",
+        sub: "Translation of Hadith",
+        question: "Apakah maksud bagi potongan lafaz <span class='arabic-font text-xl font-bold'>'لَيْسَ مِنَّا'</span>?",
+        options: [
+          { text: "Bukan daripada golongan kami", en: "Not one of us / not among our followers", correct: true },
+          { text: "Bukan daripada kewajipan kami", en: "Not part of our obligation", correct: false },
+          { text: "Bukan daripada keluarga kami", en: "Not part of our family", correct: false }
+        ],
+        explanation: "'Laisa minna' bermaksud bukan daripada golongan kami (iaitu orang yang tidak mengikut sunnah dan teladan Nabi SAW)."
+      },
+      3: {
+        title: "KUIZ WAGBA 3: Pengertian Hadis",
+        sub: "Definition of Hadith",
+        question: "Hadis ialah segala perkara yang disandarkan kepada Nabi Muhammad SAW dari segi...",
+        options: [
+          { text: "Perkataan, perbuatan, pengakuan (taqrir) dan sifat", en: "Words, actions, approvals and traits", correct: true },
+          { text: "Perkataan dan tulisan baginda sahaja", en: "Words and writings only", correct: false },
+          { text: "Mimpi para sahabat nabi", en: "Dreams of the companions", correct: false }
+        ],
+        explanation: "Pengertian hadis merangkumi 4 perkara: Qauli (perkataan), Fi'li (perbuatan), Taqriri (pengakuan), dan Wasfi (sifat Nabi SAW)."
+      },
+      4: {
+        title: "KUIZ WAGBA 4: Peranan Hadis",
+        sub: "Role of Hadith",
+        question: "Apakah kedudukan dan peranan utama hadis dalam Islam?",
+        options: [
+          { text: "Sumber hukum kedua selepas Al-Quran & penjelas terperinci", en: "Second source of law & detailed explanation", correct: true },
+          { text: "Hanya sebagai cerita sejarah zaman dahulu", en: "Only as historical folklore", correct: false },
+          { text: "Ganti kepada kitab suci Al-Quran", en: "Replacement of the Holy Quran", correct: false }
+        ],
+        explanation: "Hadis adalah sumber hukum yang kedua selepas Al-Quran dan berfungsi memperincikan hukum-hakam umum."
+      },
+      5: {
+        title: "KUIZ WAGBA 5: Adab Mengasihi Orang Muda",
+        sub: "Manners Toward the Young",
+        question: "Antara berikut, yang manakah adab mengasihi orang yang lebih muda?",
+        options: [
+          { text: "Berbicara dengan nada mesra & menunjukkan teladan baik", en: "Speaking in friendly tone & setting good role model", correct: true },
+          { text: "Memarahi mereka di hadapan orang ramai", en: "Scolding them publicly", correct: false },
+          { text: "Membiarkan mereka melakukan kesalahan tanpa teguran", en: "Ignoring their wrongdoings", correct: false }
+        ],
+        explanation: "Adab terhadap orang muda termasuk berbicara mesra, menasihati secara baik, dan menjadi contoh teladan."
+      },
+      6: {
+        title: "KUIZ WAGBA 6: Adab Menghormati Orang Tua",
+        sub: "Manners Toward Elders",
+        question: "Bagaimanakah cara kita menunjukkan rasa hormat kepada orang tua?",
+        options: [
+          { text: "Memberi panggilan terhormat, salam dan bersopan santun", en: "Giving respectful titles, greetings, and being polite", correct: true },
+          { text: "Mencelah dan memotong percakapan mereka", en: "Interrupting their speech", correct: false },
+          { text: "Berjalan laju mendahului mereka dengan sombong", en: "Walking past them arrogantly", correct: false }
+        ],
+        explanation: "Menghormati orang tua dituntut dengan memanggil gelaran sopan, mendahului memberi salam, serta ringan tulang membantu."
+      },
+      7: {
+        title: "KUIZ WAGBA 7: Kesan Mengasihi Orang Muda",
+        sub: "Impact of Loving the Young",
+        question: "Apakah kesan positif apabila golongan tua mengasihi golongan muda?",
+        options: [
+          { text: "Keluarga bahagia & orang muda membesar lebih bersopan", en: "Happy families & youths grow more polite", correct: true },
+          { text: "Orang muda menjadi manja dan malas belajar", en: "Youths become lazy and spoiled", correct: false },
+          { text: "Hilang rasa hormat kepada undang-undang", en: "Loss of respect for the law", correct: false }
+        ],
+        explanation: "Kesan kasih sayang menjadikan keluarga bahagia, masyarakat aman, dan orang muda meneladani kesopanan."
+      },
+      8: {
+        title: "KUIZ WAGBA 8: Kesan Menghormati Orang Tua",
+        sub: "Impact of Respecting Elders",
+        question: "Apakah ganjaran dan kesan menghormati orang tua dalam kehidupan?",
+        options: [
+          { text: "Kehidupan lebih diberkati, tenang jiwa & dikasihi Allah", en: "Blessed life, inner peace & loved by Allah", correct: true },
+          { text: "Mendapat ganjaran wang ringgit yang banyak", en: "Receiving lots of monetary rewards", correct: false },
+          { text: "Menjadi terkenal dan dipuji di media sosial", en: "Becoming famous on social media", correct: false }
+        ],
+        explanation: "Orang yang menghormati orang tua akan dikasihi Allah dan Rasul, hidup berkat, serta memperolehi ketenangan jiwa."
+      }
     };
+
     function loadQuiz(id) {
-      const q = qData[id];
-      document.getElementById('quiz-box').innerHTML = `
-        <h4 class="font-bold text-base text-slate-900">${q.q}</h4>
-        <div class="space-y-2 pt-2">
-          ${q.opts.map((opt,i)=>`
-            <button onclick="checkAns(${i==q.ans})" class="w-full text-left p-3.5 rounded-xl border-2 hover:bg-amber-50 text-xs font-bold">${opt}</button>
+      // 1. Sorot butang aktif
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.getElementById('btn-q-' + i);
+        if (i === id) {
+          btn.className = "q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-amber-500 bg-amber-50/80 ring-2 ring-amber-400/20";
+        } else {
+          btn.className = "q-btn text-left p-3 rounded-2xl border-2 transition-all font-bold text-xs border-slate-200 bg-white hover:border-amber-400";
+        }
+      }
+
+      // 2. Paparkan kandungan kad soalan
+      const q = quizDatabase[id];
+      const card = document.getElementById('quiz-card');
+      card.innerHTML = `
+        <div class="flex items-center justify-between border-b pb-3">
+          <div>
+            <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">${q.title}</span>
+            <div class="text-[11px] text-slate-400 italic mt-0.5">${q.sub}</div>
+          </div>
+          <div id="quiz-status-badge" class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">Belum Dijawab</div>
+        </div>
+
+        <div>
+          <h4 class="text-base md:text-lg font-bold text-slate-900 leading-snug">${q.question}</h4>
+        </div>
+
+        <div class="space-y-2.5 pt-2">
+          ${q.options.map((opt, optIndex) => `
+            <button onclick="handleAnswer(${id}, ${optIndex})" id="opt-btn-${optIndex}" class="w-full text-left p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-amber-400 hover:bg-amber-50/40 transition">
+              <div class="text-xs md:text-sm font-bold text-slate-800">${opt.text}</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">${opt.en}</div>
+            </button>
           `).join('')}
         </div>
-        <div id="q-result" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+
+        <div id="quiz-feedback" class="hidden p-4 rounded-2xl text-xs font-medium space-y-1"></div>
       `;
     }
-    function checkAns(c) {
-      const res = document.getElementById('q-result');
-      res.classList.remove('hidden');
-      res.className = c ? "p-3 rounded-xl text-xs font-bold bg-emerald-100 text-emerald-900" : "p-3 rounded-xl text-xs font-bold bg-rose-100 text-rose-900";
-      res.innerText = c ? "Tahniah! Jawapan Tepat ⭐" : "Kurang tepat, cuba lagi 😊";
+
+    function handleAnswer(quizId, optIndex) {
+      const q = quizDatabase[quizId];
+      const isCorrect = q.options[optIndex].correct;
+      const feedbackEl = document.getElementById('quiz-feedback');
+      const badge = document.getElementById('quiz-status-badge');
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.getElementById('opt-btn-' + idx);
+        btn.disabled = true;
+        btn.classList.add('cursor-not-allowed', 'opacity-80');
+        if (opt.correct) {
+          btn.classList.remove('bg-white', 'border-slate-200');
+          btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900');
+        } else if (idx === optIndex && !isCorrect) {
+          btn.classList.remove('bg-white', 'border-slate-200');
+          btn.classList.add('bg-rose-100', 'border-rose-400', 'text-rose-900');
+        }
+      });
+
+      feedbackEl.classList.remove('hidden');
+      if (isCorrect) {
+        badge.className = "text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full";
+        badge.innerText = "Tahniah! Betul ⭐";
+        feedbackEl.className = "p-4 rounded-2xl text-xs font-medium bg-emerald-100/90 text-emerald-950 border border-emerald-300 space-y-1";
+        feedbackEl.innerHTML = `<strong>Tahniah! Jawapan Tepat! 🎉</strong><br>${q.explanation}`;
+      } else {
+        badge.className = "text-xs font-bold px-3 py-1 bg-rose-100 text-rose-800 rounded-full";
+        badge.innerText = "Cuba Lagi 😊";
+        feedbackEl.className = "p-4 rounded-2xl text-xs font-medium bg-rose-100/90 text-rose-950 border border-rose-300 space-y-1";
+        feedbackEl.innerHTML = `<strong>Jawapan Kurang Tepat. 😊</strong><br>${q.explanation}`;
+      }
     }
   </script>
 </body>
