@@ -3,140 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pendidikan Islam Tahun 3 - Portal Pembelajaran Interaktif</title>
+  <title>Portal Pendidikan Islam Tahun 3 - KSSR Semakan</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
+    .arabic-font { font-family: 'Amiri', serif; direction: rtl; }
   </style>
 </head>
-<body class="bg-amber-50/40 text-slate-800 min-h-screen antialiased selection:bg-emerald-200">
-  <div class="max-w-4xl mx-auto px-4 py-8 md:py-12 space-y-8">
-    
-    <!-- Header Utama Portal -->
-    <header class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 text-center relative overflow-hidden">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold tracking-wide mb-3">
-        <span>📖 PORTAL PEMBELAJARAN INTERAKTIF</span>
-        <span>•</span>
-        <span>KSSR TAHUN 3</span>
-      </div>
-      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">
-        Pendidikan Islam Tahun 3
-      </h1>
-      <p class="text-xs md:text-sm text-slate-500 italic mt-1">
-        Nota WAGBA Ringkas, Kuiz Penilaian Kendiri & Lembaran Cetak PBD
-      </p>
-    </header>
+<body class="bg-slate-50 text-slate-800 min-h-screen antialiased flex flex-col selection:bg-emerald-200">
 
-    <!-- Grid Menu Pilihan Bidang -->
+  <!-- Header Utama Portal -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-xs">
+    <div class="max-w-5xl mx-auto px-4 py-4 sm:px-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-black text-lg shadow-sm">
+          PI
+        </div>
+        <div>
+          <h1 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">Portal Pendidikan Islam</h1>
+          <p class="text-xs text-slate-500 font-medium">Tahun 3 • KSSR Semakan (PBD & WAGBA)</p>
+        </div>
+      </div>
+      <span class="hidden sm:inline-block px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-full text-xs font-bold">
+        E-Pembelajaran Interaktif
+      </span>
+    </div>
+  </header>
+
+  <!-- Kandungan Utama -->
+  <main class="max-w-5xl mx-auto px-4 py-8 sm:px-6 flex-1 w-full space-y-8">
+
+    <!-- Banner Aluan -->
+    <div class="bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-800 rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-md">
+      <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="relative z-10 max-w-2xl space-y-2">
+        <span class="inline-block px-3 py-1 bg-white/15 backdrop-blur-md rounded-full text-[11px] font-bold tracking-wider uppercase text-emerald-100">
+          Selamat Datang Murid & Guru
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug">
+          Modul Digital Pembelajaran Berterusan
+        </h2>
+        <p class="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
+          Pilih mana-mana modul bidang pembelajaran di bawah untuk mengakses nota kriteria WAGBA (*What Am I Getting Better At*), kuiz interaktif berserta semakan segera, dan lembaran pentaksiran A4 (PBD).
+        </p>
+      </div>
+    </div>
+
+    <!-- Senarai Pilihan Bidang -->
     <div class="space-y-4">
-      <div class="flex items-center justify-between px-1">
-        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-700">Pilih Bidang Pembelajaran:</h2>
-        <span class="text-xs font-semibold px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-full">4 Modul Sedia Digunakan</span>
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div>
+          <h2 class="text-base sm:text-lg font-extrabold text-slate-900">Senarai Bidang Pembelajaran</h2>
+          <p class="text-xs text-slate-500">Klik kad bidang untuk membuka modul penuh</p>
+        </div>
+        <span class="text-xs font-bold px-2.5 py-1 bg-slate-200 text-slate-700 rounded-full">Tahun 3</span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        
-        <!-- 1. Hadis -->
-        <a href="hadis.html" class="group block p-5 bg-white rounded-3xl border-2 border-emerald-100 hover:border-emerald-500 shadow-sm transition-all hover:scale-[1.02]">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-2xl group-hover:scale-110 transition">
-                📖
-              </div>
-              <div>
-                <span class="text-[10px] font-extrabold text-emerald-700 uppercase">Bidang 1</span>
-                <h3 class="text-base font-extrabold text-slate-900">Hadis</h3>
-                <p class="text-xs text-slate-500 italic">Yang Muda Dikasihi, Yang Tua Dihormati</p>
-              </div>
+      <!-- Grid Kad Bidang -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+        <!-- Kad 1: Bidang Al-Quran -->
+        <div class="block p-5 bg-white rounded-3xl border border-slate-200/80 shadow-xs opacity-75 cursor-not-allowed">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">📖</span>
+            <div>
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Bidang 1</span>
+              <h3 class="text-base font-extrabold text-slate-900">Al-Quran</h3>
+              <p class="text-xs text-slate-400 italic">Akan Datang / Soon</p>
             </div>
-            <span class="text-emerald-600 font-bold text-sm">➔</span>
+          </div>
+        </div>
+
+        <!-- Kad 2: Bidang Hadis -->
+        <div class="block p-5 bg-white rounded-3xl border border-slate-200/80 shadow-xs opacity-75 cursor-not-allowed">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">💬</span>
+            <div>
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Bidang 2</span>
+              <h3 class="text-base font-extrabold text-slate-900">Hadis</h3>
+              <p class="text-xs text-slate-400 italic">Akan Datang / Soon</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kad 3: Bidang Akidah -->
+        <div class="block p-5 bg-white rounded-3xl border border-slate-200/80 shadow-xs opacity-75 cursor-not-allowed">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">🤲</span>
+            <div>
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Bidang 3</span>
+              <h3 class="text-base font-extrabold text-slate-900">Akidah</h3>
+              <p class="text-xs text-slate-400 italic">Akan Datang / Soon</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kad 4: Bidang Ibadah -->
+        <div class="block p-5 bg-white rounded-3xl border border-slate-200/80 shadow-xs opacity-75 cursor-not-allowed">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">🕌</span>
+            <div>
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Bidang 4</span>
+              <h3 class="text-base font-extrabold text-slate-900">Ibadah</h3>
+              <p class="text-xs text-slate-400 italic">Akan Datang / Soon</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kad 5: Bidang Sirah (AKTIF -> sirah.html) -->
+        <a href="sirah.html" class="block p-5 bg-white rounded-3xl border border-amber-200 shadow-sm hover:shadow-md transition hover:scale-[1.02] group">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl group-hover:scale-110 transition">📜</span>
+            <div class="flex-1">
+              <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Bidang 5</span>
+              <h3 class="text-base font-extrabold text-slate-900 flex items-center justify-between">
+                Sirah Nabawiyyah
+                <span class="text-amber-600 text-xs font-bold">➔</span>
+              </h3>
+              <p class="text-xs text-slate-500 italic">Kenal Wahyu: Penurunan Wahyu Pertama</p>
+            </div>
           </div>
         </a>
 
-        <!-- 2. Akidah -->
-        <a href="akidah.html" class="group block p-5 bg-white rounded-3xl border-2 border-teal-100 hover:border-teal-500 shadow-sm transition-all hover:scale-[1.02]">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-2xl group-hover:scale-110 transition">
-                🏛️
-              </div>
-              <div>
-                <span class="text-[10px] font-extrabold text-teal-700 uppercase">Bidang 2</span>
-                <h3 class="text-base font-extrabold text-slate-900">Akidah</h3>
-                <p class="text-xs text-slate-500 italic">Allah Al-'Alim & Al-Hakim</p>
-              </div>
+        <!-- Kad 6: Bidang Adab (AKTIF -> adab.html) -->
+        <a href="adab.html" class="block p-5 bg-white rounded-3xl border border-emerald-200 shadow-sm hover:shadow-md transition hover:scale-[1.02] group">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl group-hover:scale-110 transition">🌙</span>
+            <div class="flex-1">
+              <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">Bidang 6</span>
+              <h3 class="text-base font-extrabold text-slate-900 flex items-center justify-between">
+                Adab & Akhlak
+                <span class="text-emerald-600 text-xs font-bold">➔</span>
+              </h3>
+              <p class="text-xs text-slate-500 italic">Jagai Adab Tidurmu & Qailulah</p>
             </div>
-            <span class="text-teal-600 font-bold text-sm">➔</span>
           </div>
         </a>
 
-        <!-- 3. Ibadah -->
-        <a href="ibadah.html" class="group block p-5 bg-white rounded-3xl border-2 border-cyan-100 hover:border-cyan-500 shadow-sm transition-all hover:scale-[1.02]">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-cyan-100 flex items-center justify-center text-2xl group-hover:scale-110 transition">
-                🤲
-              </div>
-              <div>
-                <span class="text-[10px] font-extrabold text-cyan-700 uppercase">Bidang 3</span>
-                <h3 class="text-base font-extrabold text-slate-900">Ibadah</h3>
-                <p class="text-xs text-slate-500 italic">Bersuci Daripada Hadas</p>
-              </div>
+        <!-- Kad 7: Bidang Jawi -->
+        <div class="block p-5 bg-white rounded-3xl border border-slate-200/80 shadow-xs opacity-75 cursor-not-allowed">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">✒️</span>
+            <div>
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Bidang 7</span>
+              <h3 class="text-base font-extrabold text-slate-900">Pelajaran Jawi</h3>
+              <p class="text-xs text-slate-400 italic">Akan Datang / Soon</p>
             </div>
-            <span class="text-cyan-600 font-bold text-sm">➔</span>
           </div>
-        </a>
-
-        <!-- 4. Sirah -->
-        <a href="sirah.html" class="group block p-5 bg-white rounded-3xl border-2 border-amber-100 hover:border-amber-500 shadow-sm transition-all hover:scale-[1.02]">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-2xl group-hover:scale-110 transition">
-                📜
-              </div>
-              <div>
-                <span class="text-[10px] font-extrabold text-amber-700 uppercase">Bidang 4</span>
-                <h3 class="text-base font-extrabold text-slate-900">Sirah</h3>
-                <p class="text-xs text-slate-500 italic">Kenal Wahyu (Gua Hira')</p>
-              </div>
-            </div>
-            <span class="text-amber-600 font-bold text-sm">➔</span>
-          </div>
-        </a>
+        </div>
 
       </div>
     </div>
 
-    <!-- Bahagian Bidang Seterusnya (Akan Datang) -->
-    <div class="space-y-3 pt-2">
-      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 px-1">Modul Dalam Perancangan:</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        <div class="p-4 bg-slate-100/80 rounded-2xl border border-slate-200 text-center opacity-70">
-          <div class="text-2xl">🤝</div>
-          <div class="text-xs font-bold text-slate-700 mt-1">Adab</div>
-          <div class="text-[10px] text-slate-400">Akan Datang</div>
-        </div>
-        <div class="p-4 bg-slate-100/80 rounded-2xl border border-slate-200 text-center opacity-70">
-          <div class="text-2xl">✏️</div>
-          <div class="text-xs font-bold text-slate-700 mt-1">Jawi</div>
-          <div class="text-[10px] text-slate-400">Akan Datang</div>
-        </div>
-        <div class="p-4 bg-slate-100/80 rounded-2xl border border-slate-200 text-center opacity-70 col-span-2 sm:col-span-1">
-          <div class="text-2xl">🕌</div>
-          <div class="text-xs font-bold text-slate-700 mt-1">Al-Quran</div>
-          <div class="text-[10px] text-slate-400">Akan Datang</div>
-        </div>
-      </div>
+  </main>
+
+  <!-- Footer Portal -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-auto">
+    <div class="max-w-5xl mx-auto px-4 space-y-1">
+      <p class="font-semibold text-slate-700">Portal Pendidikan Islam KSSR Semakan • Tahun 3</p>
+      <p>Dibina untuk kegunaan pengajaran, pembelajaran berterusan, dan Pentaksiran Bilik Darjah (PBD).</p>
     </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="text-center text-xs text-slate-400 pt-4 border-t border-slate-200">
-      Portal Interaktif KSSR Tahun 3 • Dibina untuk Guru & Murid
-    </footer>
-
-  </div>
 </body>
 </html>
