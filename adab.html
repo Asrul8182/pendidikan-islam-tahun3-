@@ -3,869 +3,743 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modul Pendidikan Islam Tahun 3: Jagai Adab Tidurmu & Qailulah</title>
-  <!-- Tailwind CSS CDN -->
+  <title>Bidang Adab - Pendidikan Islam Tahun 3</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Poppins & Amiri -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Poppins', 'sans-serif'],
-            arabic: ['Amiri', 'serif']
-          },
-          colors: {
-            primary: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              800: '#065f46'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .arabic-font { font-family: 'Amiri', serif; direction: rtl; }
     @media print {
-      body {
-        background-color: white !important;
-        color: black !important;
-      }
-      .no-print {
-        display: none !important;
-      }
-      .print-only {
-        display: block !important;
-      }
-      .wagba-card {
-        display: block !important;
-        page-break-inside: avoid;
-        margin-bottom: 2rem;
-        box-shadow: none !important;
-        border: 1px solid #e2e8f0 !important;
-      }
+      @page { size: A4 portrait; margin: 10mm; }
+      body { background-color: #ffffff !important; color: #000000 !important; font-size: 10pt; }
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
     }
-    .print-only {
-      display: none;
-    }
+    @media screen { .print-only { display: none; } }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+<body class="bg-amber-50/40 text-slate-800 min-h-screen antialiased selection:bg-purple-200">
+  <div class="no-print max-w-5xl mx-auto px-4 py-6 md:py-10 space-y-6">
 
-  <!-- Header Modul -->
-  <header class="bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-900 text-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-4 py-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div>
-        <span class="inline-block px-2.5 py-0.5 text-xs font-semibold tracking-wider uppercase bg-emerald-600/60 text-emerald-100 rounded-full mb-1">
-          KSSR Semakan • Tahun 3
-        </span>
-        <h1 class="text-xl sm:text-2xl font-bold tracking-tight">Bidang Adab: Jagai Adab Tidurmu & Qailulah</h1>
-        <p class="text-xs sm:text-sm text-emerald-100/90 italic">Etiquette of Sleeping & The Sunnah of Midday Nap</p>
-      </div>
+    <!-- Butang Navigasi Atas -->
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-2xl text-xs font-bold text-slate-700 shadow-xs transition hover:scale-105 active:scale-95">
+        <span>⬅️</span>
+        <span>Kembali ke Menu Bidang / <span class="italic font-normal">Back</span></span>
+      </a>
 
-      <!-- Tab Penukar Mod & Cetak -->
-      <div class="flex items-center gap-2 no-print">
-        <div class="bg-emerald-950/40 p-1 rounded-xl flex">
-          <button id="btn-mode-notes" onclick="switchMainTab('notes')" class="px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500 text-white shadow-sm">
-            📖 Nota WAGBA
-          </button>
-          <button id="btn-mode-quiz" onclick="switchMainTab('quiz')" class="px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-emerald-100 hover:text-white">
-            ✍️ Kuiz Interaktif
-          </button>
-        </div>
-        <button onclick="window.print()" title="Cetak Lembaran A4" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium transition flex items-center gap-1">
-          🖨️ <span class="hidden sm:inline">Cetak</span>
-        </button>
-      </div>
+      <button onclick="window.print()" class="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-3.5 py-2 rounded-2xl font-bold text-xs shadow-md shadow-purple-600/20 transition hover:scale-105 active:scale-95">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>Cetak Lembaran A4</span>
+      </button>
     </div>
-  </header>
 
-  <!-- Pengepala Cetakan Dokumen Rasmi -->
-  <div class="print-only max-w-5xl mx-auto p-6 border-b border-slate-300">
-    <div class="flex justify-between items-center text-sm text-slate-600">
-      <div>
-        <p class="font-bold text-base text-slate-900">MODUL PEMBELAJARAN PENDIDIKAN ISLAM TAHUN 3 (PBD)</p>
-        <p>Bidang: Adab & Akhlak Islamiah | Jagai Adab Tidurmu & Qailulah</p>
+    <!-- Header Modul Adab -->
+    <header class="bg-white rounded-3xl p-5 md:p-7 shadow-sm border border-purple-100 relative overflow-hidden">
+      <div class="absolute -right-8 -top-8 w-36 h-36 bg-purple-100/50 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="space-y-1.5 text-center md:text-left z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-[11px] font-bold tracking-wide">
+          <span>🌙 BIDANG ADAB</span>
+          <span>•</span>
+          <span class="italic font-normal">ETIQUETTE</span>
+          <span>•</span>
+          <span>TAHUN 3</span>
+        </div>
+        <h1 class="text-xl md:text-2xl font-extrabold text-slate-900 leading-tight">
+          Jagai Adab Tidurmu & Amalan Qailulah
+        </h1>
+        <p class="text-xs md:text-sm text-slate-500 italic font-medium">
+          Sleeping Etiquette in Islam & The Sunnah of Midday Nap (Qailulah)
+        </p>
       </div>
-      <div class="text-right">
-        <p>Nama: ________________________________</p>
-        <p>Kelas: ____________ Tarikh: ___________</p>
+    </header>
+
+    <!-- 2 Pilihan Utama: NOTA vs KUIZ -->
+    <section class="grid grid-cols-2 gap-3">
+      <button onclick="switchTab('wagba')" id="tab-btn-wagba" class="p-3.5 md:p-4 rounded-2xl border-2 border-purple-500 bg-purple-50/50 ring-2 ring-purple-400/20 shadow-xs transition-all flex items-center justify-between group">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="text-xl">🎯</span>
+          <div>
+            <div class="text-[10px] font-bold text-purple-700 uppercase">Modul</div>
+            <h2 class="text-xs md:text-sm font-extrabold text-slate-900">NOTA WAGBA</h2>
+          </div>
+        </div>
+        <span class="text-purple-600 font-bold text-xs">➔</span>
+      </button>
+
+      <button onclick="switchTab('kuiz')" id="tab-btn-kuiz" class="p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-purple-50/60 shadow-xs transition-all flex items-center justify-between group">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="text-xl">⭐</span>
+          <div>
+            <div class="text-[10px] font-bold text-purple-700 uppercase">Ujian</div>
+            <h2 class="text-xs md:text-sm font-extrabold text-slate-900">KUIZ INTERAKTIF</h2>
+          </div>
+        </div>
+        <span class="text-purple-600 font-bold text-xs">➔</span>
+      </button>
+    </section>
+
+    <!-- ================= NOTA WAGBA ================= -->
+    <div id="section-wagba" class="space-y-5">
+      <!-- Pilihan Butang Mini WAGBA -->
+      <div class="bg-white rounded-3xl p-4 md:p-5 shadow-sm border border-purple-100 space-y-3">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="text-xs font-bold text-slate-800">Pilih Helaian WAGBA Adab:</span>
+          <span class="text-[10px] px-2 py-0.5 bg-purple-100 text-purple-800 rounded-full font-bold">1 hingga 8</span>
+        </div>
+
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
+          <button onclick="activateNote(1)" id="btn-w-1" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-purple-500 bg-purple-50 text-purple-900 font-extrabold text-xs ring-2 ring-purple-400/20">W1</button>
+          <button onclick="activateNote(2)" id="btn-w-2" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-purple-300 text-slate-700 font-bold text-xs">W2</button>
+          <button onclick="activateNote(3)" id="btn-w-3" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-purple-300 text-slate-700 font-bold text-xs">W3</button>
+          <button onclick="activateNote(4)" id="btn-w-4" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-purple-300 text-slate-700 font-bold text-xs">W4</button>
+          <button onclick="activateNote(5)" id="btn-w-5" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-purple-300 text-slate-700 font-bold text-xs">W5</button>
+          <button onclick="activateNote(6)" id="btn-w-6" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-purple-300 text-slate-700 font-bold text-xs">W6</button>
+          <button onclick="activateNote(7)" id="btn-w-7" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-purple-300 text-slate-700 font-bold text-xs">W7</button>
+          <button onclick="activateNote(8)" id="btn-w-8" class="w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-purple-300 text-slate-700 font-bold text-xs">W8</button>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Kandungan Utama -->
-  <main class="max-w-5xl mx-auto px-4 py-6 sm:px-6 flex-1 w-full">
+      <!-- WAGBA 1: Amalan Sebelum Tidur -->
+      <div id="note-1" class="note-item bg-white rounded-3xl p-5 md:p-8 border border-purple-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-purple-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 1: Amalan Sebelum Tidur</span>
+          <span class="text-xs text-slate-400 italic">Practices Before Sleeping</span>
+        </div>
 
-    <!-- ==================== SEKSYEN 1: NOTA WAGBA ==================== -->
-    <section id="section-notes">
-      
-      <!-- Bar Navigasi Mini WAGBA (W1 - W8) -->
-      <div class="no-print bg-white p-2.5 rounded-2xl shadow-sm border border-slate-200/80 mb-6 flex flex-wrap items-center justify-center gap-2">
-        <span class="text-xs font-bold text-slate-500 uppercase tracking-wide mr-2 hidden md:inline">Navigasi Helaian:</span>
-        <button onclick="showWagba(1)" id="pill-w1" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-emerald-600 text-white shadow-md ring-2 ring-emerald-500 ring-offset-1">W1</button>
-        <button onclick="showWagba(2)" id="pill-w2" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">W2</button>
-        <button onclick="showWagba(3)" id="pill-w3" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">W3</button>
-        <button onclick="showWagba(4)" id="pill-w4" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">W4</button>
-        <button onclick="showWagba(5)" id="pill-w5" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">W5</button>
-        <button onclick="showWagba(6)" id="pill-w6" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">W6</button>
-        <button onclick="showWagba(7)" id="pill-w7" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">W7</button>
-        <button onclick="showWagba(8)" id="pill-w8" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">W8</button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
+            <div>
+              <div class="font-bold text-slate-900 text-sm">Tidur awal</div>
+              <div class="text-slate-600 mt-0.5">Memudahkan bangun pada waktu subuh dan mendapat rehat mencukupi.</div>
+              <div class="text-[10px] text-slate-400 italic mt-0.5">Sleeping early.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
+            <div>
+              <div class="font-bold text-slate-900 text-sm">Berwuduk</div>
+              <div class="text-slate-600 mt-0.5">Berada dalam keadaan suci dan didoakan malaikat sepanjang malam.</div>
+              <div class="text-[10px] text-slate-400 italic mt-0.5">Performing ablution.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">3</span>
+            <div>
+              <div class="font-bold text-slate-900 text-sm">Mengibas tempat tidur</div>
+              <div class="text-slate-600 mt-0.5">Membersihkan tempat tidur daripada sebarang kotoran, habuk, atau serangga.</div>
+              <div class="text-[10px] text-slate-400 italic mt-0.5">Dusting off the bed.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">4</span>
+            <div>
+              <div class="font-bold text-slate-900 text-sm">Membaca Basmalah</div>
+              <div class="text-slate-600 mt-0.5">Membaca <span class="font-semibold text-slate-900">"Bismillahirrahmanirrahim"</span> sebelum membaringkan badan.</div>
+              <div class="text-[10px] text-slate-400 italic mt-0.5">Reciting basmalah.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3 sm:col-span-2">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">5</span>
+            <div>
+              <div class="font-bold text-slate-900 text-sm">Tidur mengiring di sebelah kanan</div>
+              <div class="text-slate-600 mt-0.5">Posisi sunnah yang sangat bermanfaat untuk pernafasan dan fungsi jantung.</div>
+              <div class="text-[10px] text-slate-400 italic mt-0.5">Sleeping on the right side.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-amber-50/70 rounded-2xl border border-amber-200 space-y-1 text-xs">
+          <div class="font-bold text-amber-900 flex items-center gap-1.5">
+            <span>ℹ️</span>
+            <span>Info Tambahan Sunnah:</span>
+          </div>
+          <div class="text-slate-800">• Nabi Muhammad ﷺ tidak suka kepada orang yang tidur tanpa menunaikan solat Isyak terlebih dahulu.</div>
+          <p class="text-[11px] text-slate-500 italic">• The Prophet Muhammad ﷺ disliked sleeping before performing the Isha prayer.</p>
+        </div>
+
+        <div class="pt-3 border-t flex justify-end">
+          <button onclick="activateNote(2)" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 2 (Doa & Zikir)</span><span>➔</span>
+          </button>
+        </div>
       </div>
 
-      <!-- KAD WAGBA 1 -->
-      <article id="card-w1" class="wagba-card bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 transition-all">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">WAGBA 1</span>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Amalan Sebelum Tidur</h2>
-            <p class="text-xs sm:text-sm text-slate-500 italic">Practices Before Sleeping</p>
-          </div>
-          <span class="text-3xl">🌙</span>
+      <!-- WAGBA 2: Doa dan Zikir Berkaitan Tidur -->
+      <div id="note-2" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-purple-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-purple-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 2: Doa dan Zikir Berkaitan Tidur</span>
+          <span class="text-xs text-slate-400 italic">Du'a and Dhikr Related to Sleeping</span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100">
-            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-emerald-600 text-white font-bold text-sm shrink-0">1</span>
-            <div>
-              <h3 class="font-semibold text-slate-900">Tidur Awal</h3>
-              <p class="text-xs text-slate-500 italic mb-1">Sleeping early</p>
-              <p class="text-sm text-slate-600">Mendapat rehat yang mencukupi dan memudahkan bangun untuk solat Subuh.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100">
-            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-emerald-600 text-white font-bold text-sm shrink-0">2</span>
-            <div>
-              <h3 class="font-semibold text-slate-900">Berwuduk</h3>
-              <p class="text-xs text-slate-500 italic mb-1">Performing ablution</p>
-              <p class="text-sm text-slate-600">Berada dalam keadaan suci dan dilindungi malaikat sepanjang malam.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100">
-            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-emerald-600 text-white font-bold text-sm shrink-0">3</span>
-            <div>
-              <h3 class="font-semibold text-slate-900">Mengibas Tempat Tidur</h3>
-              <p class="text-xs text-slate-500 italic mb-1">Dusting off the bed</p>
-              <p class="text-sm text-slate-600">Membersihkan tempat perbaringan daripada sebarang habuk atau serangga berbahaya.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100">
-            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-emerald-600 text-white font-bold text-sm shrink-0">4</span>
-            <div>
-              <h3 class="font-semibold text-slate-900">Membaca Basmalah</h3>
-              <p class="text-xs text-slate-500 italic mb-1">Reciting basmalah</p>
-              <p class="text-sm text-slate-600">Memulakan setiap perbuatan dengan nama Allah SWT.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 md:col-span-2">
-            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-emerald-600 text-white font-bold text-sm shrink-0">5</span>
-            <div>
-              <h3 class="font-semibold text-slate-900">Tidur Mengiring di Sebelah Kanan</h3>
-              <p class="text-xs text-slate-500 italic mb-1">Sleeping on the right side</p>
-              <p class="text-sm text-slate-600">Mengikut sunnah Rasulullah ﷺ dan memberi faedah kesihatan yang baik bagi pernafasan dan jantung.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
-          <span class="text-xl">⚠️</span>
-          <div>
-            <h4 class="font-bold text-amber-900 text-xs sm:text-sm uppercase tracking-wide">Info Tambahan Sunnah:</h4>
-            <p class="text-sm text-amber-800 mt-0.5">
-              Nabi Muhammad ﷺ tidak suka kepada orang yang tidur tanpa menunaikan solat Isyak terlebih dahulu.
-              <span class="block text-xs italic text-amber-700 mt-0.5">The Prophet ﷺ disliked sleeping before offering the Isha prayer.</span>
-            </p>
-          </div>
-        </div>
-
-        <!-- Butang Navigasi Kad -->
-        <div class="no-print mt-8 pt-4 border-t border-slate-100 flex justify-between items-center">
-          <button disabled class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-400 cursor-not-allowed">⬅ Kembali</button>
-          <button onclick="showWagba(2)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">Seterusnya ➔</button>
-        </div>
-      </article>
-
-      <!-- KAD WAGBA 2 -->
-      <article id="card-w2" class="wagba-card bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 transition-all hidden">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">WAGBA 2</span>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Doa dan Zikir Berkaitan Tidur</h2>
-            <p class="text-xs sm:text-sm text-slate-500 italic">Du'a and Dhikr Related to Sleeping</p>
-          </div>
-          <span class="text-3xl">🤲</span>
-        </div>
-
-        <div class="space-y-6">
+        <div class="space-y-4">
           <!-- Doa Sebelum Tidur -->
-          <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-100">
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-white px-2.5 py-1 rounded-md border border-emerald-200">1. Doa Sebelum Tidur</span>
-            <div class="my-4 text-center">
-              <p class="font-arabic text-3xl sm:text-4xl text-emerald-950 font-bold leading-relaxed" dir="rtl">
+          <div class="p-5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-3">
+            <span class="px-2.5 py-0.5 bg-purple-700 text-white rounded-lg text-[11px] font-extrabold uppercase">1. Doa Sebelum Tidur</span>
+            <div class="text-center py-2">
+              <p class="arabic-font text-3xl md:text-4xl leading-relaxed text-purple-950 font-bold" dir="rtl">
                 بِاسْمِكَ اللَّهُمَّ أَحْيَا وَأَمُوتُ
               </p>
             </div>
-            <div class="bg-white p-3.5 rounded-xl border border-emerald-100 space-y-1">
-              <p class="text-sm font-semibold text-slate-800"><span class="text-emerald-700 font-medium">Maksud:</span> "Dengan nama-Mu ya Allah, aku hidup dan aku mati."</p>
-              <p class="text-xs text-slate-500 italic"><span class="font-medium text-slate-600">Meaning:</span> "In Your Name, O Allah, I live and I die."</p>
+            <div class="p-3 bg-white rounded-xl border border-purple-100 text-xs space-y-1">
+              <div class="font-bold text-slate-900"><span class="text-purple-700">Maksud:</span> "Dengan nama-Mu ya Allah, aku hidup dan aku mati."</div>
+              <div class="text-slate-500 italic text-[11px]"><span class="font-semibold text-slate-600">Meaning:</span> "In Your Name, O Allah, I live and I die."</div>
             </div>
           </div>
 
           <!-- Doa Bangun Tidur -->
-          <div class="p-5 rounded-2xl bg-teal-50/60 border border-teal-100">
-            <span class="text-xs font-bold uppercase tracking-wider text-teal-700 bg-white px-2.5 py-1 rounded-md border border-teal-200">2. Doa Bangun Tidur</span>
-            <div class="my-4 text-center">
-              <p class="font-arabic text-3xl sm:text-4xl text-teal-950 font-bold leading-relaxed" dir="rtl">
+          <div class="p-5 bg-indigo-50/60 rounded-2xl border border-indigo-200 space-y-3">
+            <span class="px-2.5 py-0.5 bg-indigo-700 text-white rounded-lg text-[11px] font-extrabold uppercase">2. Doa Bangun Tidur</span>
+            <div class="text-center py-2">
+              <p class="arabic-font text-2xl md:text-4xl leading-relaxed text-indigo-950 font-bold" dir="rtl">
                 اَلْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ
               </p>
             </div>
-            <div class="bg-white p-3.5 rounded-xl border border-teal-100 space-y-1">
-              <p class="text-sm font-semibold text-slate-800"><span class="text-teal-700 font-medium">Maksud:</span> "Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami dan kepada-Nya kami dibangkitkan."</p>
-              <p class="text-xs text-slate-500 italic"><span class="font-medium text-slate-600">Meaning:</span> "All praise belongs to Allah who gave us life after having caused us to die, and unto Him is the resurrection."</p>
+            <div class="p-3 bg-white rounded-xl border border-indigo-100 text-xs space-y-1">
+              <div class="font-bold text-slate-900"><span class="text-indigo-700">Maksud:</span> "Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami dan kepada-Nya kami dibangkitkan."</div>
+              <div class="text-slate-500 italic text-[11px]"><span class="font-semibold text-slate-600">Meaning:</span> "All praise is due to Allah who gave us life after causing us to die, and unto Him is the resurrection."</div>
             </div>
           </div>
         </div>
 
-        <div class="no-print mt-8 pt-4 border-t border-slate-100 flex justify-between items-center">
-          <button onclick="showWagba(1)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">⬅ Kembali</button>
-          <button onclick="showWagba(3)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">Seterusnya ➔</button>
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(1)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(3)" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 3 (Bangun Tidur)</span><span>➔</span>
+          </button>
         </div>
-      </article>
+      </div>
 
-      <!-- KAD WAGBA 3 -->
-      <article id="card-w3" class="wagba-card bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 transition-all hidden">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">WAGBA 3</span>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Amalan Selepas Bangun Tidur</h2>
-            <p class="text-xs sm:text-sm text-slate-500 italic">Practices After Waking Up</p>
-          </div>
-          <span class="text-3xl">🌅</span>
+      <!-- WAGBA 3: Amalan Selepas Bangun Tidur -->
+      <div id="note-3" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-purple-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-purple-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 3: Amalan Selepas Bangun Tidur</span>
+          <span class="text-xs text-slate-400 italic">Practices After Waking Up</span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+        <div class="space-y-2.5 text-xs">
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
             <div>
-              <span class="w-6 h-6 inline-flex items-center justify-center rounded-md bg-emerald-600 text-white font-bold text-xs mb-2">1</span>
-              <h3 class="font-semibold text-slate-900 text-sm">Membaca Doa Bangun Tidur</h3>
-              <p class="text-xs text-slate-500 italic mb-2">Reciting waking up prayer</p>
-              <p class="text-xs text-slate-600">Memanjatkan rasa syukur kepada Allah SWT kerana dihidupkan semula.</p>
+              <div class="font-bold text-slate-900 text-sm">Membaca doa bangun tidur</div>
+              <div class="text-slate-600 mt-0.5">Memuji dan bersyukur ke hadrat Allah SWT kerana diberikan peluang bernafas kembali.</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">Reciting the prayer upon waking up.</div>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
             <div>
-              <span class="w-6 h-6 inline-flex items-center justify-center rounded-md bg-emerald-600 text-white font-bold text-xs mb-2">2</span>
-              <h3 class="font-semibold text-slate-900 text-sm">Mengemas Tempat Tidur</h3>
-              <p class="text-xs text-slate-500 italic mb-2">Tidying the bed</p>
-              <p class="text-xs text-slate-600">Menzahirkan disiplin, ketertiban, dan kebersihan diri serta bilik tidur.</p>
+              <div class="font-bold text-slate-900 text-sm">Mengemas tempat tidur</div>
+              <div class="text-slate-600 mt-0.5">Menzahirkan disiplin, ketertiban, dan kebersihan diri serta bilik tidur.</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">Tidying the bed.</div>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">3</span>
             <div>
-              <span class="w-6 h-6 inline-flex items-center justify-center rounded-md bg-emerald-600 text-white font-bold text-xs mb-2">3</span>
-              <h3 class="font-semibold text-slate-900 text-sm">Membasuh Tangan</h3>
-              <p class="text-xs text-slate-500 italic mb-2">Washing both hands</p>
-              <p class="text-xs text-slate-600">Mencuci tangan sebelum memegang sesuatu atau memulakan urusan.</p>
+              <div class="font-bold text-slate-900 text-sm">Membasuh tangan</div>
+              <div class="text-slate-600 mt-0.5">Mencuci kedua-dua belah tangan sebelum memegang makanan atau perkakas lain.</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">Washing both hands.</div>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between sm:col-span-2 md:col-span-2">
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">4</span>
             <div>
-              <span class="w-6 h-6 inline-flex items-center justify-center rounded-md bg-emerald-600 text-white font-bold text-xs mb-2">4</span>
-              <h3 class="font-semibold text-slate-900 text-sm">Membasuh Muka & Membersihkan Hidung</h3>
-              <p class="text-xs text-slate-500 italic mb-2">Washing face & cleansing nose</p>
-              <p class="text-xs text-slate-600">Memasukkan air ke dalam hidung dan menghembuskannya keluar (istinsyaq & istintsar) untuk kesegaran dan kebersihan rongga pernafasan.</p>
+              <div class="font-bold text-slate-900 text-sm">Membasuh muka dan mencuci hidung</div>
+              <div class="text-slate-600 mt-0.5">Memasukkan air dan menghembuskannya keluar (istinsyaq & istintsar) untuk menyegarkan wajah dan membersihkan rongga pernafasan.</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">Washing the face and cleansing the nose by sniffing water in and blowing it out.</div>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+          <div class="p-3.5 bg-purple-50/50 rounded-2xl border border-purple-200 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-lg bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">5</span>
             <div>
-              <span class="w-6 h-6 inline-flex items-center justify-center rounded-md bg-emerald-600 text-white font-bold text-xs mb-2">5</span>
-              <h3 class="font-semibold text-slate-900 text-sm">Bersiwak / Memberus Gigi</h3>
-              <p class="text-xs text-slate-500 italic mb-2">Using miswak or brushing teeth</p>
-              <p class="text-xs text-slate-600">Menghilangkan bau mulut dan membersihkan sisa kotoran pada gigi.</p>
+              <div class="font-bold text-slate-900 text-sm">Bersugi (bersiwak) atau memberus gigi</div>
+              <div class="text-slate-600 mt-0.5">Menghilangkan bau mulut dan menjaga kesihatan gusi serta kebersihan gigi.</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">Using a miswak or brushing teeth.</div>
             </div>
           </div>
         </div>
 
-        <div class="no-print mt-8 pt-4 border-t border-slate-100 flex justify-between items-center">
-          <button onclick="showWagba(2)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">⬅ Kembali</button>
-          <button onclick="showWagba(4)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">Seterusnya ➔</button>
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(2)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(4)" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 4 (Dalil Hadis)</span><span>➔</span>
+          </button>
         </div>
-      </article>
+      </div>
 
-      <!-- KAD WAGBA 4 -->
-      <article id="card-w4" class="wagba-card bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 transition-all hidden">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">WAGBA 4</span>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Kefahaman Dalil Naqli Sunnah Tidur</h2>
-            <p class="text-xs sm:text-sm text-slate-500 italic">Understanding the Naqli Evidence of Sleeping Sunnah</p>
-          </div>
-          <span class="text-3xl">📜</span>
+      <!-- WAGBA 4: Kefahaman Dalil Naqli Sunnah Tidur -->
+      <div id="note-4" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-purple-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-purple-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 4: Kefahaman Dalil Naqli Sunnah Tidur</span>
+          <span class="text-xs text-slate-400 italic">Naqli Evidence of Sleeping Sunnah</span>
         </div>
 
-        <div class="p-6 rounded-2xl bg-amber-50/40 border border-amber-200/80">
-          <p class="text-xs font-bold uppercase tracking-wider text-amber-800">Hadis Sahih (Riwayat al-Bukhari & Muslim):</p>
-          <div class="my-4 text-center sm:text-right">
-            <p class="font-arabic text-2xl sm:text-3xl text-amber-950 font-bold leading-relaxed" dir="rtl">
-              قَالَ رَسُولُ اللَّهِ ﷺ: «إِذَا أَتَيْتَ مَضْجَعَكَ فَتَوَضَّأْ وُضُوءَكَ لِلصَّلَاةِ ثُمَّ اضْطَجِعْ عَلَى شِقِّكَ الْأَيْمَنِ»
-            </p>
-          </div>
-
-          <div class="space-y-2 mt-4 pt-4 border-t border-amber-200">
-            <p class="text-sm font-semibold text-slate-900">
-              <span class="text-amber-800 font-bold">Maksudnya:</span> "Apabila engkau hendak tidur, maka hendaklah berwuduk terlebih dahulu sebagaimana wuduk untuk solat dan kemudian berbaringlah mengiring di sebelah kananmu."
-            </p>
-            <p class="text-xs text-slate-600 italic">
-              <span class="font-bold text-slate-700">English translation:</span> "When you go to bed, perform ablution as you would for prayer, then lie down on your right side."
-            </p>
-          </div>
+        <div class="p-6 bg-purple-50/60 rounded-2xl border border-purple-200 text-center space-y-3">
+          <p class="arabic-font text-2xl md:text-3xl leading-relaxed text-purple-950 font-bold" dir="rtl">
+            قَالَ رَسُولُ اللَّهِ ﷺ: «إِذَا أَتَيْتَ مَضْجَعَكَ فَتَوَضَّأْ وُضُوءَكَ لِلصَّلَاةِ ثُمَّ اضْطَجِعْ عَلَى شِقِّكَ الْأَيْمَنِ»
+          </p>
+          <p class="text-xs text-slate-500 font-semibold">(Riwayat al-Bukhari & Muslim / Narrated by al-Bukhari and Muslim)</p>
         </div>
 
-        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <h3 class="font-semibold text-slate-800 text-sm">💡 Inti Pati 1: Tuntutan Berwuduk</h3>
-            <p class="text-xs text-slate-600 mt-1">Disunatkan berwuduk sempurna seperti hendak menunaikan solat agar kita sentiasa suci sepanjang tidur.</p>
+        <div class="p-4 bg-white rounded-2xl border border-slate-200 space-y-2 text-xs">
+          <div class="font-bold text-slate-900 text-sm">
+            <span class="text-purple-700">Maksudnya:</span> "Apabila engkau hendak tidur, maka hendaklah berwuduk terlebih dahulu sebagaimana wuduk untuk solat dan kemudian berbaringlah mengiring di sebelah kananmu."
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <h3 class="font-semibold text-slate-800 text-sm">💡 Inti Pati 2: Posisi Rusuk Kanan</h3>
-            <p class="text-xs text-slate-600 mt-1">Memulakan tidur dengan mengiring ke rusuk kanan merupakan sunnah mulia Rasulullah ﷺ.</p>
-          </div>
-        </div>
-
-        <div class="no-print mt-8 pt-4 border-t border-slate-100 flex justify-between items-center">
-          <button onclick="showWagba(3)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">⬅ Kembali</button>
-          <button onclick="showWagba(5)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">Seterusnya ➔</button>
-        </div>
-      </article>
-
-      <!-- KAD WAGBA 5 -->
-      <article id="card-w5" class="wagba-card bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 transition-all hidden">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">WAGBA 5</span>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Kepentingan Mengamalkan Adab Tidur Mengikut Sunnah</h2>
-            <p class="text-xs sm:text-sm text-slate-500 italic">Importance of Practicing Sleeping Etiquette According to Sunnah</p>
-          </div>
-          <span class="text-3xl">✨</span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 mb-6">
-          <div class="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-100">
-            <span class="text-emerald-600 text-base">🟢</span>
-            <div>
-              <h3 class="font-semibold text-slate-900 text-sm">Menjadi Satu Ibadah dalam Kehidupan</h3>
-              <p class="text-xs text-slate-500 italic">Turns sleep into an act of worship</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-100">
-            <span class="text-emerald-600 text-base">🟢</span>
-            <div>
-              <h3 class="font-semibold text-slate-900 text-sm">Menjaga Kesihatan Fizikal dan Mental</h3>
-              <p class="text-xs text-slate-500 italic">Safeguards physical and mental health</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-100">
-            <span class="text-emerald-600 text-base">🟢</span>
-            <div>
-              <h3 class="font-semibold text-slate-900 text-sm">Melaksanakan Sunnah Nabi Muhammad ﷺ</h3>
-              <p class="text-xs text-slate-500 italic">Fulfills the Sunnah of Prophet Muhammad ﷺ</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-100">
-            <span class="text-emerald-600 text-base">🟢</span>
-            <div>
-              <h3 class="font-semibold text-slate-900 text-sm">Mendapat Pahala daripada Allah SWT</h3>
-              <p class="text-xs text-slate-500 italic">Earns rewards from Allah SWT</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-100 md:col-span-2">
-            <span class="text-emerald-600 text-base">🟢</span>
-            <div>
-              <h3 class="font-semibold text-slate-900 text-sm">Menghindari Diri daripada Gangguan Syaitan</h3>
-              <p class="text-xs text-slate-500 italic">Protects oneself from the disturbance of Satan</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dialog Nasihat / Larangan -->
-        <div class="p-5 rounded-2xl bg-rose-50 border border-rose-200">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-rose-600 text-lg">🛑</span>
-            <h4 class="font-bold text-rose-900 text-sm uppercase tracking-wide">Nasihat Tok & Larangan Berkaitan Tidur:</h4>
-          </div>
-          <blockquote class="text-sm font-semibold text-rose-900 bg-white p-3 rounded-xl border border-rose-100 mb-2">
-            "Elakkan tidur meniarap dan pakailah pakaian yang menutup aurat."
-          </blockquote>
-          <p class="text-xs text-rose-700 italic">
-            Avoid sleeping on your stomach (prone position) and always wear clothing that properly covers your aurah.
+          <p class="text-slate-500 italic text-[11px]">
+            "When you go to bed, perform ablution as you would for prayer, then lie down on your right side."
           </p>
         </div>
 
-        <div class="no-print mt-8 pt-4 border-t border-slate-100 flex justify-between items-center">
-          <button onclick="showWagba(4)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">⬅ Kembali</button>
-          <button onclick="showWagba(6)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">Seterusnya ➔</button>
-        </div>
-      </article>
-
-      <!-- KAD WAGBA 6 -->
-      <article id="card-w6" class="wagba-card bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 transition-all hidden">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">WAGBA 6</span>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Pengertian dan Tempoh Waktu Qailulah</h2>
-            <p class="text-xs sm:text-sm text-slate-500 italic">Definition and Duration of Qailulah</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-1">
+            <div class="font-bold text-slate-900">📌 Tuntutan Berwuduk</div>
+            <div class="text-slate-600">Disunatkan berwuduk sempurna seperti hendak menunaikan solat agar sentiasa dalam keadaan suci.</div>
           </div>
-          <span class="text-3xl">☀️</span>
-        </div>
-
-        <div class="space-y-5">
-          <!-- Definisi -->
-          <div class="p-6 rounded-2xl bg-sky-50 border border-sky-100">
-            <span class="text-xs font-bold uppercase tracking-wider text-sky-700 bg-white px-3 py-1 rounded-full border border-sky-200">Definisi Qailulah (قَيْلُولَة)</span>
-            <h3 class="text-lg font-bold text-sky-950 mt-3">
-              Tidur sekejap sebelum masuk waktu zohor
-            </h3>
-            <p class="text-xs sm:text-sm text-sky-800 italic mt-1">
-              A short nap taken before the arrival of the Zohr prayer time.
-            </p>
-          </div>
-
-          <!-- Tempoh Masa -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-              <span class="text-xs font-bold uppercase tracking-wide text-slate-500">Waktu Pelaksanaan</span>
-              <p class="font-bold text-slate-900 text-base mt-1">Sebelum Azan / Waktu Zohor</p>
-              <p class="text-xs text-slate-500 italic">A few minutes before Zohr time</p>
-            </div>
-
-            <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-              <span class="text-xs font-bold uppercase tracking-wide text-slate-500">Tempoh Masa yang Sesuai</span>
-              <p class="font-bold text-emerald-700 text-lg mt-1">Antara 10 hingga 30 minit</p>
-              <p class="text-xs text-slate-500 italic">Between 10 to 30 minutes</p>
-            </div>
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-1">
+            <div class="font-bold text-slate-900">📌 Berbaring Mengiring ke Kanan</div>
+            <div class="text-slate-600">Mengikut susunan tatacara tidur baginda Rasulullah ﷺ bagi kestabilan kesihatan tubuh badan.</div>
           </div>
         </div>
 
-        <div class="no-print mt-8 pt-4 border-t border-slate-100 flex justify-between items-center">
-          <button onclick="showWagba(5)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">⬅ Kembali</button>
-          <button onclick="showWagba(7)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">Seterusnya ➔</button>
-        </div>
-      </article>
-
-      <!-- KAD WAGBA 7 -->
-      <article id="card-w7" class="wagba-card bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 transition-all hidden">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">WAGBA 7</span>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Kepentingan Qailulah dari Aspek Mental</h2>
-            <p class="text-xs sm:text-sm text-slate-500 italic">Mental Benefits of Qailulah</p>
-          </div>
-          <span class="text-3xl">🧠</span>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="p-4 rounded-xl bg-indigo-50/50 border border-indigo-100">
-            <span class="text-2xl">⚡</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Meningkatkan Fungsi Otak</h3>
-            <p class="text-xs text-slate-500 italic">Enhances brain function</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-indigo-50/50 border border-indigo-100">
-            <span class="text-2xl">🧠</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Mengukuhkan Ingatan</h3>
-            <p class="text-xs text-slate-500 italic">Strengthens memory</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-indigo-50/50 border border-indigo-100">
-            <span class="text-2xl">😌</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Menstabilkan Emosi</h3>
-            <p class="text-xs text-slate-500 italic">Stabilizes emotions</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-indigo-50/50 border border-indigo-100 sm:col-span-2 md:col-span-1">
-            <span class="text-2xl">🌿</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Menghilangkan Tekanan</h3>
-            <p class="text-xs text-slate-500 italic">Relieves stress</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-indigo-50/50 border border-indigo-100 sm:col-span-2 md:col-span-2">
-            <span class="text-2xl">💡</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Meningkatkan Kefahaman</h3>
-            <p class="text-xs text-slate-500 italic">Improves comprehension and focus</p>
-          </div>
-        </div>
-
-        <div class="no-print mt-8 pt-4 border-t border-slate-100 flex justify-between items-center">
-          <button onclick="showWagba(6)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">⬅ Kembali</button>
-          <button onclick="showWagba(8)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">Seterusnya ➔</button>
-        </div>
-      </article>
-
-      <!-- KAD WAGBA 8 -->
-      <article id="card-w8" class="wagba-card bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 transition-all hidden">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">WAGBA 8</span>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Kepentingan Qailulah dari Aspek Fizikal</h2>
-            <p class="text-xs sm:text-sm text-slate-500 italic">Physical Benefits of Qailulah</p>
-          </div>
-          <span class="text-3xl">💪</span>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="p-4 rounded-xl bg-emerald-50/50 border border-emerald-100">
-            <span class="text-2xl">🔋</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Mengumpul Tenaga Harian</h3>
-            <p class="text-xs text-slate-500 italic">Gathers energy for daily tasks</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-emerald-50/50 border border-emerald-100">
-            <span class="text-2xl">🏋️</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Pertumbuhan Otot yang Kuat</h3>
-            <p class="text-xs text-slate-500 italic">Supports strong muscle growth</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-emerald-50/50 border border-emerald-100">
-            <span class="text-2xl">📈</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Meningkatkan Produktiviti</h3>
-            <p class="text-xs text-slate-500 italic">Helps boost daily productivity</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-emerald-50/50 border border-emerald-100 sm:col-span-2 md:col-span-1">
-            <span class="text-2xl">🛡️</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Sistem Pertahanan Badan</h3>
-            <p class="text-xs text-slate-500 italic">Strengthens body's immune system</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-emerald-50/50 border border-emerald-100 sm:col-span-2 md:col-span-2">
-            <span class="text-2xl">🌌</span>
-            <h3 class="font-bold text-slate-900 text-sm mt-2">Memberikan Tenaga untuk Qiamullail</h3>
-            <p class="text-xs text-slate-500 italic">Provides stamina for late-night prayers</p>
-          </div>
-        </div>
-
-        <div class="no-print mt-8 pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-3 justify-between items-center">
-          <button onclick="showWagba(7)" class="w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">⬅ Kembali</button>
-          <button onclick="switchMainTab('quiz')" class="w-full sm:w-auto px-6 py-2.5 rounded-xl text-sm font-bold bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-md transition flex items-center justify-center gap-2">
-            Selesai Semua Nota! Jawab Kuiz Sekarang 🎯
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(3)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(5)" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 5 (Kepentingan & Larangan)</span><span>➔</span>
           </button>
         </div>
-      </article>
-
-    </section>
-
-
-    <!-- ==================== SEKSYEN 2: KUIZ INTERAKTIF ==================== -->
-    <section id="section-quiz" class="hidden">
-      
-      <!-- Bar Navigasi Soalan (Q1 - Q8) -->
-      <div class="no-print bg-white p-2.5 rounded-2xl shadow-sm border border-slate-200/80 mb-6 flex flex-wrap items-center justify-center gap-2">
-        <span class="text-xs font-bold text-slate-500 uppercase tracking-wide mr-2 hidden md:inline">Pilih Soalan:</span>
-        <button onclick="showQuiz(1)" id="pill-q1" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-emerald-600 text-white shadow-md ring-2 ring-emerald-500 ring-offset-1">Q1</button>
-        <button onclick="showQuiz(2)" id="pill-q2" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">Q2</button>
-        <button onclick="showQuiz(3)" id="pill-q3" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">Q3</button>
-        <button onclick="showQuiz(4)" id="pill-q4" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">Q4</button>
-        <button onclick="showQuiz(5)" id="pill-q5" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">Q5</button>
-        <button onclick="showQuiz(6)" id="pill-q6" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">Q6</button>
-        <button onclick="showQuiz(7)" id="pill-q7" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">Q7</button>
-        <button onclick="showQuiz(8)" id="pill-q8" class="w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700">Q8</button>
       </div>
 
-      <!-- Kad Soalan Q1 -->
-      <div id="quiz-card-1" class="quiz-item bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Soalan 1 / 8 (WAGBA 1)</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-3">Apakah amalan sunnah sebelum tidur yang dianjurkan untuk membersihkan tempat perbaringan?</h3>
-        <p class="text-xs text-slate-500 italic mb-5">Which sunnah practice before sleeping involves cleaning the bed?</p>
-
-        <div class="space-y-3" id="options-q1">
-          <button onclick="checkAnswer(1, 0)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">A. Membasuh tilam dengan air</button>
-          <button onclick="checkAnswer(1, 1)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">B. Mengibas tempat tidur</button>
-          <button onclick="checkAnswer(1, 2)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">C. Membakar wangian di bilik</button>
+      <!-- WAGBA 5: Kepentingan Mengamalkan Adab Tidur Mengikut Sunnah -->
+      <div id="note-5" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-purple-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-purple-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 5: Kepentingan Adab Tidur Sunnah</span>
+          <span class="text-xs text-slate-400 italic">Importance of Sleeping Sunnah</span>
         </div>
-        <div id="feedback-q1" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
 
-        <div class="no-print mt-6 pt-4 border-t border-slate-100 flex justify-between">
-          <button disabled class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-400">⬅ Sebelum</button>
-          <button onclick="showQuiz(2)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white">Seterusnya ➔</button>
+        <div class="space-y-2.5 text-xs">
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">1. Menjadi satu ibadah dalam kehidupan</div>
+            <div class="text-slate-500 italic text-[11px]">Turns sleep into an act of worship in daily life.</div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">2. Menjaga kesihatan fizikal dan mental</div>
+            <div class="text-slate-500 italic text-[11px]">Safeguards physical and mental health.</div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">3. Melaksanakan sunnah Nabi Muhammad ﷺ</div>
+            <div class="text-slate-500 italic text-[11px]">Fulfills the Sunnah of Prophet Muhammad ﷺ.</div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">4. Mendapat pahala daripada Allah Subhanahu wa Ta'ala</div>
+            <div class="text-slate-500 italic text-[11px]">Earns rewards from Allah Subhanahu wa Ta'ala.</div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">5. Menghindari diri daripada gangguan syaitan</div>
+            <div class="text-slate-500 italic text-[11px]">Protects oneself from the disturbance of Satan.</div>
+          </div>
         </div>
-      </div>
 
-      <!-- Kad Soalan Q2 -->
-      <div id="quiz-card-2" class="quiz-item bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 hidden">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Soalan 2 / 8 (WAGBA 2)</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-3">Apakah maksud bagi lafaz doa: <span class="font-arabic text-xl font-bold text-emerald-800" dir="rtl">بِاسْمِكَ اللَّهُمَّ أَحْيَا وَأَمُوتُ</span>?</h3>
-        <p class="text-xs text-slate-500 italic mb-5">What is the meaning of the recitation above?</p>
-
-        <div class="space-y-3" id="options-q2">
-          <button onclick="checkAnswer(2, 0)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">A. Dengan nama-Mu ya Allah, aku hidup dan aku mati</button>
-          <button onclick="checkAnswer(2, 1)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">B. Segala puji bagi Allah yang memberi kami rezeki</button>
-          <button onclick="checkAnswer(2, 2)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">C. Ya Allah, ampunkanlah segala dosa kami</button>
+        <!-- Larangan / Nasihat Tok -->
+        <div class="p-4 bg-rose-50/70 rounded-2xl border border-rose-200 space-y-1 text-xs">
+          <div class="font-bold text-rose-900 flex items-center gap-1.5">
+            <span>🛑</span>
+            <span>Dialog Nasihat Tok (Larangan):</span>
+          </div>
+          <div class="text-slate-800 font-semibold">• "Elakkan tidur meniarap dan pakailah pakaian yang menutup aurat."</div>
+          <p class="text-[11px] text-slate-500 italic">• Avoid sleeping on your stomach (prone position) and wear clothes that cover your aurah.</p>
         </div>
-        <div id="feedback-q2" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
 
-        <div class="no-print mt-6 pt-4 border-t border-slate-100 flex justify-between">
-          <button onclick="showQuiz(1)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⬅ Sebelum</button>
-          <button onclick="showQuiz(3)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white">Seterusnya ➔</button>
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(4)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(6)" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 6 (Pengertian Qailulah)</span><span>➔</span>
+          </button>
         </div>
       </div>
 
-      <!-- Kad Soalan Q3 -->
-      <div id="quiz-card-3" class="quiz-item bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 hidden">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Soalan 3 / 8 (WAGBA 3)</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-3">Apakah amalan kebersihan diri yang disunatkan sejurus bangun tidur untuk membersihkan rongga hidung?</h3>
-        <p class="text-xs text-slate-500 italic mb-5">Which sunnah hygiene practice cleanses the nasal passages upon waking?</p>
-
-        <div class="space-y-3" id="options-q3">
-          <button onclick="checkAnswer(3, 0)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">A. Membasuh telinga tiga kali</button>
-          <button onclick="checkAnswer(3, 1)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">B. Memasukkan air ke dalam hidung dan menghembuskannya keluar</button>
-          <button onclick="checkAnswer(3, 2)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">C. Mengelap hidung dengan kain kering</button>
+      <!-- WAGBA 6: Pengertian dan Tempoh Waktu Qailulah -->
+      <div id="note-6" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-purple-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-purple-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 6: Pengertian dan Tempoh Waktu Qailulah</span>
+          <span class="text-xs text-slate-400 italic">Definition & Duration of Qailulah</span>
         </div>
-        <div id="feedback-q3" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
 
-        <div class="no-print mt-6 pt-4 border-t border-slate-100 flex justify-between">
-          <button onclick="showQuiz(2)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⬅ Sebelum</button>
-          <button onclick="showQuiz(4)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white">Seterusnya ➔</button>
+        <div class="p-5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-2">
+          <div class="text-xs font-bold text-purple-800 uppercase tracking-wider">1. Pengertian Qailulah (قَيْلُولَة):</div>
+          <h3 class="text-base md:text-lg font-bold text-slate-900 leading-relaxed">
+            "Tidur sekejap sebelum masuk waktu zohor."
+          </h3>
+          <p class="text-xs md:text-sm text-slate-600 italic">
+            "A short sleep/nap taken before the arrival of the Zohr prayer time."
+          </p>
         </div>
-      </div>
 
-      <!-- Kad Soalan Q4 -->
-      <div id="quiz-card-4" class="quiz-item bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 hidden">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Soalan 4 / 8 (WAGBA 4)</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-3">Berdasarkan hadis Rasulullah ﷺ, apakah posisi berbaring yang disunatkan sebelum tidur?</h3>
-        <p class="text-xs text-slate-500 italic mb-5">According to the hadith, which lying position is recommended before sleep?</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-center">
+          <div class="p-4 bg-purple-50/60 rounded-2xl border border-purple-200">
+            <span class="text-2xl">⏳</span>
+            <div class="text-[11px] text-slate-500 uppercase mt-1">Tempoh Masa yang Disyorkan</div>
+            <div class="text-base font-extrabold text-slate-900">10 hingga 30 Minit</div>
+            <div class="text-[10px] text-slate-400 italic">Between 10 to 30 minutes</div>
+          </div>
 
-        <div class="space-y-3" id="options-q4">
-          <button onclick="checkAnswer(4, 0)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">A. Berbaring secara meniarap</button>
-          <button onclick="checkAnswer(4, 1)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">B. Mengiring di sebelah kanan</button>
-          <button onclick="checkAnswer(4, 2)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">C. Mengiring di sebelah kiri</button>
+          <div class="p-4 bg-purple-50/60 rounded-2xl border border-purple-200">
+            <span class="text-2xl">☀️️</span>
+            <div class="text-[11px] text-slate-500 uppercase mt-1">Waktu Pelaksanaan</div>
+            <div class="text-base font-extrabold text-slate-900">Sebelum Masuk Waktu Zohor</div>
+            <div class="text-[10px] text-slate-400 italic">Before Zohr prayer time</div>
+          </div>
         </div>
-        <div id="feedback-q4" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
 
-        <div class="no-print mt-6 pt-4 border-t border-slate-100 flex justify-between">
-          <button onclick="showQuiz(3)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⬅ Sebelum</button>
-          <button onclick="showQuiz(5)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white">Seterusnya ➔</button>
-        </div>
-      </div>
-
-      <!-- Kad Soalan Q5 -->
-      <div id="quiz-card-5" class="quiz-item bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 hidden">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Soalan 5 / 8 (WAGBA 5)</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-3">Apakah larangan posisi tidur yang ditegaskan dalam nasihat orang tua/tok berdasarkan buku teks?</h3>
-        <p class="text-xs text-slate-500 italic mb-5">Which sleeping position is strictly advised to be avoided?</p>
-
-        <div class="space-y-3" id="options-q5">
-          <button onclick="checkAnswer(5, 0)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">A. Tidur mengiring ke kanan</button>
-          <button onclick="checkAnswer(5, 1)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">B. Tidur meniarap</button>
-          <button onclick="checkAnswer(5, 2)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">C. Tidur dengan bantal nipis</button>
-        </div>
-        <div id="feedback-q5" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
-
-        <div class="no-print mt-6 pt-4 border-t border-slate-100 flex justify-between">
-          <button onclick="showQuiz(4)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⬅ Sebelum</button>
-          <button onclick="showQuiz(6)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white">Seterusnya ➔</button>
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(5)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(7)" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 7 (Kepentingan Mental)</span><span>➔</span>
+          </button>
         </div>
       </div>
 
-      <!-- Kad Soalan Q6 -->
-      <div id="quiz-card-6" class="quiz-item bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 hidden">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Soalan 6 / 8 (WAGBA 6)</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-3">Apakah takrifan tidur Qailulah (قَيْلُولَة)?</h3>
-        <p class="text-xs text-slate-500 italic mb-5">What is the exact definition of Qailulah nap?</p>
-
-        <div class="space-y-3" id="options-q6">
-          <button onclick="checkAnswer(6, 0)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">A. Tidur lama selepas solat Asar</button>
-          <button onclick="checkAnswer(6, 1)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">B. Tidur sekejap sebelum masuk waktu zohor</button>
-          <button onclick="checkAnswer(6, 2)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">C. Tidur nyenyak selepas waktu Isyak</button>
+      <!-- WAGBA 7: Kepentingan Qailulah dari Aspek Mental -->
+      <div id="note-7" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-purple-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-purple-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 7: Kepentingan Qailulah dari Aspek Mental</span>
+          <span class="text-xs text-slate-400 italic">Mental Benefits of Qailulah</span>
         </div>
-        <div id="feedback-q6" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
 
-        <div class="no-print mt-6 pt-4 border-t border-slate-100 flex justify-between">
-          <button onclick="showQuiz(5)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⬅ Sebelum</button>
-          <button onclick="showQuiz(7)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white">Seterusnya ➔</button>
+        <div class="space-y-2.5 text-xs">
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">1. Meningkatkan fungsi otak</div>
+            <div class="text-slate-500 italic text-[11px]">Enhances brain function.</div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">2. Mengukuhkan ingatan</div>
+            <div class="text-slate-500 italic text-[11px]">Strengthens memory.</div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">3. Menstabilkan emosi</div>
+            <div class="text-slate-500 italic text-[11px]">Stabilizes emotions.</div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">4. Menghilangkan tekanan</div>
+            <div class="text-slate-500 italic text-[11px]">Relieves stress.</div>
+          </div>
+
+          <div class="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200 space-y-0.5">
+            <div class="font-bold text-slate-900">5. Meningkatkan kefahaman</div>
+            <div class="text-slate-500 italic text-[11px]">Improves comprehension.</div>
+          </div>
         </div>
-      </div>
 
-      <!-- Kad Soalan Q7 -->
-      <div id="quiz-card-7" class="quiz-item bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 hidden">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Soalan 7 / 8 (WAGBA 7)</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-3">Antara berikut, yang manakah kepentingan Qailulah dari aspek mental?</h3>
-        <p class="text-xs text-slate-500 italic mb-5">Which of the following is a mental benefit of Qailulah?</p>
-
-        <div class="space-y-3" id="options-q7">
-          <button onclick="checkAnswer(7, 0)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">A. Membantu pertumbuhan otot yang kuat</button>
-          <button onclick="checkAnswer(7, 1)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">B. Mengukuhkan ingatan dan menghilangkan tekanan</button>
-          <button onclick="checkAnswer(7, 2)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">C. Meningkatkan sistem pertahanan badan</button>
-        </div>
-        <div id="feedback-q7" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
-
-        <div class="no-print mt-6 pt-4 border-t border-slate-100 flex justify-between">
-          <button onclick="showQuiz(6)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⬅ Sebelum</button>
-          <button onclick="showQuiz(8)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white">Seterusnya ➔</button>
-        </div>
-      </div>
-
-      <!-- Kad Soalan Q8 -->
-      <div id="quiz-card-8" class="quiz-item bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 hidden">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Soalan 8 / 8 (WAGBA 8)</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-3">Apakah faedah fizikal Qailulah yang dapat membantu ibadah pada waktu malam?</h3>
-        <p class="text-xs text-slate-500 italic mb-5">What physical benefit of Qailulah aids worship at night?</p>
-
-        <div class="space-y-3" id="options-q8">
-          <button onclick="checkAnswer(8, 0)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">A. Memberikan tenaga untuk qiamullail</button>
-          <button onclick="checkAnswer(8, 1)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">B. Memudahkan tidur lena sepanjang malam tanpa terjaga</button>
-          <button onclick="checkAnswer(8, 2)" class="opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition text-sm font-medium">C. Mengelakkan rasa lapar ketika tidur</button>
-        </div>
-        <div id="feedback-q8" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
-
-        <div class="no-print mt-6 pt-4 border-t border-slate-100 flex justify-between items-center">
-          <button onclick="showQuiz(7)" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⬅ Sebelum</button>
-          <button onclick="switchMainTab('notes')" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-800 text-white hover:bg-slate-900">Ulang Uji Kaji Nota 📖</button>
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(6)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="activateNote(8)" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-2xl text-xs font-bold shadow-md transition flex items-center gap-1.5">
+            <span>Seterusnya: WAGBA 8 (Kepentingan Fizikal)</span><span>➔</span>
+          </button>
         </div>
       </div>
 
-    </section>
+      <!-- WAGBA 8: Kepentingan Qailulah dari Aspek Fizikal -->
+      <div id="note-8" class="note-item hidden bg-white rounded-3xl p-5 md:p-8 border border-purple-200 space-y-5 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="px-3 py-1 bg-purple-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 8: Kepentingan Qailulah dari Aspek Fizikal</span>
+          <span class="text-xs text-slate-400 italic">Physical Benefits of Qailulah</span>
+        </div>
 
-  </main>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-4 bg-purple-50/70 rounded-2xl border border-purple-200 space-y-1">
+            <div class="font-extrabold text-purple-900 text-sm">1. Mengumpul Tenaga Harian</div>
+            <div class="text-slate-700">Mengumpul tenaga untuk keperluan aktiviti harian agar kekal cergas.</div>
+            <div class="text-[10px] text-slate-400 italic">Gathers energy needed for daily activities.</div>
+          </div>
 
-  <!-- Footer Modul -->
-  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-auto">
-    <div class="max-w-5xl mx-auto px-4">
-      <p class="font-medium text-slate-700">Modul Interaktif KSSR Semakan — Pendidikan Islam Tahun 3</p>
-      <p class="mt-1">Piawaian Pembelajaran Berasaskan WAGBA (What Am I Getting Better At)</p>
+          <div class="p-4 bg-indigo-50/70 rounded-2xl border border-indigo-200 space-y-1">
+            <div class="font-extrabold text-indigo-900 text-sm">2. Pertumbuhan Otot yang Kuat</div>
+            <div class="text-slate-700">Membantu proses kerehatan dan pertumbuhan otot tubuh yang sihat.</div>
+            <div class="text-[10px] text-slate-400 italic">Supports strong muscle growth.</div>
+          </div>
+
+          <div class="p-4 bg-violet-50/70 rounded-2xl border border-violet-200 space-y-1">
+            <div class="font-extrabold text-violet-900 text-sm">3. Meningkatkan Produktiviti & Imun</div>
+            <div class="text-slate-700">Membantu meningkatkan produktiviti dan menguatkan sistem pertahanan badan.</div>
+            <div class="text-[10px] text-slate-400 italic">Boosts productivity and strengthens the immune system.</div>
+          </div>
+
+          <div class="p-4 bg-amber-50/70 rounded-2xl border border-amber-200 space-y-1">
+            <div class="font-extrabold text-amber-900 text-sm">4. Tenaga untuk Qiamullail</div>
+            <div class="text-slate-700">Memberikan stamina dan kekuatan untuk bangun beribadah serta menunaikan solat malam.</div>
+            <div class="text-[10px] text-slate-400 italic">Provides stamina to perform late-night prayers (Qiyamullail).</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t flex items-center justify-between">
+          <button onclick="activateNote(7)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">⬅ Kembali</button>
+          <button onclick="switchTab('kuiz')" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-2xl text-xs font-extrabold shadow-md transition flex items-center gap-1.5">
+            <span>Uji Kefahaman dalam Kuiz ⭐</span><span>➔</span>
+          </button>
+        </div>
+      </div>
     </div>
-  </footer>
 
-  <!-- Logik Interaktif JavaScript -->
+    <!-- ================= KUIZ INTERAKTIF ================= -->
+    <div id="section-kuiz" class="hidden space-y-5">
+      <div class="bg-white rounded-3xl p-4 md:p-5 shadow-sm border border-purple-100 space-y-3">
+        <div class="flex items-center justify-between border-b pb-2">
+          <span class="text-xs font-bold text-slate-800">Pilih Kuiz Adab:</span>
+          <span class="text-[10px] px-2 py-0.5 bg-purple-100 text-purple-800 rounded-full font-bold">Kuiz 1 hingga 8</span>
+        </div>
+
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
+          <button onclick="loadQuiz(1)" id="btn-q-1" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-purple-500 bg-purple-50 text-purple-900 ring-2 ring-purple-400/20">Q1</button>
+          <button onclick="loadQuiz(2)" id="btn-q-2" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-purple-300">Q2</button>
+          <button onclick="loadQuiz(3)" id="btn-q-3" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-purple-300">Q3</button>
+          <button onclick="loadQuiz(4)" id="btn-q-4" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-purple-300">Q4</button>
+          <button onclick="loadQuiz(5)" id="btn-q-5" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-purple-300">Q5</button>
+          <button onclick="loadQuiz(6)" id="btn-q-6" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-purple-300">Q6</button>
+          <button onclick="loadQuiz(7)" id="btn-q-7" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-purple-300">Q7</button>
+          <button onclick="loadQuiz(8)" id="btn-q-8" class="q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-purple-300">Q8</button>
+        </div>
+      </div>
+
+      <div id="quiz-card" class="p-5 md:p-8 bg-white rounded-3xl border border-purple-200 shadow-sm space-y-5"></div>
+    </div>
+  </div>
+
+  <!-- Cetakan A4 KSSR -->
+  <div class="print-only max-w-[210mm] mx-auto p-4 bg-white text-black text-xs">
+    <div class="text-center border-b-2 border-black pb-2 mb-3">
+      <div class="font-extrabold text-[11px] uppercase">PENTAKSIRAN BILIK DARJAH (PBD) • BIDANG ADAB TAHUN 3</div>
+      <h1 class="text-sm font-black uppercase">Jagai Adab Tidurmu & Amalan Qailulah</h1>
+    </div>
+    <div class="border border-black p-2 mb-3 space-y-1">
+      <div>NAMA: ____________________________________ KELAS: _________ TARIKH: _________</div>
+    </div>
+    <div class="mb-3">
+      <strong>Bahagian A: Ringkasan Pembelajaran Adab Tidur & Qailulah.</strong>
+      <table class="w-full border-collapse border border-black text-center mt-2 text-xs">
+        <tr class="bg-gray-100"><th class="border border-black p-1">Perkara</th><th class="border border-black p-1">Huraian Amalan</th></tr>
+        <tr><td class="border border-black p-2 font-bold">Amalan Sebelum Tidur</td><td class="border border-black p-2 text-left">Tidur awal, berwuduk, mengibas tempat tidur, membaca basmalah, dan tidur mengiring di sebelah kanan.</td></tr>
+        <tr><td class="border border-black p-2 font-bold">Amalan Selepas Bangun</td><td class="border border-black p-2 text-left">Membaca doa bangun tidur, mengemas tempat tidur, membasuh tangan, mencuci hidung/muka, dan bersugi.</td></tr>
+        <tr><td class="border border-black p-2 font-bold">Dalil Naqli Tidur</td><td class="border border-black p-2 text-left">Hadis Riwayat Bukhari & Muslim menganjurkan berwuduk dan berbaring pada rusuk kanan.</td></tr>
+        <tr><td class="border border-black p-2 font-bold">Pengertian Qailulah</td><td class="border border-black p-2 text-left">Tidur sekejap sebelum waktu zohor (antara 10 hingga 30 minit) untuk menyegarkan mental & fizikal.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Logik Skrip -->
   <script>
-    // Data Jawapan Kuiz & Penjelasan
-    const quizData = {
+    function switchTab(mode) {
+      const secWagba = document.getElementById('section-wagba');
+      const secKuiz = document.getElementById('section-kuiz');
+      const btnWagba = document.getElementById('tab-btn-wagba');
+      const btnKuiz = document.getElementById('tab-btn-kuiz');
+
+      if (mode === 'wagba') {
+        secWagba.classList.remove('hidden');
+        secKuiz.classList.add('hidden');
+        btnWagba.className = "p-3.5 md:p-4 rounded-2xl border-2 border-purple-500 bg-purple-50/50 ring-2 ring-purple-400/20 shadow-xs transition-all flex items-center justify-between group";
+        btnKuiz.className = "p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-purple-50/60 shadow-xs transition-all flex items-center justify-between group";
+      } else {
+        secWagba.classList.add('hidden');
+        secKuiz.classList.remove('hidden');
+        btnKuiz.className = "p-3.5 md:p-4 rounded-2xl border-2 border-purple-500 bg-purple-50/50 ring-2 ring-purple-400/20 shadow-xs transition-all flex items-center justify-between group";
+        btnWagba.className = "p-3.5 md:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-purple-50/60 shadow-xs transition-all flex items-center justify-between group";
+        loadQuiz(1);
+      }
+    }
+
+    function activateNote(id) {
+      document.querySelectorAll('.note-item').forEach(el => el.classList.add('hidden'));
+      const activeNoteEl = document.getElementById('note-' + id);
+      if (activeNoteEl) activeNoteEl.classList.remove('hidden');
+
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.getElementById('btn-w-' + i);
+        if (i === id) {
+          btn.className = "w-btn p-2 rounded-xl border-2 transition-all text-center border-purple-500 bg-purple-50 text-purple-900 font-extrabold text-xs ring-2 ring-purple-400/20";
+        } else {
+          btn.className = "w-btn p-2 rounded-xl border-2 transition-all text-center border-slate-200 bg-white hover:border-purple-300 text-slate-700 font-bold text-xs";
+        }
+      }
+    }
+
+    const quizDatabase = {
       1: {
-        correct: 1,
-        exp: "Buku teks menyatakan antara amalan sebelum tidur ialah mengibas tempat tidur untuk membersihkan habuk dan serangga."
+        title: "KUIZ WAGBA 1: Amalan Sebelum Tidur",
+        sub: "Practices Before Sleeping",
+        question: "Apakah amalan sunnah sebelum tidur yang dianjurkan untuk membersihkan tempat perbaringan?",
+        options: [
+          { text: "Mengibas tempat tidur", en: "Dusting off the bed", correct: true },
+          { text: "Membasuh tilam dengan sabun", en: "Washing the mattress with soap", correct: false },
+          { text: "Membakar wangian di sekeliling katil", en: "Burning incense around the bed", correct: false }
+        ],
+        explanation: "Buku teks mengajar kita supaya mengibas tempat tidur terlebih dahulu bagi membersihkan habuk dan mengelakkan serangga sebelum tidur."
       },
       2: {
-        correct: 0,
-        exp: "Maksud doa sebelum tidur ialah: 'Dengan nama-Mu ya Allah, aku hidup dan aku mati'."
+        title: "KUIZ WAGBA 2: Doa dan Zikir Berkaitan Tidur",
+        sub: "Du'a and Dhikr Related to Sleeping",
+        question: "Apakah maksud bagi doa: 'بِاسْمِكَ اللَّهُمَّ أَحْيَا وَأَمُوتُ'?",
+        options: [
+          { text: "Dengan nama-Mu ya Allah, aku hidup dan aku mati", en: "In Your Name, O Allah, I live and I die", correct: true },
+          { text: "Segala puji bagi Allah yang menghidupkan kami", en: "All praise belongs to Allah who gave us life", correct: false },
+          { text: "Ya Allah, selamatkanlah perjalanan kami", en: "O Allah, protect our journey", correct: false }
+        ],
+        explanation: "Maksud doa sebelum tidur 'Bismika Allahumma ahya wa amuut' ialah 'Dengan nama-Mu ya Allah, aku hidup dan aku mati'."
       },
       3: {
-        correct: 1,
-        exp: "Amalan bangun tidur termasuk membasuh muka dan mencuci hidung dengan memasukkan air dan menghembuskannya keluar (istinsyaq & istintsar)."
+        title: "KUIZ WAGBA 3: Amalan Selepas Bangun Tidur",
+        sub: "Practices After Waking Up",
+        question: "Apakah amalan kebersihan diri yang disunatkan untuk membersihkan rongga hidung sejurus bangun tidur?",
+        options: [
+          { text: "Memasukkan air dan menghembuskannya keluar (istinsyaq & istintsar)", en: "Sniffing water in and blowing it out", correct: true },
+          { text: "Menyapu hidung menggunakan minyak wangi", en: "Applying perfume onto the nose", correct: false },
+          { text: "Mengelap hidung dengan tisu basah", en: "Wiping nose with wet wipes", correct: false }
+        ],
+        explanation: "Amalan selepas bangun tidur merangkumi membasuh muka dan mencuci hidung dengan memasukkan air ke dalam hidung dan menghembuskannya keluar."
       },
       4: {
-        correct: 1,
-        exp: "Hadis riwayat al-Bukhari & Muslim menegaskan: '...kemudian berbaringlah mengiring di sebelah kananmu'."
+        title: "KUIZ WAGBA 4: Kefahaman Dalil Naqli Sunnah Tidur",
+        sub: "Naqli Evidence of Sleeping Sunnah",
+        question: "Berdasarkan hadis Rasulullah ﷺ, apakah kedudukan berbaring yang disunatkan?",
+        options: [
+          { text: "Berbaring mengiring di sebelah kanan", en: "Lying down on the right side", correct: true },
+          { text: "Berbaring secara meniarap", en: "Lying on the stomach", correct: false },
+          { text: "Berbaring mengiring di sebelah kiri sahaja", en: "Lying on the left side only", correct: false }
+        ],
+        explanation: "Hadis riwayat al-Bukhari dan Muslim menegaskan: '...kemudian berbaringlah mengiring di sebelah kananmu'."
       },
       5: {
-        correct: 1,
-        exp: "Nasihat Tok menegaskan supaya mengelakkan tidur meniarap dan sentiasa menutup aurat."
+        title: "KUIZ WAGBA 5: Kepentingan & Larangan",
+        sub: "Importance and Prohibitions",
+        question: "Berdasarkan nasihat Tok dalam buku teks, apakah posisi tidur yang perlu dielakkan?",
+        options: [
+          { text: "Tidur meniarap", en: "Sleeping on the stomach (prone)", correct: true },
+          { text: "Tidur mengiring ke kanan", en: "Sleeping on the right side", correct: false },
+          { text: "Tidur berbantalkan lengan", en: "Sleeping resting on an arm", correct: false }
+        ],
+        explanation: "Tok menasihati Nabil/Nazir supaya mengelakkan tidur meniarap dan sentiasa memakai pakaian yang menutup aurat."
       },
       6: {
-        correct: 1,
-        exp: "Qailulah ialah tidur sekejap sebelum masuk waktu zohor (antara 10 hingga 30 minit)."
+        title: "KUIZ WAGBA 6: Pengertian Qailulah",
+        sub: "Definition of Qailulah",
+        question: "Apakah pengertian tidur Qailulah (قَيْلُولَة)?",
+        options: [
+          { text: "Tidur sekejap sebelum masuk waktu zohor", en: "A short sleep before the Zohr prayer time", correct: true },
+          { text: "Tidur lama selepas waktu Asar", en: "A long sleep after Asr prayer", correct: false },
+          { text: "Tidur nyenyak sepanjang hari", en: "Sleeping soundly all day", correct: false }
+        ],
+        explanation: "Qailulah ialah tidur sekejap sebelum masuk waktu zohor iaitu dalam tempoh antara 10 hingga 30 minit."
       },
       7: {
-        correct: 1,
-        exp: "Kebaikan mental qailulah merangkumi mengukuhkan ingatan, meningkatkan fungsi otak, menstabilkan emosi, dan menghilangkan tekanan."
+        title: "KUIZ WAGBA 7: Kepentingan Qailulah (Mental)",
+        sub: "Mental Benefits of Qailulah",
+        question: "Antara berikut, yang manakah kepentingan Qailulah dari aspek mental?",
+        options: [
+          { text: "Meningkatkan fungsi otak dan mengukuhkan ingatan", en: "Enhances brain function and strengthens memory", correct: true },
+          { text: "Mempercepatkan pertumbuhan kuku", en: "Accelerates fingernail growth", correct: false },
+          { text: "Menjadikan badan cepat lesu", en: "Causes body fatigue", correct: false }
+        ],
+        explanation: "Aspek mental qailulah membantu meningkatkan fungsi otak, mengukuhkan ingatan, menstabilkan emosi, dan mengurangkan tekanan."
       },
       8: {
-        correct: 0,
-        exp: "Antara faedah fizikal qailulah ialah mengumpul stamina serta memberikan tenaga untuk mendirikan qiamullail pada malam hari."
+        title: "KUIZ WAGBA 8: Kepentingan Qailulah (Fizikal)",
+        sub: "Physical Benefits of Qailulah",
+        question: "Apakah faedah fizikal Qailulah yang berkaitan dengan ibadah pada waktu malam?",
+        options: [
+          { text: "Memberikan tenaga untuk qiamullail", en: "Provides stamina for late-night prayers", correct: true },
+          { text: "Menyebabkan rasa malas bangun Subuh", en: "Causes lethargy for Subuh prayer", correct: false },
+          { text: "Menghalang badan daripada berpeluh", en: "Prevents body from sweating", correct: false }
+        ],
+        explanation: "Tidur qailulah memberi stamina fizikal yang mencukupi untuk memudahkan seseorang bangun menunaikan qiamullail pada malam hari."
       }
     };
 
-    // Fungsi Penukar Tab Utama
-    function switchMainTab(mode) {
-      const secNotes = document.getElementById('section-notes');
-      const secQuiz = document.getElementById('section-quiz');
-      const btnNotes = document.getElementById('btn-mode-notes');
-      const btnQuiz = document.getElementById('btn-mode-quiz');
-
-      if (mode === 'notes') {
-        secNotes.classList.remove('hidden');
-        secQuiz.classList.add('hidden');
-        btnNotes.className = "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500 text-white shadow-sm";
-        btnQuiz.className = "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-emerald-100 hover:text-white";
-      } else {
-        secNotes.classList.add('hidden');
-        secQuiz.classList.remove('hidden');
-        btnQuiz.className = "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500 text-white shadow-sm";
-        btnNotes.className = "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-emerald-100 hover:text-white";
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Fungsi Papar Kad WAGBA
-    function showWagba(index) {
+    function loadQuiz(id) {
       for (let i = 1; i <= 8; i++) {
-        const card = document.getElementById(`card-w${i}`);
-        const pill = document.getElementById(`pill-w${i}`);
-        if (i === index) {
-          card.classList.remove('hidden');
-          pill.className = "w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-emerald-600 text-white shadow-md ring-2 ring-emerald-500 ring-offset-1";
+        const btn = document.getElementById('btn-q-' + i);
+        if (i === id) {
+          btn.className = "q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-purple-500 bg-purple-50 text-purple-900 ring-2 ring-purple-400/20";
         } else {
-          card.classList.add('hidden');
-          pill.className = "w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700";
+          btn.className = "q-btn p-2 rounded-xl border-2 transition-all font-bold text-xs border-slate-200 bg-white text-slate-700 hover:border-purple-300";
         }
       }
+
+      const q = quizDatabase[id];
+      const card = document.getElementById('quiz-card');
+      card.innerHTML = `
+        <div class="flex items-center justify-between border-b pb-2">
+          <div>
+            <span class="px-2.5 py-0.5 bg-purple-600 text-white rounded-lg text-[11px] font-extrabold uppercase">${q.title}</span>
+            <div class="text-[10px] text-slate-400 italic mt-0.5">${q.sub}</div>
+          </div>
+          <div id="quiz-status-badge" class="text-[11px] font-bold px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full">Belum Dijawab</div>
+        </div>
+
+        <div>
+          <div class="text-sm md:text-base font-bold text-slate-900 leading-snug">${q.question}</div>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          ${q.options.map((opt, optIndex) => `
+            <button onclick="handleAnswer(${id}, ${optIndex})" id="opt-btn-${optIndex}" class="w-full text-left p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-purple-400 hover:bg-purple-50/40 transition">
+              <div class="text-xs md:text-sm font-bold text-slate-800">${opt.text}</div>
+              <div class="text-[11px] text-slate-500 italic mt-0.5">${opt.en}</div>
+            </button>
+          `).join('')}
+        </div>
+
+        <div id="quiz-feedback" class="hidden p-3.5 rounded-2xl text-xs font-medium space-y-1"></div>
+      `;
     }
 
-    // Fungsi Papar Kad Kuiz
-    function showQuiz(index) {
-      for (let i = 1; i <= 8; i++) {
-        const card = document.getElementById(`quiz-card-${i}`);
-        const pill = document.getElementById(`pill-q${i}`);
-        if (i === index) {
-          card.classList.remove('hidden');
-          pill.className = "w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-emerald-600 text-white shadow-md ring-2 ring-emerald-500 ring-offset-1";
-        } else {
-          card.classList.add('hidden');
-          pill.className = "w-10 h-10 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-100 hover:bg-emerald-50 text-slate-700";
+    function handleAnswer(quizId, optIndex) {
+      const q = quizDatabase[quizId];
+      const isCorrect = q.options[optIndex].correct;
+      const feedbackEl = document.getElementById('quiz-feedback');
+      const badge = document.getElementById('quiz-status-badge');
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.getElementById('opt-btn-' + idx);
+        btn.disabled = true;
+        btn.classList.add('cursor-not-allowed', 'opacity-80');
+        if (opt.correct) {
+          btn.classList.remove('bg-white', 'border-slate-200');
+          btn.classList.add('bg-purple-100', 'border-purple-500', 'text-purple-900');
+        } else if (idx === optIndex && !isCorrect) {
+          btn.classList.remove('bg-white', 'border-slate-200');
+          btn.classList.add('bg-rose-100', 'border-rose-400', 'text-rose-900');
         }
-      }
-    }
+      });
 
-    // Fungsi Semakan Jawapan Kuiz Serta-merta
-    function checkAnswer(qNum, chosenIndex) {
-      const q = quizData[qNum];
-      const fb = document.getElementById(`feedback-q${qNum}`);
-      const btnContainer = document.getElementById(`options-q${qNum}`);
-      const buttons = btnContainer.querySelectorAll('.opt-btn');
-
-      // Kunci butang selepas jawapan dipilih
-      buttons.forEach(btn => btn.disabled = true);
-
-      if (chosenIndex === q.correct) {
-        buttons[chosenIndex].classList.remove('hover:bg-slate-50', 'border-slate-200');
-        buttons[chosenIndex].classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
-        fb.className = "mt-4 p-4 rounded-xl text-sm bg-emerald-50 border border-emerald-200 text-emerald-900 block";
-        fb.innerHTML = `✅ <strong>Tepat sekali!</strong> ${q.exp}`;
+      feedbackEl.classList.remove('hidden');
+      if (isCorrect) {
+        badge.className = "text-[11px] font-bold px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-full";
+        badge.innerText = "Tahniah! Betul ⭐";
+        feedbackEl.className = "p-3.5 rounded-2xl text-xs font-medium bg-purple-100/90 text-purple-950 border border-purple-300 space-y-1";
+        feedbackEl.innerHTML = `<strong>Tahniah! Jawapan Tepat! 🎉</strong><br>${q.explanation}`;
       } else {
-        buttons[chosenIndex].classList.remove('hover:bg-slate-50', 'border-slate-200');
-        buttons[chosenIndex].classList.add('bg-rose-100', 'border-rose-400', 'text-rose-900');
-        buttons[q.correct].classList.add('bg-emerald-50', 'border-emerald-400', 'text-emerald-800', 'font-semibold');
-        fb.className = "mt-4 p-4 rounded-xl text-sm bg-rose-50 border border-rose-200 text-rose-900 block";
-        fb.innerHTML = `❌ <strong>Kurang tepat.</strong> ${q.exp}`;
+        badge.className = "text-[11px] font-bold px-2.5 py-0.5 bg-rose-100 text-rose-800 rounded-full";
+        badge.innerText = "Cuba Lagi 😊";
+        feedbackEl.className = "p-3.5 rounded-2xl text-xs font-medium bg-rose-100/90 text-rose-950 border border-rose-300 space-y-1";
+        feedbackEl.innerHTML = `<strong>Jawapan Kurang Tepat. 😊</strong><br>${q.explanation}`;
       }
     }
   </script>
