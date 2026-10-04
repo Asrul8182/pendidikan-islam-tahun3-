@@ -137,27 +137,184 @@
         </div>
       </div>
 
-      <!-- Item Nota Hadis -->
-      <div id="note-1" class="note-item bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 text-center space-y-4 shadow-sm">
-        <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 1: Matan Hadis Nabi SAW</span>
-        <div class="p-6 bg-emerald-50/50 rounded-2xl border border-emerald-100 space-y-3">
+      <!-- ================= ITEM NOTA 1: LAFAZ HADIS (ARAB PENUH + PECAHAN BLOK ARAB) ================= -->
+      <div id="note-1" class="note-item bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-6 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-3">
+          <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 1: Matan Hadis Nabi SAW</span>
+          <span class="text-xs text-slate-400 italic">Hadith Recitation</span>
+        </div>
+
+        <!-- Matan Penuh Asal Dikekalkan -->
+        <div class="p-6 bg-emerald-50/50 rounded-2xl border border-emerald-100 text-center space-y-3">
           <p class="arabic-font text-3xl md:text-5xl leading-relaxed text-emerald-950 font-bold">لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَيُوَقِّرْ كَبِيرَنَا</p>
           <p class="text-xs text-slate-500 font-semibold">(Riwayat At-Tirmizi / <span class="italic">Narrated by At-Tirmidhi</span>)</p>
         </div>
-      </div>
 
-      <div id="note-2" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
-        <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 2: Terjemahan Hadis</span>
-        <div class="p-6 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-2">
-          <p class="text-base md:text-lg font-bold text-slate-900 leading-relaxed">
-            "Bukan daripada golongan kami orang yang tidak mengasihi orang yang lebih muda dan tidak menghormati orang yang lebih tua."
-          </p>
-          <p class="text-xs md:text-sm text-slate-600 italic">
-            "He is not one of us who does not show mercy to our young ones and acknowledge the honour due to our elders."
-          </p>
+        <!-- Pecahan Bahasa Arab Blok Demi Blok -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">Pecahan Lafaz Arab Blok Demi Blok / <span class="italic font-normal">Arabic Block by Block</span></h4>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" dir="rtl">
+            <!-- Blok Arab 1 -->
+            <div class="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-200 flex items-center justify-between gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">١</span>
+              <div class="text-right">
+                <div class="arabic-font text-2xl font-bold text-emerald-950">لَيْسَ مِنَّا</div>
+                <div class="text-xs text-slate-500 font-semibold" dir="ltr">Laisa minna</div>
+              </div>
+            </div>
+
+            <!-- Blok Arab 2 -->
+            <div class="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-200 flex items-center justify-between gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">٢</span>
+              <div class="text-right">
+                <div class="arabic-font text-2xl font-bold text-emerald-950">مَنْ لَمْ يَرْحَمْ</div>
+                <div class="text-xs text-slate-500 font-semibold" dir="ltr">Man lam yarham</div>
+              </div>
+            </div>
+
+            <!-- Blok Arab 3 -->
+            <div class="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-200 flex items-center justify-between gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">٣</span>
+              <div class="text-right">
+                <div class="arabic-font text-2xl font-bold text-emerald-950">صَغِيرَنَا</div>
+                <div class="text-xs text-slate-500 font-semibold" dir="ltr">Shagirana</div>
+              </div>
+            </div>
+
+            <!-- Blok Arab 4 -->
+            <div class="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-200 flex items-center justify-between gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">٤</span>
+              <div class="text-right">
+                <div class="arabic-font text-2xl font-bold text-emerald-950">وَيُوَقِّرْ كَبِيرَنَا</div>
+                <div class="text-xs text-slate-500 font-semibold" dir="ltr">Wa yuwaqqir kabirana</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- ================= ITEM NOTA 2: TERJEMAHAN HADIS (MELAYU & INGGERIS LENGKAP + PECAHAN BLOK MASING-MASING) ================= -->
+      <div id="note-2" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-6 shadow-sm">
+        <div class="flex items-center justify-between border-b pb-3">
+          <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 2: Terjemahan Hadis</span>
+          <span class="text-xs text-slate-400 italic">Translation of Hadith</span>
+        </div>
+
+        <!-- 1. Terjemahan Penuh Bahasa Melayu (Dikekalkan Sedia Ada) -->
+        <div class="p-6 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-1">
+          <span class="text-[11px] font-bold text-amber-800 uppercase tracking-wider">Terjemahan Penuh Bahasa Melayu</span>
+          <p class="text-base md:text-lg font-bold text-slate-900 leading-relaxed">
+            "Bukan daripada golongan kami orang yang tidak mengasihi orang yang lebih muda dan tidak menghormati orang yang lebih tua."
+          </p>
+        </div>
+
+        <!-- Pecahan Terjemahan Bahasa Melayu Blok Demi Blok -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">Pecahan Bahasa Melayu Blok Demi Blok</h4>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Blok Melayu 1 -->
+            <div class="p-4 bg-emerald-50/50 rounded-2xl border border-emerald-200 flex items-start gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
+              <div>
+                <div class="text-sm font-bold text-slate-900">Bukan daripada golongan kami</div>
+                <div class="text-xs text-slate-500">Lafaz: Laisa minna</div>
+              </div>
+            </div>
+
+            <!-- Blok Melayu 2 -->
+            <div class="p-4 bg-emerald-50/50 rounded-2xl border border-emerald-200 flex items-start gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
+              <div>
+                <div class="text-sm font-bold text-slate-900">orang yang</div>
+                <div class="text-xs text-slate-500">Lafaz: Man (lam...)</div>
+              </div>
+            </div>
+
+            <!-- Blok Melayu 3 -->
+            <div class="p-4 bg-emerald-50/50 rounded-2xl border border-emerald-200 flex items-start gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">3</span>
+              <div>
+                <div class="text-sm font-bold text-slate-900">tidak mengasihi orang yang lebih muda</div>
+                <div class="text-xs text-slate-500">Lafaz: Lam yarham shagirana</div>
+              </div>
+            </div>
+
+            <!-- Blok Melayu 4 -->
+            <div class="p-4 bg-emerald-50/50 rounded-2xl border border-emerald-200 flex items-start gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">4</span>
+              <div>
+                <div class="text-sm font-bold text-slate-900">dan tidak menghormati orang yang lebih tua</div>
+                <div class="text-xs text-slate-500">Lafaz: Wa yuwaqqir kabirana</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Terjemahan Penuh Bahasa Inggeris (Dikekalkan Sedia Ada) -->
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-1">
+          <span class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Full English Translation</span>
+          <p class="text-sm md:text-base text-slate-700 italic font-medium leading-relaxed">
+            "He is not one of us who does not show mercy to our young ones and acknowledge the honour due to our elders."
+          </p>
+        </div>
+
+        <!-- Pecahan Terjemahan Bahasa Inggeris Blok Demi Blok -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">Pecahan Bahasa Inggeris Blok Demi Blok / <span class="italic font-normal">English Block by Block</span></h4>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Blok BI 1 -->
+            <div class="p-4 bg-blue-50/40 rounded-2xl border border-blue-200 flex items-start gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-blue-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
+              <div>
+                <div class="text-sm italic font-semibold text-slate-900">"He is not one of us"</div>
+                <div class="text-xs text-slate-500 mt-0.5">Not from our community / way</div>
+              </div>
+            </div>
+
+            <!-- Blok BI 2 -->
+            <div class="p-4 bg-blue-50/40 rounded-2xl border border-blue-200 flex items-start gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-blue-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
+              <div>
+                <div class="text-sm italic font-semibold text-slate-900">"the one who"</div>
+                <div class="text-xs text-slate-500 mt-0.5">Whosoever / anyone that</div>
+              </div>
+            </div>
+
+            <!-- Blok BI 3 -->
+            <div class="p-4 bg-blue-50/40 rounded-2xl border border-blue-200 flex items-start gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-blue-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">3</span>
+              <div>
+                <div class="text-sm italic font-semibold text-slate-900">"does not show mercy to our young ones"</div>
+                <div class="text-xs text-slate-500 mt-0.5">Lacks affection toward children & youth</div>
+              </div>
+            </div>
+
+            <!-- Blok BI 4 -->
+            <div class="p-4 bg-blue-50/40 rounded-2xl border border-blue-200 flex items-start gap-3 shadow-xs">
+              <span class="w-7 h-7 rounded-xl bg-blue-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">4</span>
+              <div>
+                <div class="text-sm italic font-semibold text-slate-900">"and acknowledge the honour due to our elders"</div>
+                <div class="text-xs text-slate-500 mt-0.5">Fails to respect and revere older persons</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Item Nota Hadis: WAGBA 3 -->
       <div id="note-3" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
         <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 3: Pengertian Hadis</span>
         <div class="p-5 bg-emerald-50/60 rounded-2xl border border-emerald-200 space-y-2">
@@ -176,6 +333,7 @@
         </div>
       </div>
 
+      <!-- Item Nota Hadis: WAGBA 4 -->
       <div id="note-4" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
         <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 4: Peranan Hadis</span>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
@@ -190,6 +348,7 @@
         </div>
       </div>
 
+      <!-- Item Nota Hadis: WAGBA 5 -->
       <div id="note-5" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
         <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 5: Adab Mengasihi Orang Muda</span>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
@@ -201,6 +360,7 @@
         </div>
       </div>
 
+      <!-- Item Nota Hadis: WAGBA 6 -->
       <div id="note-6" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-4 shadow-sm">
         <span class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 6: Adab Menghormati Orang Tua</span>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
@@ -215,7 +375,7 @@
         </div>
       </div>
 
-      <!-- WAGBA 7: RUMI & ENGLISH SAHAJA (TIADA JAWI) -->
+      <!-- Item Nota Hadis: WAGBA 7 (TIADA JAWI - 100% RUMI & ENGLISH) -->
       <div id="note-7" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-pink-200 space-y-4 shadow-sm">
         <div class="flex items-center justify-between border-b pb-3">
           <span class="px-3 py-1 bg-pink-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 7: Kesan Mengasihi Orang yang Lebih Muda</span>
@@ -223,7 +383,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- 1 -->
           <div class="p-4 bg-pink-50/60 rounded-2xl border border-pink-200 space-y-1">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-pink-600 text-white text-xs font-bold flex items-center justify-center">1</span>
@@ -232,7 +391,6 @@
             <div class="text-xs text-slate-500 italic pl-8">Being loved and respected</div>
           </div>
 
-          <!-- 2 -->
           <div class="p-4 bg-pink-50/60 rounded-2xl border border-pink-200 space-y-1">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-pink-600 text-white text-xs font-bold flex items-center justify-center">2</span>
@@ -241,7 +399,6 @@
             <div class="text-xs text-slate-500 italic pl-8">Families live happily</div>
           </div>
 
-          <!-- 3 -->
           <div class="p-4 bg-pink-50/60 rounded-2xl border border-pink-200 space-y-1">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-pink-600 text-white text-xs font-bold flex items-center justify-center">3</span>
@@ -250,7 +407,6 @@
             <div class="text-xs text-slate-500 italic pl-8">Society lives in peace</div>
           </div>
 
-          <!-- 4 -->
           <div class="p-4 bg-pink-50/60 rounded-2xl border border-pink-200 space-y-1">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-pink-600 text-white text-xs font-bold flex items-center justify-center">4</span>
@@ -259,7 +415,6 @@
             <div class="text-xs text-slate-500 italic pl-8">Youths behave more politely</div>
           </div>
 
-          <!-- 5 -->
           <div class="p-4 bg-pink-50/60 rounded-2xl border border-pink-200 space-y-1 md:col-span-2">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-pink-600 text-white text-xs font-bold flex items-center justify-center">5</span>
@@ -270,7 +425,7 @@
         </div>
       </div>
 
-      <!-- WAGBA 8: RUMI & ENGLISH SAHAJA (TIADA JAWI) -->
+      <!-- Item Nota Hadis: WAGBA 8 (TIADA JAWI - 100% RUMI & ENGLISH) -->
       <div id="note-8" class="note-item hidden bg-white rounded-3xl p-6 md:p-8 border border-amber-200 space-y-4 shadow-sm">
         <div class="flex items-center justify-between border-b pb-3">
           <span class="px-3 py-1 bg-amber-600 text-white rounded-xl text-xs font-extrabold uppercase">WAGBA 8: Kesan Menghormati Orang yang Lebih Tua</span>
@@ -278,7 +433,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- 1 -->
           <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-1">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center">1</span>
@@ -287,7 +441,6 @@
             <div class="text-xs text-slate-500 italic pl-8">Mutual love exists between the young and the old</div>
           </div>
 
-          <!-- 2 -->
           <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-1">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center">2</span>
@@ -296,7 +449,6 @@
             <div class="text-xs text-slate-500 italic pl-8">Life is more blessed</div>
           </div>
 
-          <!-- 3 -->
           <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-1">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center">3</span>
@@ -305,7 +457,6 @@
             <div class="text-xs text-slate-500 italic pl-8">Gaining peace of mind</div>
           </div>
 
-          <!-- 4 -->
           <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-1">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center">4</span>
@@ -314,7 +465,6 @@
             <div class="text-xs text-slate-500 italic pl-8">Beloved by Allah SWT and the Messenger SAW</div>
           </div>
 
-          <!-- 5 -->
           <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-1 md:col-span-2">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center">5</span>
@@ -416,7 +566,7 @@
       }
     }
 
-    // Data Kuiz Dwibahasa Hadis (WAGBA 7 & 8 disahkan mengikut buku teks)
+    // Data Kuiz Dwibahasa Hadis
     const quizDatabase = {
       1: {
         title: "KUIZ WAGBA 1: Lafaz Hadis",
@@ -509,7 +659,6 @@
     };
 
     function loadQuiz(id) {
-      // Sorotan butang aktif
       for (let i = 1; i <= 8; i++) {
         const btn = document.getElementById('btn-q-' + i);
         if (i === id) {
@@ -519,7 +668,6 @@
         }
       }
 
-      // Paparkan soalan
       const q = quizDatabase[id];
       const card = document.getElementById('quiz-card');
       card.innerHTML = `
